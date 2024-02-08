@@ -1,7 +1,9 @@
 // MARK: - Registration Screen:
 "registration.registration" = "Регистрация";
 "registration.email" = "e-mail";
+"registration.emailPlaceholder" = "Введите email";
 "registration.password" = "Пароль";
+"registration.passwordPlaceholder" = "******";
 "registration.repeatPassword" = "Повторите пароль";
 
 // MARK: - Enter Screen:
