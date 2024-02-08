@@ -28,9 +28,16 @@ final class EnterViewController: UIViewController {
     
     private lazy var enterButton: CustomButton = {
         let button = CustomButton(type: .system)
-        button.setTitle(L10n.Registration.registration, for: .normal)
+        button.setTitle(L10n.Enter.enter, for: .normal)
         return button
     }()
+    
+    // MARK: - Lifecycle:
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+        setupConstraints()
+    }
 }
 
 // MARK: - CustomInputStackViewDelegate:
@@ -59,12 +66,14 @@ private extension EnterViewController {
     func setupInputsStackViewConstraints() {
         inputsStackView.snp.makeConstraints { make in
             make.center.equalToSuperview()
+            make.left.equalTo(GlobalUIConstants.baseInset)
+            make.right.equalTo(-GlobalUIConstants.baseInset)
         }
     }
     
     func setupEnterButtonConstraints() {
         enterButton.snp.makeConstraints { make in
-            make.top.equalTo(inputsStackView.snp.bottom).inset(LocalUIConstants.buttonTopInset)
+            make.top.equalTo(inputsStackView.snp.bottom).inset(-LocalUIConstants.buttonTopInset)
             make.left.equalTo(GlobalUIConstants.baseInset)
             make.right.equalTo(-GlobalUIConstants.baseInset)
         }

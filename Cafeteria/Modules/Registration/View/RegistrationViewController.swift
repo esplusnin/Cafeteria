@@ -1,7 +1,13 @@
 import UIKit
 
-class RegistationViewController: UIViewController {
+class RegistrationViewController: UIViewController {
 
+    // MARK: - Dependencies:
+    private var output: RegistrationViewOutputProtocol?
+    
+    // MARK: - Classes:
+    private let configurator = RegistrationConfigurator()
+    
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
         static let inputsStacksInset: CGFloat = 24
@@ -36,22 +42,43 @@ class RegistationViewController: UIViewController {
         button.setTitle(L10n.Registration.registration, for: .normal)
         return button
     }()
-    
+
     // MARK: - Lifecycle:
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        setupTargets()
+        configurator.configure(self)
+    }
+    
+    // MARK: - Public Methods:
+    func setup(_ output: RegistrationViewOutputProtocol) {
+        self.output = output
+    }
+    
+    // MARK: - Objc Methods:
+    @objc private func createAccount() {
+//        guard let email = emailStackView.titleLabel.text,
+//              let password = passwordStackView.titleLabel.text,
+//              let repeatedPassword = repeatPasswordStackView.titleLabel.text else { return }
+//        output?.createAccount(with: email, and: password, repeatedPassword: repeatedPassword)
+        output?.createAccount(with: "", and: "", repeatedPassword: "")
     }
 }
 
+// MARK: - RegistrationViewProtocol:
+extension RegistrationViewController: RegistrationViewInputProtocol {
+    
+}
+
 // MARK: - CustomInputStackViewDelegate:
-extension RegistationViewController: CustomInputStackViewDelegate {
+extension RegistrationViewController: CustomInputStackViewDelegate {
     
 }
 
 // MARK: - Setup Views:
-private extension RegistationViewController {
+private extension RegistrationViewController {
     func setupViews() {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
         navigationItem.title = L10n.Registration.registration
@@ -62,7 +89,7 @@ private extension RegistationViewController {
 }
 
 // MARK: - Setup Constraints:
-private extension RegistationViewController {
+private extension RegistrationViewController {
     func setupConstraints() {
         setupInputsStackViewConstraints()
         setupRegistrationButton()
@@ -82,5 +109,12 @@ private extension RegistationViewController {
             make.left.equalTo(GlobalUIConstants.baseInset)
             make.right.equalTo(-GlobalUIConstants.baseInset)
         }
+    }
+}
+
+// MARK: - Setup Targets:
+private extension RegistrationViewController {
+    func setupTargets() {
+        registrationButton.addTarget(self, action: #selector(createAccount), for: .touchUpInside)
     }
 }

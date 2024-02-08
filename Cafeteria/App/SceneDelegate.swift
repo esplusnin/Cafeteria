@@ -8,7 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: scene)
-        let rootViewController = RegistationViewController()
+        let rootViewController = RegistrationViewController()
         let rootNavigationController = UINavigationController(rootViewController: rootViewController)
        
         setup(rootNavigationController)
@@ -26,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         navigationController.navigationBar.standardAppearance = appearance
         navigationController.navigationBar.scrollEdgeAppearance = navigationController.navigationBar.standardAppearance
-        
+        navigationController.navigationBar.tintColor = Asset.Colors.textBrown.color
+        navigationController.navigationBar.topItem?.backButtonDisplayMode = .minimal
     }
 }

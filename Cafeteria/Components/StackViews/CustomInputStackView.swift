@@ -25,7 +25,7 @@ final class CustomInputStackView: UIStackView {
     private var state: CustomInputStackViewState?
     
     // MARK: - UI:
-    private var titleLabel: UILabel = {
+    private(set) var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.font = .bodyRegular
