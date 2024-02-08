@@ -1,0 +1,32 @@
+// MARK: - Registration Screen:
+"registration.registration" = "Регистрация";
+"registration.email" = "e-mail";
+"registration.password" = "Пароль";
+"registration.repeatPassword" = "Повторите пароль";
+
+// MARK: - Enter Screen:
+"enter.title" = "Вход";
+"enter.email" = "e-mail";
+"enter.password" = "Пароль";
+"enter.enter" = "Войти";
+
+// MARK: - Nearest Cafeterians Screen:
+"nearestCafeterian.title" = "Ближайшие кофейня";
+"nearestCafeterian.fromYou" = "от вас";
+"nearestCafeterian.onMap" = "На карте";
+
+// MARK: - Map Screen:
+"map.title" = "Карта";
+
+// MARK: - Menu Screen:
+"menu.title" = "Меню";
+"menu.espresso" = "Эспрессо";
+"menu.cappuccino" = "Капучино";
+"menu.hotChocolate" = "Горячий шоколад";
+"menu.latte" = "Латте";
+"menu.goToPay" = "Перейти к оплате";
+
+// MARK: - Order Screen:
+"order.title" = "Ваш заказ";
+"order.thanks" = "Время ожидания заказа 15 минут\nСпасибо, что выбрали нас!";
+"order.pay" = "";
