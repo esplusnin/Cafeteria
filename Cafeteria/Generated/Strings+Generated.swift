@@ -58,8 +58,12 @@ internal enum L10n {
   internal enum Registration {
     /// e-mail
     internal static let email = L10n.tr("Localizable", "registration.email", fallback: "e-mail")
+    /// Введите email
+    internal static let emailPlaceholder = L10n.tr("Localizable", "registration.emailPlaceholder", fallback: "Введите email")
     /// Пароль
     internal static let password = L10n.tr("Localizable", "registration.password", fallback: "Пароль")
+    /// ******
+    internal static let passwordPlaceholder = L10n.tr("Localizable", "registration.passwordPlaceholder", fallback: "******")
     /// Регистрация
     internal static let registration = L10n.tr("Localizable", "registration.registration", fallback: "Регистрация")
     /// Повторите пароль

@@ -8,7 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: scene)
-        let rootViewController = ViewController()
+        let rootViewController = RegistationViewController()
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
     }
