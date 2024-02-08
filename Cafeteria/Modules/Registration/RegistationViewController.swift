@@ -5,6 +5,7 @@ class RegistationViewController: UIViewController {
     // MARK: - Constants and Variables:
     private enum UILocalConstants {
         static let inputsStacksInset: CGFloat = 24
+        static let buttonTopInset: CGFloat = 30
     }
     
     // MARK: - UI:
@@ -30,6 +31,12 @@ class RegistationViewController: UIViewController {
         return stackView
     }()
     
+    private lazy var registrationButton: CustomButton = {
+        let button = CustomButton(type: .system)
+        button.setTitle(L10n.Registration.registration, for: .normal)
+        return button
+    }()
+    
     // MARK: - Lifecycle:
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +56,7 @@ private extension RegistationViewController {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
         navigationItem.title = L10n.Registration.registration
 
-        view.addSubview(inputsStackView)
+        [inputsStackView, registrationButton].forEach(view.addSubview)
         [emailStackView, passwordStackView, repeatPasswordStackView].forEach(inputsStackView.addArrangedSubview)
     }
 }
@@ -58,11 +65,20 @@ private extension RegistationViewController {
 private extension RegistationViewController {
     func setupConstraints() {
         setupInputsStackViewConstraints()
+        setupRegistrationButton()
     }
     
     func setupInputsStackViewConstraints() {
         inputsStackView.snp.makeConstraints { make in
             make.center.equalToSuperview()
+            make.left.equalTo(GlobalUIConstants.baseInset)
+            make.right.equalTo(-GlobalUIConstants.baseInset)
+        }
+    }
+    
+    func setupRegistrationButton() {
+        registrationButton.snp.makeConstraints { make in
+            make.top.equalTo(inputsStackView.snp.bottom).inset(-UILocalConstants.buttonTopInset)
             make.left.equalTo(GlobalUIConstants.baseInset)
             make.right.equalTo(-GlobalUIConstants.baseInset)
         }

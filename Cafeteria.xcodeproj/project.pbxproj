@@ -23,6 +23,7 @@
 		7E29C8432B74C81D00647D9F /* CustomInputStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8422B74C81D00647D9F /* CustomInputStackView.swift */; };
 		7E29C8452B74CA7500647D9F /* GlobalUIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8442B74CA7500647D9F /* GlobalUIConstants.swift */; };
 		7E29C8482B74CB0700647D9F /* CustomInputStackViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8472B74CB0700647D9F /* CustomInputStackViewDelegate.swift */; };
+		7E29C84B2B75191F00647D9F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C84A2B75191F00647D9F /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		7E29C8422B74C81D00647D9F /* CustomInputStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputStackView.swift; sourceTree = "<group>"; };
 		7E29C8442B74CA7500647D9F /* GlobalUIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUIConstants.swift; sourceTree = "<group>"; };
 		7E29C8472B74CB0700647D9F /* CustomInputStackViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputStackViewDelegate.swift; sourceTree = "<group>"; };
+		7E29C84A2B75191F00647D9F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		7E29C83D2B74C78500647D9F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7E29C8492B75190B00647D9F /* Buttons */,
 				7E29C8412B74C7EF00647D9F /* StackViews */,
 			);
 			path = Components;
@@ -189,6 +192,14 @@
 				7E29C8472B74CB0700647D9F /* CustomInputStackViewDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7E29C8492B75190B00647D9F /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				7E29C84A2B75191F00647D9F /* CustomButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 				7E29C82E2B74B84E00647D9F /* XCAssets+Generated.swift in Sources */,
 				7E29C80B2B74B1F400647D9F /* RegistationViewController.swift in Sources */,
 				7E29C8072B74B1F400647D9F /* AppDelegate.swift in Sources */,
+				7E29C84B2B75191F00647D9F /* CustomButton.swift in Sources */,
 				7E29C8432B74C81D00647D9F /* CustomInputStackView.swift in Sources */,
 				7E29C8292B74B58000647D9F /* Strings+Generated.swift in Sources */,
 				7E29C8482B74CB0700647D9F /* CustomInputStackViewDelegate.swift in Sources */,

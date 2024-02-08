@@ -37,7 +37,7 @@ final class CustomInputStackView: UIStackView {
         let textField = UITextField()
         textField.layer.borderColor = Asset.Colors.textBrown.color.cgColor
         textField.layer.borderWidth = LocalUIConstants.borderWidth
-        textField.layer.cornerRadius = GlobalUIConstants.textFieldCornerRadius
+        textField.layer.cornerRadius = GlobalUIConstants.inputViewCornerRadius
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: LocalUIConstants.leftTextViewWidth, height: LocalUIConstants.textFieldHeight))
         textField.leftViewMode = .always
         textField.clearButtonMode = .whileEditing
