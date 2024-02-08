@@ -13,13 +13,13 @@ final class CustomInputStackView: UIStackView {
         case repeatPassword
     }
     
-    private enum UILocalConstants {
+    private enum LocalUIConstants {
+        static let labelHeight: CGFloat = 18
         static let textFieldHeight: CGFloat = 47
         static let borderWidth: CGFloat = 2
         static let leftTextViewWidth: CGFloat = 18
         
         static let verticalSpacing: CGFloat = 7.5
-        static let rightInset: CGFloat = 20
     }
     
     private var state: CustomInputStackViewState?
@@ -36,10 +36,12 @@ final class CustomInputStackView: UIStackView {
     private var inputTextField: UITextField = {
         let textField = UITextField()
         textField.layer.borderColor = Asset.Colors.textBrown.color.cgColor
-        textField.layer.borderWidth = UILocalConstants.borderWidth
-        textField.isSecureTextEntry = true
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: UILocalConstants.leftTextViewWidth, height: UILocalConstants.textFieldHeight))
+        textField.layer.borderWidth = LocalUIConstants.borderWidth
+        textField.layer.cornerRadius = GlobalUIConstants.textFieldCornerRadius
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: LocalUIConstants.leftTextViewWidth, height: LocalUIConstants.textFieldHeight))
         textField.leftViewMode = .always
+        textField.clearButtonMode = .whileEditing
+        textField.textContentType = .oneTimeCode
         textField.font = .bodyLarge
         textField.textColor = Asset.Colors.textLightBrown.color
         return textField
@@ -48,6 +50,8 @@ final class CustomInputStackView: UIStackView {
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupViews()
+        setupConstraints()
     }
     
     required init(coder: NSCoder) {
@@ -58,6 +62,7 @@ final class CustomInputStackView: UIStackView {
         self.init()
         self.delegate = delegate
         self.state = state
+        setupStackView()
     }
     
     // MARK: - Private Methods:
@@ -71,9 +76,11 @@ final class CustomInputStackView: UIStackView {
             inputTextField.placeholder = L10n.Registration.emailPlaceholder
         case .password:
             titleLabel.text = L10n.Registration.password
+            inputTextField.isSecureTextEntry = true
             inputTextField.placeholder = L10n.Registration.passwordPlaceholder
         case .repeatPassword:
             titleLabel.text = L10n.Registration.repeatPassword
+            inputTextField.isSecureTextEntry = true
             inputTextField.placeholder = L10n.Registration.passwordPlaceholder
         }
     }
@@ -83,6 +90,8 @@ final class CustomInputStackView: UIStackView {
 private extension CustomInputStackView {
     func setupViews() {
         axis = .vertical
+        spacing = LocalUIConstants.verticalSpacing
+        distribution = .fillProportionally
         backgroundColor = Asset.Colors.backgroundWhite.color
         
         [titleLabel, inputTextField].forEach(addArrangedSubview)
@@ -92,12 +101,19 @@ private extension CustomInputStackView {
 // MARK: - Setup Constraints:
 private extension CustomInputStackView {
     func setupConstraints() {
+        setupTitleLabelConstraints()
         setupInputTextFieldConstraints()
+    }
+    
+    func setupTitleLabelConstraints() {
+        titleLabel.snp.makeConstraints { make in
+            make.height.equalTo(LocalUIConstants.labelHeight)
+        }
     }
     
     func setupInputTextFieldConstraints() {
         inputTextField.snp.makeConstraints { make in
-            make.height.equalTo(UILocalConstants.textFieldHeight)
+            make.height.equalTo(LocalUIConstants.textFieldHeight)
         }
     }
 }

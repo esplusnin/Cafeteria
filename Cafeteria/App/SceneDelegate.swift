@@ -9,7 +9,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         let rootViewController = RegistationViewController()
-        window?.rootViewController = rootViewController
+        let rootNavigationController = UINavigationController(rootViewController: rootViewController)
+       
+        setup(rootNavigationController)
+        
+        window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
+    }
+    
+    // MARK: - Private Methods:
+    private func setup(_ navigationController: UINavigationController) {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = Asset.Colors.backgroundGray.color
+        appearance.titleTextAttributes = [.foregroundColor: Asset.Colors.textBrown.color]
+        
+        navigationController.navigationBar.standardAppearance = appearance
+        navigationController.navigationBar.scrollEdgeAppearance = navigationController.navigationBar.standardAppearance
+        
     }
 }

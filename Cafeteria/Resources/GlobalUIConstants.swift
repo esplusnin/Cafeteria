@@ -1,5 +1,6 @@
 import Foundation
 
 enum GlobalUIConstants {
-    static let textFieldCornerRadius: CGFloat = 10
+    static let baseInset: CGFloat = 18
+    static let textFieldCornerRadius: CGFloat = 24
 }
