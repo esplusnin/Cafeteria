@@ -24,6 +24,7 @@
 		7E29C8452B74CA7500647D9F /* GlobalUIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8442B74CA7500647D9F /* GlobalUIConstants.swift */; };
 		7E29C8482B74CB0700647D9F /* CustomInputStackViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8472B74CB0700647D9F /* CustomInputStackViewDelegate.swift */; };
 		7E29C84B2B75191F00647D9F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C84A2B75191F00647D9F /* CustomButton.swift */; };
+		7E29C84E2B751D9200647D9F /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C84D2B751D9200647D9F /* EnterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		7E29C8442B74CA7500647D9F /* GlobalUIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUIConstants.swift; sourceTree = "<group>"; };
 		7E29C8472B74CB0700647D9F /* CustomInputStackViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputStackViewDelegate.swift; sourceTree = "<group>"; };
 		7E29C84A2B75191F00647D9F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		7E29C84D2B751D9200647D9F /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				7E29C83C2B74C68200647D9F /* Registration */,
+				7E29C84C2B751D6000647D9F /* Enter */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -200,6 +203,14 @@
 				7E29C84A2B75191F00647D9F /* CustomButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		7E29C84C2B751D6000647D9F /* Enter */ = {
+			isa = PBXGroup;
+			children = (
+				7E29C84D2B751D9200647D9F /* EnterViewController.swift */,
+			);
+			path = Enter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +344,7 @@
 				7E29C8292B74B58000647D9F /* Strings+Generated.swift in Sources */,
 				7E29C8482B74CB0700647D9F /* CustomInputStackViewDelegate.swift in Sources */,
 				7E29C8452B74CA7500647D9F /* GlobalUIConstants.swift in Sources */,
+				7E29C84E2B751D9200647D9F /* EnterViewController.swift in Sources */,
 				7E29C8092B74B1F400647D9F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
