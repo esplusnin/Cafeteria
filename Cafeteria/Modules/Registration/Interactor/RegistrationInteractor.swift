@@ -12,9 +12,9 @@ final class RegistrationInteractor {
     }
     
     // MARK: - Private Methods:
-    private func checkAccountDetail(email: String, password: String, repeatedPassword: String) {
+    private func checkAccountDetail(login: String, password: String, repeatedPassword: String) {
         #warning("Добавить проверку валидности значения и вынести работу с нетворк клиентом обратно в RegistrationInteractorInputProtocol")
-        let account = Account(login: email, password: password)
+        let account = Account(login: login, password: password)
         
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             guard let self else { return }
@@ -23,7 +23,7 @@ final class RegistrationInteractor {
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let token):
-                        self.save(token)
+                        self.save(token, login: login, password: password)
                     case .failure(_ :):
                         self.output?.accountDidNotCreate()
                     }
@@ -32,10 +32,13 @@ final class RegistrationInteractor {
         }
     }
     
-    private func save(_ token: String) {
+    private func save(_ token: String, login: String, password: String) {
         let keyChainStorage = KeyChainStorage()
         
         keyChainStorage.setNew(token)
+        keyChainStorage.setNew(login: login)
+        keyChainStorage.setNew(password: password)
+        
         output?.accountDidCreate()
     }
 }
@@ -43,6 +46,6 @@ final class RegistrationInteractor {
 // MARK: - RegistrationInteractorInputProtocol:
 extension RegistrationInteractor: RegistrationInteractorInputProtocol {
     func createNewAccount(with login: String, and password: String, repeatedPassword: String) {
-        checkAccountDetail(email: login, password: password, repeatedPassword: repeatedPassword)
+        checkAccountDetail(login: login, password: password, repeatedPassword: repeatedPassword)
     }
 }

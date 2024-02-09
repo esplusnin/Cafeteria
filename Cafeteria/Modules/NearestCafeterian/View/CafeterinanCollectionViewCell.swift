@@ -59,8 +59,13 @@ final class CafeterinanCollectionViewCell: UICollectionViewCell {
         addShadow()
     }
     
+    // MARK: - Public Methods:
+    func setupLocation(_ name: String) {
+        cafeterianTitleLabel.text = name
+    }
+        
     // MARK: - Private Methods:
-    func addShadow() {
+    private func addShadow() {
         contentBackgroundView.layer.cornerRadius = LocalUIConstants.cornerRadius
         contentBackgroundView.backgroundColor = Asset.Colors.backgroundLightBrown.color
         
