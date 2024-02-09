@@ -3,9 +3,8 @@ import Foundation
 final class RegistrationPresenter {
     
     // MARK: - Dependencies:
-    weak var output: RegistrationPresenterOutputProtocol?
+    weak var view: RegistrationViewInputProtocol?
     
-    private let view: RegistrationViewInputProtocol
     private let interactor: RegistrationInteractorInputProtocol
     private let router: RegistrationRouterInputProtocol
     
