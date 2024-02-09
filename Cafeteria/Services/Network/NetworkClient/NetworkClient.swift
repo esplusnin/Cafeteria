@@ -20,7 +20,7 @@ final class NetworkClient: NetworkClientInputProtocol {
         }
     }
     
-    func enter(_ login: Login, completion: @escaping (Result<String, Error>) -> Void) {
+    func authorize(_ login: Login, completion: @escaping (Result<String, Error>) -> Void) {
         
         AF.request(Resources.Network.EndPoint.login, 
                    method: .post,
