@@ -22,7 +22,7 @@ final class NetworkClient: NetworkClientInputProtocol {
     
     func authorize(_ login: Login, completion: @escaping (Result<String, Error>) -> Void) {
         
-        AF.request(Resources.Network.EndPoint.login, 
+        AF.request(Resources.Network.EndPoint.login,
                    method: .post,
                    parameters: login,
                    encoder: JSONParameterEncoder.default).responseDecodable(of: AuthorizationDTO.self) { response in
