@@ -57,6 +57,7 @@ class RegistrationViewController: UIViewController {
         setupViews()
         setupConstraints()
         setupTargets()
+        
         configurator.configure(self)
     }
     

@@ -1,6 +1,12 @@
 import UIKit
 
-final class EnterViewController: UIViewController {
+final class AuthorizationViewController: UIViewController {
+    
+    // MARK: - Dependencies:
+    private var output: AuthorizationViewOutputProtocols?
+    
+    // MARK: - Classes:
+    private let configurator = AuthorizationConfigurator()
     
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
@@ -37,16 +43,27 @@ final class EnterViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        configurator.configute(self)
+    }
+    
+    // MARK: - Public Methods:
+    func setup(_ output: AuthorizationViewOutputProtocols) {
+        self.output = output
     }
 }
 
+// MARK: - AuthorizationViewInputProtocol:
+extension AuthorizationViewController: AuthorizationViewInputProtocol {
+    
+}
+
 // MARK: - CustomInputStackViewDelegate:
-extension EnterViewController: CustomInputStackViewDelegate {
+extension AuthorizationViewController: CustomInputStackViewDelegate {
     
 }
 
 // MARK: - Setup Views:
-private extension EnterViewController {
+private extension AuthorizationViewController {
     func setupViews() {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
         navigationItem.title = L10n.Authorization.title
@@ -57,7 +74,7 @@ private extension EnterViewController {
 }
 
 // MARK: - Setup Constraints:
-private extension EnterViewController {
+private extension AuthorizationViewController {
     func setupConstraints() {
         setupInputsStackViewConstraints()
         setupEnterButtonConstraints()

@@ -1,6 +1,8 @@
 import Foundation
 
-final class RegistrationConfigurator: RegistrationConfiguratorProtocol {
+final class RegistrationConfigurator {
+    
+    // MARK: - Public Methods:
     func configure(_ controller: RegistrationViewController) {
         let networkClient = NetworkClient()
         let interactor = RegistrationInteractor(networkClient: networkClient)

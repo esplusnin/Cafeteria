@@ -24,17 +24,14 @@
 		7E29C8452B74CA7500647D9F /* GlobalUIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8442B74CA7500647D9F /* GlobalUIConstants.swift */; };
 		7E29C8482B74CB0700647D9F /* CustomInputStackViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8472B74CB0700647D9F /* CustomInputStackViewDelegate.swift */; };
 		7E29C84B2B75191F00647D9F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C84A2B75191F00647D9F /* CustomButton.swift */; };
-		7E29C84E2B751D9200647D9F /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C84D2B751D9200647D9F /* EnterViewController.swift */; };
+		7E29C84E2B751D9200647D9F /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C84D2B751D9200647D9F /* AuthorizationViewController.swift */; };
 		7E29C8582B7521DA00647D9F /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8572B7521DA00647D9F /* NetworkClient.swift */; };
 		7E29C85B2B75220100647D9F /* NetworkClientInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C85A2B75220100647D9F /* NetworkClientInputProtocol.swift */; };
 		7E29C85F2B75226C00647D9F /* RegistrationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C85E2B75226C00647D9F /* RegistrationConfigurator.swift */; };
-		7E29C8622B75227B00647D9F /* RegistrationConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8612B75227B00647D9F /* RegistrationConfiguratorProtocol.swift */; };
 		7E29C8652B75234300647D9F /* RegistrationViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8642B75234300647D9F /* RegistrationViewInputProtocol.swift */; };
 		7E29C8672B75236C00647D9F /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8662B75236C00647D9F /* RegistrationPresenter.swift */; };
-		7E29C86A2B75267200647D9F /* RegistrationPresenterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8692B75267200647D9F /* RegistrationPresenterInputProtocol.swift */; };
 		7E29C86D2B75477E00647D9F /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C86C2B75477E00647D9F /* Account.swift */; };
 		7E29C86F2B75480F00647D9F /* RegistrationViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C86E2B75480F00647D9F /* RegistrationViewOutputProtocol.swift */; };
-		7E29C8712B754A7A00647D9F /* RegistrationPresenterOutputProtocol .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8702B754A7A00647D9F /* RegistrationPresenterOutputProtocol .swift */; };
 		7E29C8732B754B4C00647D9F /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8722B754B4C00647D9F /* RegistrationRouter.swift */; };
 		7E29C8762B754B6600647D9F /* RegistrationRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8752B754B6600647D9F /* RegistrationRouterInputProtocol.swift */; };
 		7E29C8782B754C2400647D9F /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8772B754C2400647D9F /* RegistrationInteractor.swift */; };
@@ -44,6 +41,15 @@
 		7E94FDE12B75F4F900DAEAD1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FDE02B75F4F900DAEAD1 /* KeychainAccess */; };
 		7E94FDE42B75F50F00DAEAD1 /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FDE32B75F50F00DAEAD1 /* KeyChainStorage.swift */; };
 		7E94FDE92B761E3C00DAEAD1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FDE82B761E3C00DAEAD1 /* Login.swift */; };
+		7E94FE002B7626BC00DAEAD1 /* AuthorizationViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FDFF2B7626BC00DAEAD1 /* AuthorizationViewInputProtocol.swift */; };
+		7E94FE032B7626D500DAEAD1 /* AuthorizationViewOutputProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE022B7626D500DAEAD1 /* AuthorizationViewOutputProtocols.swift */; };
+		7E94FE052B76274E00DAEAD1 /* AuthorizationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE042B76274E00DAEAD1 /* AuthorizationConfigurator.swift */; };
+		7E94FE072B76280F00DAEAD1 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE062B76280F00DAEAD1 /* AuthorizationPresenter.swift */; };
+		7E94FE0B2B76290B00DAEAD1 /* AuthorizationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE0A2B76290B00DAEAD1 /* AuthorizationInteractor.swift */; };
+		7E94FE0D2B76291F00DAEAD1 /* AuthorizationInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE0C2B76291F00DAEAD1 /* AuthorizationInteractorInputProtocol.swift */; };
+		7E94FE0F2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE0E2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift */; };
+		7E94FE112B7629FC00DAEAD1 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE102B7629FC00DAEAD1 /* AuthorizationRouter.swift */; };
+		7E94FE142B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE132B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift */; };
 		7ED51D302B75EC6200696C84 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D2F2B75EC6200696C84 /* Resources.swift */; };
 		7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */; };
 /* End PBXBuildFile section */
@@ -66,17 +72,14 @@
 		7E29C8442B74CA7500647D9F /* GlobalUIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUIConstants.swift; sourceTree = "<group>"; };
 		7E29C8472B74CB0700647D9F /* CustomInputStackViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputStackViewDelegate.swift; sourceTree = "<group>"; };
 		7E29C84A2B75191F00647D9F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		7E29C84D2B751D9200647D9F /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
+		7E29C84D2B751D9200647D9F /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		7E29C8572B7521DA00647D9F /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		7E29C85A2B75220100647D9F /* NetworkClientInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientInputProtocol.swift; sourceTree = "<group>"; };
 		7E29C85E2B75226C00647D9F /* RegistrationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfigurator.swift; sourceTree = "<group>"; };
-		7E29C8612B75227B00647D9F /* RegistrationConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfiguratorProtocol.swift; sourceTree = "<group>"; };
 		7E29C8642B75234300647D9F /* RegistrationViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewInputProtocol.swift; sourceTree = "<group>"; };
 		7E29C8662B75236C00647D9F /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
-		7E29C8692B75267200647D9F /* RegistrationPresenterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenterInputProtocol.swift; sourceTree = "<group>"; };
 		7E29C86C2B75477E00647D9F /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		7E29C86E2B75480F00647D9F /* RegistrationViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutputProtocol.swift; sourceTree = "<group>"; };
-		7E29C8702B754A7A00647D9F /* RegistrationPresenterOutputProtocol .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegistrationPresenterOutputProtocol .swift"; sourceTree = "<group>"; };
 		7E29C8722B754B4C00647D9F /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		7E29C8752B754B6600647D9F /* RegistrationRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouterInputProtocol.swift; sourceTree = "<group>"; };
 		7E29C8772B754C2400647D9F /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
@@ -84,6 +87,15 @@
 		7E29C87C2B754CF600647D9F /* RegistrationInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorOutputProtocol.swift; sourceTree = "<group>"; };
 		7E94FDE32B75F50F00DAEAD1 /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
 		7E94FDE82B761E3C00DAEAD1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		7E94FDFF2B7626BC00DAEAD1 /* AuthorizationViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewInputProtocol.swift; sourceTree = "<group>"; };
+		7E94FE022B7626D500DAEAD1 /* AuthorizationViewOutputProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewOutputProtocols.swift; sourceTree = "<group>"; };
+		7E94FE042B76274E00DAEAD1 /* AuthorizationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationConfigurator.swift; sourceTree = "<group>"; };
+		7E94FE062B76280F00DAEAD1 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
+		7E94FE0A2B76290B00DAEAD1 /* AuthorizationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractor.swift; sourceTree = "<group>"; };
+		7E94FE0C2B76291F00DAEAD1 /* AuthorizationInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		7E94FE0E2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		7E94FE102B7629FC00DAEAD1 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
+		7E94FE132B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouterInputProtocol.swift; sourceTree = "<group>"; };
 		7ED51D2F2B75EC6200696C84 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,8 +269,12 @@
 		7E29C84C2B751D6000647D9F /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				7E94FDE72B761E3600DAEAD1 /* Entity */,
+				7E94FDF92B76266500DAEAD1 /* Configurator */,
 				7E94FDE62B761E3000DAEAD1 /* View */,
+				7E94FDFA2B76266D00DAEAD1 /* Interactor */,
+				7E94FDFD2B76267600DAEAD1 /* Presenter */,
+				7E94FDE72B761E3600DAEAD1 /* Entity */,
+				7E94FDFC2B76267600DAEAD1 /* Router */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -275,7 +291,6 @@
 		7E29C8502B75216B00647D9F /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
-				7E29C8602B75226E00647D9F /* Protocols */,
 				7E29C85E2B75226C00647D9F /* RegistrationConfigurator.swift */,
 			);
 			path = Configurator;
@@ -293,7 +308,6 @@
 		7E29C8522B75217D00647D9F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				7E29C8682B75236F00647D9F /* Protocols */,
 				7E29C8662B75236C00647D9F /* RegistrationPresenter.swift */,
 			);
 			path = Presenter;
@@ -342,28 +356,11 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		7E29C8602B75226E00647D9F /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7E29C8612B75227B00647D9F /* RegistrationConfiguratorProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		7E29C8632B75233700647D9F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				7E29C8642B75234300647D9F /* RegistrationViewInputProtocol.swift */,
 				7E29C86E2B75480F00647D9F /* RegistrationViewOutputProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		7E29C8682B75236F00647D9F /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7E29C8692B75267200647D9F /* RegistrationPresenterInputProtocol.swift */,
-				7E29C8702B754A7A00647D9F /* RegistrationPresenterOutputProtocol .swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -413,7 +410,8 @@
 		7E94FDE62B761E3000DAEAD1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7E29C84D2B751D9200647D9F /* EnterViewController.swift */,
+				7E94FE012B7626C800DAEAD1 /* Protocols */,
+				7E29C84D2B751D9200647D9F /* AuthorizationViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -424,6 +422,66 @@
 				7E94FDE82B761E3C00DAEAD1 /* Login.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		7E94FDF92B76266500DAEAD1 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE042B76274E00DAEAD1 /* AuthorizationConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		7E94FDFA2B76266D00DAEAD1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FDFB2B76266D00DAEAD1 /* Protocols */,
+				7E94FE0A2B76290B00DAEAD1 /* AuthorizationInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		7E94FDFB2B76266D00DAEAD1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE0C2B76291F00DAEAD1 /* AuthorizationInteractorInputProtocol.swift */,
+				7E94FE0E2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7E94FDFC2B76267600DAEAD1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE122B7629FF00DAEAD1 /* Protocols */,
+				7E94FE102B7629FC00DAEAD1 /* AuthorizationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7E94FDFD2B76267600DAEAD1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE062B76280F00DAEAD1 /* AuthorizationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7E94FE012B7626C800DAEAD1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FDFF2B7626BC00DAEAD1 /* AuthorizationViewInputProtocol.swift */,
+				7E94FE022B7626D500DAEAD1 /* AuthorizationViewOutputProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7E94FE122B7629FF00DAEAD1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE132B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -554,15 +612,17 @@
 			files = (
 				7E29C83B2B74C43C00647D9F /* UIFont + Extension.swift in Sources */,
 				7E29C8652B75234300647D9F /* RegistrationViewInputProtocol.swift in Sources */,
-				7E29C86A2B75267200647D9F /* RegistrationPresenterInputProtocol.swift in Sources */,
-				7E29C8622B75227B00647D9F /* RegistrationConfiguratorProtocol.swift in Sources */,
 				7E94FDE42B75F50F00DAEAD1 /* KeyChainStorage.swift in Sources */,
 				7E29C87D2B754CF600647D9F /* RegistrationInteractorOutputProtocol.swift in Sources */,
+				7E94FE052B76274E00DAEAD1 /* AuthorizationConfigurator.swift in Sources */,
 				7E29C86F2B75480F00647D9F /* RegistrationViewOutputProtocol.swift in Sources */,
 				7E29C82E2B74B84E00647D9F /* XCAssets+Generated.swift in Sources */,
+				7E94FE032B7626D500DAEAD1 /* AuthorizationViewOutputProtocols.swift in Sources */,
 				7E29C80B2B74B1F400647D9F /* RegistrationViewController.swift in Sources */,
 				7ED51D302B75EC6200696C84 /* Resources.swift in Sources */,
+				7E94FE112B7629FC00DAEAD1 /* AuthorizationRouter.swift in Sources */,
 				7E29C8672B75236C00647D9F /* RegistrationPresenter.swift in Sources */,
+				7E94FE0D2B76291F00DAEAD1 /* AuthorizationInteractorInputProtocol.swift in Sources */,
 				7E29C8072B74B1F400647D9F /* AppDelegate.swift in Sources */,
 				7E29C84B2B75191F00647D9F /* CustomButton.swift in Sources */,
 				7E29C8432B74C81D00647D9F /* CustomInputStackView.swift in Sources */,
@@ -570,18 +630,22 @@
 				7E29C8292B74B58000647D9F /* Strings+Generated.swift in Sources */,
 				7E29C8482B74CB0700647D9F /* CustomInputStackViewDelegate.swift in Sources */,
 				7E29C8452B74CA7500647D9F /* GlobalUIConstants.swift in Sources */,
-				7E29C84E2B751D9200647D9F /* EnterViewController.swift in Sources */,
+				7E94FE072B76280F00DAEAD1 /* AuthorizationPresenter.swift in Sources */,
+				7E29C84E2B751D9200647D9F /* AuthorizationViewController.swift in Sources */,
 				7E29C8092B74B1F400647D9F /* SceneDelegate.swift in Sources */,
-				7E29C8712B754A7A00647D9F /* RegistrationPresenterOutputProtocol .swift in Sources */,
 				7E94FDE92B761E3C00DAEAD1 /* Login.swift in Sources */,
 				7E29C8732B754B4C00647D9F /* RegistrationRouter.swift in Sources */,
 				7E29C85F2B75226C00647D9F /* RegistrationConfigurator.swift in Sources */,
+				7E94FE0B2B76290B00DAEAD1 /* AuthorizationInteractor.swift in Sources */,
 				7E29C8582B7521DA00647D9F /* NetworkClient.swift in Sources */,
 				7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */,
 				7E29C8762B754B6600647D9F /* RegistrationRouterInputProtocol.swift in Sources */,
 				7E29C8782B754C2400647D9F /* RegistrationInteractor.swift in Sources */,
+				7E94FE002B7626BC00DAEAD1 /* AuthorizationViewInputProtocol.swift in Sources */,
+				7E94FE0F2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift in Sources */,
 				7E29C86D2B75477E00647D9F /* Account.swift in Sources */,
 				7E29C85B2B75220100647D9F /* NetworkClientInputProtocol.swift in Sources */,
+				7E94FE142B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
