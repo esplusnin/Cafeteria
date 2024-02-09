@@ -22,7 +22,7 @@ final class AuthorizationViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var emailStackView: CustomInputStackView = {
+    private lazy var loginStackView: CustomInputStackView = {
         let stackView = CustomInputStackView(delegate: self, state: .login)
         return stackView
     }()
@@ -32,7 +32,7 @@ final class AuthorizationViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var enterButton: CustomButton = {
+    private lazy var authorizationButton: CustomButton = {
         let button = CustomButton(type: .system)
         button.setTitle(L10n.Authorization.enter, for: .normal)
         return button
@@ -43,6 +43,7 @@ final class AuthorizationViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        setupTargets()
         configurator.configute(self)
     }
     
@@ -50,11 +51,21 @@ final class AuthorizationViewController: UIViewController {
     func setup(_ output: AuthorizationViewOutputProtocols) {
         self.output = output
     }
+    
+    // MARK: - Objc methods:
+    @objc private func authorize() {
+        guard let login = loginStackView.inputTextField.text,
+              let password = passwordStackView.inputTextField.text else { return }
+        blockUI()
+        output?.authorize(with: login, and: password)
+    }
 }
 
 // MARK: - AuthorizationViewInputProtocol:
 extension AuthorizationViewController: AuthorizationViewInputProtocol {
-    
+    func accountDidAuthorize() {
+        unblock()
+    }
 }
 
 // MARK: - CustomInputStackViewDelegate:
@@ -68,8 +79,8 @@ private extension AuthorizationViewController {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
         navigationItem.title = L10n.Authorization.title
         
-        [inputsStackView, enterButton].forEach(view.addSubview)
-        [emailStackView, passwordStackView].forEach(inputsStackView.addArrangedSubview)
+        [inputsStackView, authorizationButton].forEach(view.addSubview)
+        [loginStackView, passwordStackView].forEach(inputsStackView.addArrangedSubview)
     }
 }
 
@@ -89,10 +100,17 @@ private extension AuthorizationViewController {
     }
     
     func setupEnterButtonConstraints() {
-        enterButton.snp.makeConstraints { make in
+        authorizationButton.snp.makeConstraints { make in
             make.top.equalTo(inputsStackView.snp.bottom).inset(-LocalUIConstants.buttonTopInset)
             make.left.equalTo(GlobalUIConstants.baseInset)
             make.right.equalTo(-GlobalUIConstants.baseInset)
         }
+    }
+}
+
+// MARK: - Setup Targets:
+private extension AuthorizationViewController {
+    func setupTargets() {
+        authorizationButton.addTarget(self, action: #selector(authorize), for: .touchUpInside)
     }
 }

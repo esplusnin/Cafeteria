@@ -50,6 +50,8 @@
 		7E94FE0F2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE0E2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift */; };
 		7E94FE112B7629FC00DAEAD1 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE102B7629FC00DAEAD1 /* AuthorizationRouter.swift */; };
 		7E94FE142B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE132B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift */; };
+		7E94FE1A2B7633F000DAEAD1 /* NearestCafeterianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE192B7633F000DAEAD1 /* NearestCafeterianViewController.swift */; };
+		7E94FE1C2B76346F00DAEAD1 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE1B2B76346F00DAEAD1 /* UIViewController + Extension.swift */; };
 		7ED51D302B75EC6200696C84 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D2F2B75EC6200696C84 /* Resources.swift */; };
 		7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */; };
 /* End PBXBuildFile section */
@@ -96,6 +98,8 @@
 		7E94FE0E2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInteractorOutputProtocol.swift; sourceTree = "<group>"; };
 		7E94FE102B7629FC00DAEAD1 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
 		7E94FE132B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouterInputProtocol.swift; sourceTree = "<group>"; };
+		7E94FE192B7633F000DAEAD1 /* NearestCafeterianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestCafeterianViewController.swift; sourceTree = "<group>"; };
+		7E94FE1B2B76346F00DAEAD1 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		7ED51D2F2B75EC6200696C84 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +211,7 @@
 			children = (
 				7E29C83C2B74C68200647D9F /* Registration */,
 				7E29C84C2B751D6000647D9F /* Authorization */,
+				7E94FE182B7633DE00DAEAD1 /* NearestCafeterian */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				7E29C83A2B74C43C00647D9F /* UIFont + Extension.swift */,
+				7E94FE1B2B76346F00DAEAD1 /* UIViewController + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -484,6 +490,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		7E94FE182B7633DE00DAEAD1 /* NearestCafeterian */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE192B7633F000DAEAD1 /* NearestCafeterianViewController.swift */,
+			);
+			path = NearestCafeterian;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -617,6 +631,7 @@
 				7E94FE052B76274E00DAEAD1 /* AuthorizationConfigurator.swift in Sources */,
 				7E29C86F2B75480F00647D9F /* RegistrationViewOutputProtocol.swift in Sources */,
 				7E29C82E2B74B84E00647D9F /* XCAssets+Generated.swift in Sources */,
+				7E94FE1A2B7633F000DAEAD1 /* NearestCafeterianViewController.swift in Sources */,
 				7E94FE032B7626D500DAEAD1 /* AuthorizationViewOutputProtocols.swift in Sources */,
 				7E29C80B2B74B1F400647D9F /* RegistrationViewController.swift in Sources */,
 				7ED51D302B75EC6200696C84 /* Resources.swift in Sources */,
@@ -643,6 +658,7 @@
 				7E29C8782B754C2400647D9F /* RegistrationInteractor.swift in Sources */,
 				7E94FE002B7626BC00DAEAD1 /* AuthorizationViewInputProtocol.swift in Sources */,
 				7E94FE0F2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift in Sources */,
+				7E94FE1C2B76346F00DAEAD1 /* UIViewController + Extension.swift in Sources */,
 				7E29C86D2B75477E00647D9F /* Account.swift in Sources */,
 				7E29C85B2B75220100647D9F /* NetworkClientInputProtocol.swift in Sources */,
 				7E94FE142B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift in Sources */,

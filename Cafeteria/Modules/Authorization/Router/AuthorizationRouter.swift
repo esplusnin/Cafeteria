@@ -7,5 +7,8 @@ final class AuthorizationRouter {
 }
 
 extension AuthorizationRouter: AuthorizationRouterInputProtocol {
-    
+    func goToNearestCafeterianScreen() {
+        let viewController = NearestCafeterianViewController()
+        navigation?.pushViewController(viewController, animated: true)
+    }
 }

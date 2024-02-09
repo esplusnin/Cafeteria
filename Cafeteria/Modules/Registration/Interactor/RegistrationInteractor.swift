@@ -13,7 +13,7 @@ final class RegistrationInteractor {
     
     // MARK: - Private Methods:
     private func checkAccountDetail(email: String, password: String, repeatedPassword: String) {
-        
+        #warning("Добавить проверку валидности значения и вынести работу с нетворк клиентом обратно в RegistrationInteractorInputProtocol")
         let account = Account(login: email, password: password)
         
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
