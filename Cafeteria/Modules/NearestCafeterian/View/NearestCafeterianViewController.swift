@@ -2,6 +2,12 @@ import UIKit
 
 final class NearestCafeterianViewController: UIViewController {
     
+    // MARK: - Dependencies:
+    private var output: NearestCafeterianViewOutputProtocol?
+    
+    // MARK: - Classes:
+    private let configurator = NearestCafeterianConfigurator()
+    
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
         static let collectionViewTopInset: CGFloat = 15
@@ -34,7 +40,18 @@ final class NearestCafeterianViewController: UIViewController {
         setupViews()
         setupConstraints()
         setupTargets()
+        configurator.configure(self)
+        blockUI()
     }
+    
+    // MARK: - Public Methods:
+    func setup(_ output: NearestCafeterianViewOutputProtocol) {
+        self.output = output
+    }
+}
+
+extension NearestCafeterianViewController: NearestCafeterianViewControllerInputProtocol {
+    
 }
 
 // MARK: - UICollectionViewDataSource:

@@ -32,7 +32,7 @@ extension AuthorizationInteractor: AuthorizationInteractorInputProtocol {
                 case .success(let token):
                     self.save(token)
                     self.output?.accountDidAuthorize()
-                case .failure(let failure):
+                case .failure(_ :):
                     self.output?.accountDidNotAuthorize()
                 }
             }
