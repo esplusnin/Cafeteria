@@ -13,23 +13,36 @@ final class RegistrationInteractor {
     
     // MARK: - Private Methods:
     private func checkAccountDetail(email: String, password: String, repeatedPassword: String) {
-        accountDidRegistred()
-//        DispatchQueue.global(qos: .userInteractive).async {
-//            
-//        }
+        
+        let account = Account(login: email, password: password)
+        
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            guard let self else { return }
+            
+            self.networkClient.registerNew(account) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let token):
+                        self.save(token)
+                    case .failure(_ :):
+                        self.output?.accountDidNotCreate()
+                    }
+                }
+            }
+        }
+    }
+    
+    private func save(_ token: String) {
+        let keyChainStorage = KeyChainStorage()
+        
+        keyChainStorage.setNew(token)
+        output?.accountDidCreate()
     }
 }
 
 // MARK: - RegistrationInteractorInputProtocol:
 extension RegistrationInteractor: RegistrationInteractorInputProtocol {
-    func createNewAccount(with email: String, and password: String, repeatedPassword: String) {
-        checkAccountDetail(email: email, password: password, repeatedPassword: repeatedPassword)
-    }
-}
-
-// MARK: - NetworkClientOutputProtocol:
-extension RegistrationInteractor: NetworkClientOutputProtocol {
-    func accountDidRegistred() {
-        output?.accountDidCreate()
+    func createNewAccount(with login: String, and password: String, repeatedPassword: String) {
+        checkAccountDetail(email: login, password: password, repeatedPassword: repeatedPassword)
     }
 }

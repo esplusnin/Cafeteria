@@ -17,7 +17,7 @@ final class EnterViewController: UIViewController {
     }()
     
     private lazy var emailStackView: CustomInputStackView = {
-        let stackView = CustomInputStackView(delegate: self, state: .email)
+        let stackView = CustomInputStackView(delegate: self, state: .login)
         return stackView
     }()
     
@@ -28,7 +28,7 @@ final class EnterViewController: UIViewController {
     
     private lazy var enterButton: CustomButton = {
         let button = CustomButton(type: .system)
-        button.setTitle(L10n.Enter.enter, for: .normal)
+        button.setTitle(L10n.Authorization.enter, for: .normal)
         return button
     }()
     
@@ -49,7 +49,7 @@ extension EnterViewController: CustomInputStackViewDelegate {
 private extension EnterViewController {
     func setupViews() {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
-        navigationItem.title = L10n.Enter.title
+        navigationItem.title = L10n.Authorization.title
         
         [inputsStackView, enterButton].forEach(view.addSubview)
         [emailStackView, passwordStackView].forEach(inputsStackView.addArrangedSubview)

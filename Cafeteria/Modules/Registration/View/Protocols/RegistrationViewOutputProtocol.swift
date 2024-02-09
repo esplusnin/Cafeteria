@@ -1,5 +1,6 @@
 import Foundation
 
 protocol RegistrationViewOutputProtocol: AnyObject {
-    func createAccount(with email: String, and password: String, repeatedPassword: String)
+    func createAccount(with login: String, and password: String, repeatedPassword: String)
+    func goToAuthorizationScreen() 
 }

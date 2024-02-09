@@ -40,7 +40,12 @@
 		7E29C8782B754C2400647D9F /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8772B754C2400647D9F /* RegistrationInteractor.swift */; };
 		7E29C87B2B754C3500647D9F /* RegistrationInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C87A2B754C3500647D9F /* RegistrationInteractorInputProtocol.swift */; };
 		7E29C87D2B754CF600647D9F /* RegistrationInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C87C2B754CF600647D9F /* RegistrationInteractorOutputProtocol.swift */; };
-		7E29C87F2B75502D00647D9F /* NetworkClientOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C87E2B75502D00647D9F /* NetworkClientOutputProtocol.swift */; };
+		7E94FDDE2B75F23A00DAEAD1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FDDD2B75F23A00DAEAD1 /* Alamofire */; };
+		7E94FDE12B75F4F900DAEAD1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FDE02B75F4F900DAEAD1 /* KeychainAccess */; };
+		7E94FDE42B75F50F00DAEAD1 /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FDE32B75F50F00DAEAD1 /* KeyChainStorage.swift */; };
+		7E94FDE92B761E3C00DAEAD1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FDE82B761E3C00DAEAD1 /* Login.swift */; };
+		7ED51D302B75EC6200696C84 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D2F2B75EC6200696C84 /* Resources.swift */; };
+		7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +82,10 @@
 		7E29C8772B754C2400647D9F /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 		7E29C87A2B754C3500647D9F /* RegistrationInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		7E29C87C2B754CF600647D9F /* RegistrationInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorOutputProtocol.swift; sourceTree = "<group>"; };
-		7E29C87E2B75502D00647D9F /* NetworkClientOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientOutputProtocol.swift; sourceTree = "<group>"; };
+		7E94FDE32B75F50F00DAEAD1 /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
+		7E94FDE82B761E3C00DAEAD1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		7ED51D2F2B75EC6200696C84 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E94FDE12B75F4F900DAEAD1 /* KeychainAccess in Frameworks */,
+				7E94FDDE2B75F23A00DAEAD1 /* Alamofire in Frameworks */,
 				7E29C8352B74C28E00647D9F /* SnapKit in Frameworks */,
 				7E29C8372B74C28E00647D9F /* SnapKit-Dynamic in Frameworks */,
 			);
@@ -139,6 +149,7 @@
 				7E29C82A2B74B5CA00647D9F /* Colors */,
 				7E29C81C2B74B3C100647D9F /* Localizable */,
 				7E29C8442B74CA7500647D9F /* GlobalUIConstants.swift */,
+				7ED51D2F2B75EC6200696C84 /* Resources.swift */,
 				7E29C80F2B74B1F600647D9F /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -183,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				7E29C83C2B74C68200647D9F /* Registration */,
-				7E29C84C2B751D6000647D9F /* Enter */,
+				7E29C84C2B751D6000647D9F /* Authorization */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -243,12 +254,13 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		7E29C84C2B751D6000647D9F /* Enter */ = {
+		7E29C84C2B751D6000647D9F /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				7E29C84D2B751D9200647D9F /* EnterViewController.swift */,
+				7E94FDE72B761E3600DAEAD1 /* Entity */,
+				7E94FDE62B761E3000DAEAD1 /* View */,
 			);
-			path = Enter;
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 		7E29C84F2B75215C00647D9F /* View */ = {
@@ -299,6 +311,7 @@
 		7E29C8542B7521AF00647D9F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7E94FDE52B75F62B00DAEAD1 /* Storage */,
 				7E29C8552B7521BC00647D9F /* Network */,
 			);
 			path = Services;
@@ -325,7 +338,6 @@
 			isa = PBXGroup;
 			children = (
 				7E29C85A2B75220100647D9F /* NetworkClientInputProtocol.swift */,
-				7E29C87E2B75502D00647D9F /* NetworkClientOutputProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -360,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				7E29C86C2B75477E00647D9F /* Account.swift */,
+				7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -379,6 +392,38 @@
 				7E29C87C2B754CF600647D9F /* RegistrationInteractorOutputProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7E94FDE22B75F50000DAEAD1 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FDE32B75F50F00DAEAD1 /* KeyChainStorage.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		7E94FDE52B75F62B00DAEAD1 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FDE22B75F50000DAEAD1 /* KeyChain */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		7E94FDE62B761E3000DAEAD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E29C84D2B751D9200647D9F /* EnterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7E94FDE72B761E3600DAEAD1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FDE82B761E3C00DAEAD1 /* Login.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +447,8 @@
 			packageProductDependencies = (
 				7E29C8342B74C28E00647D9F /* SnapKit */,
 				7E29C8362B74C28E00647D9F /* SnapKit-Dynamic */,
+				7E94FDDD2B75F23A00DAEAD1 /* Alamofire */,
+				7E94FDE02B75F4F900DAEAD1 /* KeychainAccess */,
 			);
 			productName = Cafeteria;
 			productReference = 7E29C8032B74B1F400647D9F /* Cafeteria.app */;
@@ -432,6 +479,8 @@
 			mainGroup = 7E29C7FA2B74B1F400647D9F;
 			packageReferences = (
 				7E29C8332B74C28E00647D9F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7E94FDDC2B75F23A00DAEAD1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7E94FDDF2B75F4F900DAEAD1 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 7E29C8042B74B1F400647D9F /* Products */;
 			projectDirPath = "";
@@ -506,12 +555,13 @@
 				7E29C83B2B74C43C00647D9F /* UIFont + Extension.swift in Sources */,
 				7E29C8652B75234300647D9F /* RegistrationViewInputProtocol.swift in Sources */,
 				7E29C86A2B75267200647D9F /* RegistrationPresenterInputProtocol.swift in Sources */,
-				7E29C87F2B75502D00647D9F /* NetworkClientOutputProtocol.swift in Sources */,
 				7E29C8622B75227B00647D9F /* RegistrationConfiguratorProtocol.swift in Sources */,
+				7E94FDE42B75F50F00DAEAD1 /* KeyChainStorage.swift in Sources */,
 				7E29C87D2B754CF600647D9F /* RegistrationInteractorOutputProtocol.swift in Sources */,
 				7E29C86F2B75480F00647D9F /* RegistrationViewOutputProtocol.swift in Sources */,
 				7E29C82E2B74B84E00647D9F /* XCAssets+Generated.swift in Sources */,
 				7E29C80B2B74B1F400647D9F /* RegistrationViewController.swift in Sources */,
+				7ED51D302B75EC6200696C84 /* Resources.swift in Sources */,
 				7E29C8672B75236C00647D9F /* RegistrationPresenter.swift in Sources */,
 				7E29C8072B74B1F400647D9F /* AppDelegate.swift in Sources */,
 				7E29C84B2B75191F00647D9F /* CustomButton.swift in Sources */,
@@ -523,9 +573,11 @@
 				7E29C84E2B751D9200647D9F /* EnterViewController.swift in Sources */,
 				7E29C8092B74B1F400647D9F /* SceneDelegate.swift in Sources */,
 				7E29C8712B754A7A00647D9F /* RegistrationPresenterOutputProtocol .swift in Sources */,
+				7E94FDE92B761E3C00DAEAD1 /* Login.swift in Sources */,
 				7E29C8732B754B4C00647D9F /* RegistrationRouter.swift in Sources */,
 				7E29C85F2B75226C00647D9F /* RegistrationConfigurator.swift in Sources */,
 				7E29C8582B7521DA00647D9F /* NetworkClient.swift in Sources */,
+				7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */,
 				7E29C8762B754B6600647D9F /* RegistrationRouterInputProtocol.swift in Sources */,
 				7E29C8782B754C2400647D9F /* RegistrationInteractor.swift in Sources */,
 				7E29C86D2B75477E00647D9F /* Account.swift in Sources */,
@@ -772,6 +824,22 @@
 				minimumVersion = 5.7.0;
 			};
 		};
+		7E94FDDC2B75F23A00DAEAD1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		7E94FDDF2B75F4F900DAEAD1 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -784,6 +852,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7E29C8332B74C28E00647D9F /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
+		};
+		7E94FDDD2B75F23A00DAEAD1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E94FDDC2B75F23A00DAEAD1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7E94FDE02B75F4F900DAEAD1 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E94FDDF2B75F4F900DAEAD1 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

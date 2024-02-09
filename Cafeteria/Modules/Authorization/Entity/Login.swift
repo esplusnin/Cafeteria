@@ -1,6 +1,6 @@
 import Foundation
 
-struct Account: Codable {
+struct Login: Encodable {
     let login: String
     let password: String
 }

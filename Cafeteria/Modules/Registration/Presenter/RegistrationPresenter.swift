@@ -19,14 +19,22 @@ final class RegistrationPresenter {
 
 // MARK: - RegistrationViewOutputProtocol:
 extension RegistrationPresenter: RegistrationViewOutputProtocol {
-    func createAccount(with email: String, and password: String, repeatedPassword: String) {
-        interactor.createNewAccount(with: email, and: password, repeatedPassword: repeatedPassword)
+    func createAccount(with login: String, and password: String, repeatedPassword: String) {
+        interactor.createNewAccount(with: login, and: password, repeatedPassword: repeatedPassword)
+    }
+    
+    func goToAuthorizationScreen() {
+        router.goToAuthorizationScreen()
     }
 }
 
 // MARK: - RegistrationInteractorOutputProtocol:
 extension RegistrationPresenter: RegistrationInteractorOutputProtocol {
     func accountDidCreate() {
-        router.goToNearestCafeterianViewController()
+        router.goToAuthorizationScreen()
+    }
+    
+    func accountDidNotCreate() {
+        
     }
 }

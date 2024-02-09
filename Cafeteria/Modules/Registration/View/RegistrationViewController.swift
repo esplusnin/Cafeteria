@@ -22,8 +22,8 @@ class RegistrationViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var emailStackView: CustomInputStackView = {
-        let stackView = CustomInputStackView(delegate: self, state: .email)
+    private lazy var loginStackView: CustomInputStackView = {
+        let stackView = CustomInputStackView(delegate: self, state: .login)
         return stackView
     }()
     
@@ -40,6 +40,14 @@ class RegistrationViewController: UIViewController {
     private lazy var registrationButton: CustomButton = {
         let button = CustomButton(type: .system)
         button.setTitle(L10n.Registration.registration, for: .normal)
+        return button
+    }()
+    
+    private lazy var authorizationButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle(L10n.Registration.enterLogin, for: .normal)
+        button.setTitleColor(Asset.Colors.textLightBrown.color, for: .normal)
+        button.titleLabel?.font = .bodyMedium
         return button
     }()
 
@@ -59,11 +67,14 @@ class RegistrationViewController: UIViewController {
     
     // MARK: - Objc Methods:
     @objc private func createAccount() {
-//        guard let email = emailStackView.titleLabel.text,
-//              let password = passwordStackView.titleLabel.text,
-//              let repeatedPassword = repeatPasswordStackView.titleLabel.text else { return }
-//        output?.createAccount(with: email, and: password, repeatedPassword: repeatedPassword)
-        output?.createAccount(with: "", and: "", repeatedPassword: "")
+        guard let login = loginStackView.inputTextField.text,
+              let password = passwordStackView.inputTextField.text,
+              let repeatedPassword = repeatPasswordStackView.inputTextField.text else { return }
+        output?.createAccount(with: login, and: password, repeatedPassword: repeatedPassword)
+    }
+    
+    @objc private func authorization() {
+        output?.goToAuthorizationScreen()
     }
 }
 
@@ -83,8 +94,8 @@ private extension RegistrationViewController {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
         navigationItem.title = L10n.Registration.registration
 
-        [inputsStackView, registrationButton].forEach(view.addSubview)
-        [emailStackView, passwordStackView, repeatPasswordStackView].forEach(inputsStackView.addArrangedSubview)
+        [inputsStackView, registrationButton, authorizationButton].forEach(view.addSubview)
+        [loginStackView, passwordStackView, repeatPasswordStackView].forEach(inputsStackView.addArrangedSubview)
     }
 }
 
@@ -93,6 +104,7 @@ private extension RegistrationViewController {
     func setupConstraints() {
         setupInputsStackViewConstraints()
         setupRegistrationButton()
+        setupAuthorizationButtonConstraints()
     }
     
     func setupInputsStackViewConstraints() {
@@ -110,11 +122,19 @@ private extension RegistrationViewController {
             make.right.equalTo(-GlobalUIConstants.baseInset)
         }
     }
+    
+    func setupAuthorizationButtonConstraints() {
+        authorizationButton.snp.makeConstraints { make in
+            make.top.equalTo(registrationButton.snp.bottom).inset(-LocalUIConstants.buttonTopInset)
+            make.centerX.equalToSuperview()
+        }
+    }
 }
 
 // MARK: - Setup Targets:
 private extension RegistrationViewController {
     func setupTargets() {
         registrationButton.addTarget(self, action: #selector(createAccount), for: .touchUpInside)
+        authorizationButton.addTarget(self, action: #selector(authorization), for: .touchUpInside)
     }
 }

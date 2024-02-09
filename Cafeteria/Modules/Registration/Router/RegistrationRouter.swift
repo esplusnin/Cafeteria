@@ -8,7 +8,7 @@ final class RegistrationRouter {
 
 // MARK: - RegistrationRouterInputProtocol:
 extension RegistrationRouter: RegistrationRouterInputProtocol {
-    func goToNearestCafeterianViewController() {
+    func goToAuthorizationScreen() {
         let viewController = EnterViewController()
         navigation?.pushViewController(viewController, animated: true)
     }

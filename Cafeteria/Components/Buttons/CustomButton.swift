@@ -22,6 +22,7 @@ private extension CustomButton {
     func setupViews() {
         layer.cornerRadius = GlobalUIConstants.inputViewCornerRadius
         backgroundColor = Asset.Colors.backgroundDarkBrown.color
+        titleLabel?.font = .mediumTitleBold
         setTitleColor(Asset.Colors.textSuperLightBrown.color, for: .normal)
     }
 }
