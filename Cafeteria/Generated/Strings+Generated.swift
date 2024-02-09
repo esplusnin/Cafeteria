@@ -10,15 +10,15 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  internal enum Enter {
+  internal enum Authorization {
     /// e-mail
-    internal static let email = L10n.tr("Localizable", "enter.email", fallback: "e-mail")
+    internal static let email = L10n.tr("Localizable", "authorization.email", fallback: "e-mail")
     /// Войти
-    internal static let enter = L10n.tr("Localizable", "enter.enter", fallback: "Войти")
+    internal static let enter = L10n.tr("Localizable", "authorization.enter", fallback: "Войти")
     /// Пароль
-    internal static let password = L10n.tr("Localizable", "enter.password", fallback: "Пароль")
+    internal static let password = L10n.tr("Localizable", "authorization.password", fallback: "Пароль")
     /// Вход
-    internal static let title = L10n.tr("Localizable", "enter.title", fallback: "Вход")
+    internal static let title = L10n.tr("Localizable", "authorization.title", fallback: "Вход")
   }
   internal enum Map {
     /// Карта
@@ -60,6 +60,8 @@ internal enum L10n {
     internal static let email = L10n.tr("Localizable", "registration.email", fallback: "e-mail")
     /// Введите email
     internal static let emailPlaceholder = L10n.tr("Localizable", "registration.emailPlaceholder", fallback: "Введите email")
+    /// Вы уже зарегистрированы?
+    internal static let enterLogin = L10n.tr("Localizable", "registration.enterLogin", fallback: "Вы уже зарегистрированы?")
     /// Пароль
     internal static let password = L10n.tr("Localizable", "registration.password", fallback: "Пароль")
     /// ******

@@ -5,14 +5,15 @@
 "registration.password" = "Пароль";
 "registration.passwordPlaceholder" = "******";
 "registration.repeatPassword" = "Повторите пароль";
+"registration.enterLogin" = "Вы уже зарегистрированы?";
 
-// MARK: - Enter Screen:
-"enter.title" = "Вход";
-"enter.email" = "e-mail";
-"enter.password" = "Пароль";
-"enter.enter" = "Войти";
+// MARK: - Authorization Screen:
+"authorization.title" = "Вход";
+"authorization.email" = "e-mail";
+"authorization.password" = "Пароль";
+"authorization.enter" = "Войти";
 
-// MARK: - Nearest Cafeterians Screen:
+// MARK: - Nearest Cafeterian Screen:
 "nearestCafeterian.title" = "Ближайшие кофейня";
 "nearestCafeterian.fromYou" = "от вас";
 "nearestCafeterian.onMap" = "На карте";

@@ -8,7 +8,7 @@ final class CustomInputStackView: UIStackView {
     
     // MARK: - Constants and Variables
     enum CustomInputStackViewState {
-        case email
+        case login
         case password
         case repeatPassword
     }
@@ -33,7 +33,7 @@ final class CustomInputStackView: UIStackView {
         return label
     }()
     
-    private var inputTextField: UITextField = {
+    private(set) var inputTextField: UITextField = {
         let textField = UITextField()
         textField.layer.borderColor = Asset.Colors.textBrown.color.cgColor
         textField.layer.borderWidth = LocalUIConstants.borderWidth
@@ -70,7 +70,7 @@ final class CustomInputStackView: UIStackView {
         guard let state else { return }
         
         switch state {
-        case .email:
+        case .login:
             titleLabel.text = L10n.Registration.email
             inputTextField.isSecureTextEntry = false
             inputTextField.placeholder = L10n.Registration.emailPlaceholder
