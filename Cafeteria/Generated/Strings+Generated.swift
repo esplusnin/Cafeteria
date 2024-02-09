@@ -43,8 +43,8 @@ internal enum L10n {
     internal static let fromYou = L10n.tr("Localizable", "nearestCafeterian.fromYou", fallback: "от вас")
     /// На карте
     internal static let onMap = L10n.tr("Localizable", "nearestCafeterian.onMap", fallback: "На карте")
-    /// Ближайшие кофейня
-    internal static let title = L10n.tr("Localizable", "nearestCafeterian.title", fallback: "Ближайшие кофейня")
+    /// Ближайшие кофейни
+    internal static let title = L10n.tr("Localizable", "nearestCafeterian.title", fallback: "Ближайшие кофейни")
   }
   internal enum Order {
     /// 

@@ -7,7 +7,7 @@ final class KeyChainStorage {
     private let keyChain = Keychain()
     
     // MARK: - Constants and Variables:
-    private var token: String? {
+    private(set) var token: String? {
         get {
             keyChain[Resources.KeyChain.token]
         }

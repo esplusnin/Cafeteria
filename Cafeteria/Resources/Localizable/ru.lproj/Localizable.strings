@@ -14,7 +14,7 @@
 "authorization.enter" = "Войти";
 
 // MARK: - Nearest Cafeterian Screen:
-"nearestCafeterian.title" = "Ближайшие кофейня";
+"nearestCafeterian.title" = "Ближайшие кофейни";
 "nearestCafeterian.fromYou" = "от вас";
 "nearestCafeterian.onMap" = "На карте";
 
