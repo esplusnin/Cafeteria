@@ -26,7 +26,6 @@ final class NetworkClient: NetworkClientInputProtocol {
                    method: .post,
                    parameters: login,
                    encoder: JSONParameterEncoder.default).responseDecodable(of: AuthorizationDTO.self) { response in
-            print(response.response?.statusCode)
             switch response.result {
             case .success(let registrationDTO):
                 let token = registrationDTO.token

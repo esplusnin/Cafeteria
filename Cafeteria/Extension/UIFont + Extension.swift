@@ -2,7 +2,6 @@ import UIKit
 
 extension UIFont {
     static let largeTitleBold = UIFont.systemFont(ofSize: 18, weight: .bold)
-    static let mediumTitleBold = UIFont.systemFont(ofSize: 18, weight: .bold)
     static let regularTitle = UIFont.systemFont(ofSize: 15, weight: .medium)
     
     static let bodyExtraLarge = UIFont.systemFont(ofSize: 24, weight: .medium)

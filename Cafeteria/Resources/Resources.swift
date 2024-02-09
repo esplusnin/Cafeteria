@@ -21,4 +21,8 @@ enum Resources {
             static let register = Resources.Network.Pathes.baseURL + Resources.Network.Pathes.register
         }
     }
+    
+    enum Identifiers {
+        static let cafeterianCollectionViewCell = "CafeterianCollectionViewCell"
+    }
 }
