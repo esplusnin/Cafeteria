@@ -8,6 +8,13 @@ final class NearestCafeterianPresenter {
     private let interactor: NearestCafeterianInteractorInputProtocol
     private let router: NearestCafeterianRouterInputProtocol
     
+    // MARK: - Constants and Variables:
+    private(set) var locations: [Location] = [] {
+        didSet {
+            view?.updateLocationsList()
+        }
+    }
+    
     // MARK: - Lifecycle:
     init(interactor: NearestCafeterianInteractorInputProtocol, router: NearestCafeterianRouterInputProtocol) {
         self.interactor = interactor
@@ -18,11 +25,17 @@ final class NearestCafeterianPresenter {
 // MARK: - NearestCafeterianViewControllerInputProtocol:
 extension NearestCafeterianPresenter: NearestCafeterianViewOutputProtocol {
     func fetchLocations() {
-        
+        interactor.fetchLocations()
     }
 }
 
 // MARK: - NearestCafeterianInteractorOutputProtocol:
 extension NearestCafeterianPresenter: NearestCafeterianInteractorOutputProtocol {
+    func update(_ locations: [Location]) {
+        self.locations = locations
+    }
     
+    func locationsDidNotUpdate() {
+        #warning("Обработчик")
+    }
 }

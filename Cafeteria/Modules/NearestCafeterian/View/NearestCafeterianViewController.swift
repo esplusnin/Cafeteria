@@ -41,7 +41,9 @@ final class NearestCafeterianViewController: UIViewController {
         setupConstraints()
         setupTargets()
         configurator.configure(self)
+
         blockUI()
+        output?.fetchLocations()
     }
     
     // MARK: - Public Methods:
@@ -51,17 +53,32 @@ final class NearestCafeterianViewController: UIViewController {
 }
 
 extension NearestCafeterianViewController: NearestCafeterianViewControllerInputProtocol {
-    
+    func updateLocationsList() {
+        guard let newAmount = output?.locations.count else { return }
+        cafeterianCollectionView.performBatchUpdates {
+            for index in 0..<newAmount {
+                cafeterianCollectionView.insertItems(at: [IndexPath(row: index, section: 0)])
+            }
+        }
+        
+        unblock()
+    }
 }
 
 // MARK: - UICollectionViewDataSource:
 extension NearestCafeterianViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        output?.locations.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.cafeterianCollectionViewCell, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.cafeterianCollectionViewCell,
+                                                            for: indexPath) as? CafeterinanCollectionViewCell,
+              let locations = output?.locations else { return UICollectionViewCell() }
+        
+        let name = locations[indexPath.row].name
+        
+        cell.setupLocation(name)
         
         return cell
     }
@@ -82,6 +99,7 @@ extension NearestCafeterianViewController: UICollectionViewDelegateFlowLayout {
 private extension NearestCafeterianViewController {
     func setupViews() {
         navigationItem.title = L10n.NearestCafeterian.title
+        navigationItem.hidesBackButton = true
         view.backgroundColor = Asset.Colors.backgroundWhite.color
 
         [cafeterianCollectionView, onMapButton].forEach(view.addSubview)

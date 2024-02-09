@@ -12,6 +12,7 @@ extension UIViewController {
             make.center.equalToSuperview()
         }
         
+        view.isUserInteractionEnabled = false
         indicator.startAnimating()
     }
     
@@ -22,6 +23,7 @@ extension UIViewController {
         
         guard let indicator else { return }
         
+        view.isUserInteractionEnabled = true
         indicator.stopAnimating()
         indicator.removeFromSuperview()
     }

@@ -1,5 +1,6 @@
 import Foundation
 
 protocol NearestCafeterianViewOutputProtocol: AnyObject {
-    func fetchLocations() 
+    var locations: [Location] { get }
+    func fetchLocations()
 }

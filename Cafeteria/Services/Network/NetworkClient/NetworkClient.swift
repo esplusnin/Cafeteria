@@ -1,6 +1,10 @@
 import Foundation
 import Alamofire
 
+enum NetworkError: Error {
+    case unauthorized
+}
+
 final class NetworkClient: NetworkClientInputProtocol {
     
     // MARK: - Public Methods:
@@ -26,6 +30,7 @@ final class NetworkClient: NetworkClientInputProtocol {
                    method: .post,
                    parameters: login,
                    encoder: JSONParameterEncoder.default).responseDecodable(of: AuthorizationDTO.self) { response in
+            
             switch response.result {
             case .success(let registrationDTO):
                 let token = registrationDTO.token
@@ -33,7 +38,24 @@ final class NetworkClient: NetworkClientInputProtocol {
             case .failure(let error):
                 completion(.failure(error))
             }
-            
+        }
+    }
+    
+    func fetchLocations(completion: @escaping (Result<[Location], Error>) -> Void) {
+        guard let token = KeyChainStorage().token else { return }
+        let headers: HTTPHeaders = [Resources.Network.Headers.authorization: Resources.Network.Headers.bearer + token]
+        
+        AF.request(Resources.Network.EndPoint.locations, headers: headers).responseDecodable(of: [Location].self) { response in
+            switch response.result {
+            case .success(let locations):
+                completion(.success(locations))
+            case .failure(let error):
+                if response.response?.statusCode == Resources.Network.HTTPCodes.unauthorized {
+                    completion(.failure(NetworkError.unauthorized))
+                } else {
+                    completion(.failure(error))
+                }
+            }
         }
     }
 }
