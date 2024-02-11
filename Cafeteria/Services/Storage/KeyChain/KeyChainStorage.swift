@@ -35,15 +35,9 @@ final class KeyChainStorage {
     }
     
     // MARK: - Public Methods:
-    func setNew(_ token: String) {
+    func setNew(_ token: String, _ login: String? = nil, _ password: String? = nil) {
         self.token = token
-    }
-    
-    func setNew(login: String) {
         self.login = login
-    }
-    
-    func setNew(password: String) {
         self.password = password
     }
 }

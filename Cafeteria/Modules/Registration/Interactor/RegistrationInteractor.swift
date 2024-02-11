@@ -11,9 +11,22 @@ final class RegistrationInteractor {
         self.networkClient = networkClient
     }
     
+    // MARK: - Constants and Variables:
+    private let minPasswordCharacter = 4
+    
     // MARK: - Private Methods:
     private func checkAccountDetail(login: String, password: String, repeatedPassword: String) {
-        #warning("Добавить проверку валидности значения и вынести работу с нетворк клиентом обратно в RegistrationInteractorInputProtocol")
+
+        guard isValidEmail(login) else {
+            output?.invalidEmailFormat()
+            return
+        }
+        
+        guard isValidPassword(password, repeatedPassword) else {
+            output?.invalidPasswordFormat()
+            return
+        }
+
         let account = Account(login: login, password: password)
         
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
@@ -23,7 +36,7 @@ final class RegistrationInteractor {
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let token):
-                        self.save(token, login: login, password: password)
+                        self.save(token, login, password)
                     case .failure(_ :):
                         self.output?.accountDidNotCreate()
                     }
@@ -32,12 +45,19 @@ final class RegistrationInteractor {
         }
     }
     
-    private func save(_ token: String, login: String, password: String) {
+    private func isValidEmail(_ email: String) -> Bool {
+        let emailRegex = Resources.AccountValidation.regexValues
+        let emailPredicate = NSPredicate(format:Resources.AccountValidation.emailPredicate, emailRegex)
+        return emailPredicate.evaluate(with: email)
+    }
+    
+    private func isValidPassword(_ password: String, _ repeatedPassword: String) -> Bool {
+        return password.count >= minPasswordCharacter && password == repeatedPassword
+    }
+    
+    private func save(_ token: String, _ login: String, _ password: String) {
         let keyChainStorage = KeyChainStorage()
-        
-        keyChainStorage.setNew(token)
-        keyChainStorage.setNew(login: login)
-        keyChainStorage.setNew(password: password)
+        keyChainStorage.setNew(token, login, password)
         
         output?.accountDidCreate()
     }

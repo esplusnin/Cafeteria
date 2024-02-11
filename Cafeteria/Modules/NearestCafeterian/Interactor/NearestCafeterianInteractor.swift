@@ -13,19 +13,24 @@ final class NearestCafeterianInteractor {
         self.networkClient = networkClient
     }
     
+    deinit {
+        print("Deinit")
+    }
+    
     // MARK: - Private Methods:
     private func repeatRequest() {
         guard let login = keyChainStorage.login,
               let password = keyChainStorage.password else { return }
-        
+
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             guard let self else { return }
             networkClient.authorize(Login(login: login, password: password)) { result in
                 switch result {
                 case .success(let token):
+                    print(token)
                     self.keyChainStorage.setNew(token)
                     self.fetchLocations()
-                case .failure(let failure):
+                case .failure(_ :):
                     self.output?.locationsDidNotUpdate()
                 }
             }

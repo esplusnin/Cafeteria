@@ -13,16 +13,16 @@ final class AuthorizationInteractor {
     }
     
     // MARK: - Private Methods:
-    private func save(_ token: String) {
+    private func save(_ token: String, _ login: String, _ password: String) {
         let keyChainStorage = KeyChainStorage()
-        keyChainStorage.setNew(token)
+        keyChainStorage.setNew(token, login, password)
     }
 }
 
 // MARK: - AuthorizationInteractorInputProtocol:
 extension AuthorizationInteractor: AuthorizationInteractorInputProtocol {
-    func authorize(with name: String, and password: String) {
-        let account = Login(login: name, password: password)
+    func authorize(with login: String, and password: String) {
+        let account = Login(login: login, password: password)
         
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             guard let self else { return }
@@ -30,7 +30,7 @@ extension AuthorizationInteractor: AuthorizationInteractorInputProtocol {
             networkClient.authorize(account) { result in
                 switch result {
                 case .success(let token):
-                    self.save(token)
+                    self.save(token, login, password)
                     self.output?.accountDidAuthorize()
                 case .failure(_ :):
                     self.output?.accountDidNotAuthorize()

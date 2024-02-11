@@ -21,3 +21,6 @@ cyclomatic_complexity:
 function_body_length:
   warning: 100
   error: 200
+type_name:
+    min_length: 3
+    max_length: 50

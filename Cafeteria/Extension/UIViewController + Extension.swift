@@ -28,3 +28,14 @@ extension UIViewController {
         indicator.removeFromSuperview()
     }
 }
+
+extension UIViewController {
+    func addEndEditingGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(endEditingGesture))
+        view.addGestureRecognizer(gesture)
+    }
+    
+    @objc private func endEditingGesture() {
+        view.endEditing(true)
+    }
+}

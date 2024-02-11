@@ -40,6 +40,7 @@ class RegistrationViewController: UIViewController {
     private lazy var registrationButton: CustomButton = {
         let button = CustomButton(type: .system)
         button.setTitle(L10n.Registration.registration, for: .normal)
+        button.titleLabel?.font = .largeTitleBold
         return button
     }()
     
@@ -80,7 +81,18 @@ class RegistrationViewController: UIViewController {
 
 // MARK: - RegistrationViewProtocol:
 extension RegistrationViewController: RegistrationViewInputProtocol {
+    func accountDidNotCreate() {
+        #warning("Добавить нотификейшн")
+    }
     
+    func invalidEmailFormat() {
+        loginStackView.changeInputState(isWrong: true)
+    }
+    
+    func invalidPasswordFormat() {
+        passwordStackView.changeInputState(isWrong: true)
+        repeatPasswordStackView.changeInputState(isWrong: true)
+    }
 }
 
 // MARK: - CustomInputStackViewDelegate:
@@ -93,6 +105,7 @@ private extension RegistrationViewController {
     func setupViews() {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
         navigationItem.title = L10n.Registration.registration
+        addEndEditingGesture()
 
         [inputsStackView, registrationButton, authorizationButton].forEach(view.addSubview)
         [loginStackView, passwordStackView, repeatPasswordStackView].forEach(inputsStackView.addArrangedSubview)

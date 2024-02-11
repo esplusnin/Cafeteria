@@ -1,5 +1,5 @@
 import Foundation
 
 protocol AuthorizationInteractorInputProtocol: AnyObject {
-    func authorize(with name: String, and password: String)
+    func authorize(with login: String, and password: String)
 }
