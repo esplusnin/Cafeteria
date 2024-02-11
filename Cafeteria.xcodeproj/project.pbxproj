@@ -17,8 +17,6 @@
 		7E29C82C2B74B5D500647D9F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E29C82B2B74B5D500647D9F /* Colors.xcassets */; };
 		7E29C82E2B74B84E00647D9F /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C82D2B74B84E00647D9F /* XCAssets+Generated.swift */; };
 		7E29C8312B74B8CA00647D9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E29C8302B74B8CA00647D9F /* Images.xcassets */; };
-		7E29C8352B74C28E00647D9F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7E29C8342B74C28E00647D9F /* SnapKit */; };
-		7E29C8372B74C28E00647D9F /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7E29C8362B74C28E00647D9F /* SnapKit-Dynamic */; };
 		7E29C83B2B74C43C00647D9F /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C83A2B74C43C00647D9F /* UIFont + Extension.swift */; };
 		7E29C8432B74C81D00647D9F /* CustomInputStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8422B74C81D00647D9F /* CustomInputStackView.swift */; };
 		7E29C8452B74CA7500647D9F /* GlobalUIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8442B74CA7500647D9F /* GlobalUIConstants.swift */; };
@@ -62,11 +60,32 @@
 		7E94FE3A2B7665F100DAEAD1 /* NearestCafeterianRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE392B7665F100DAEAD1 /* NearestCafeterianRouterInputProtocol.swift */; };
 		7E94FE3C2B7665F600DAEAD1 /* NearestCafeterianRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE3B2B7665F600DAEAD1 /* NearestCafeterianRouter.swift */; };
 		7E94FE3E2B76666800DAEAD1 /* NearestCafeterianInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE3D2B76666800DAEAD1 /* NearestCafeterianInteractor.swift */; };
-		7E94FE402B766A3D00DAEAD1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE3F2B766A3D00DAEAD1 /* Location.swift */; };
+		7E94FE402B766A3D00DAEAD1 /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE3F2B766A3D00DAEAD1 /* LocationDTO.swift */; };
 		7E94FE422B766A6F00DAEAD1 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE412B766A6F00DAEAD1 /* Point.swift */; };
+		7E94FE492B78C83500DAEAD1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE482B78C83400DAEAD1 /* LocationManager.swift */; };
+		7E94FE4C2B78D49100DAEAD1 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE4B2B78D49100DAEAD1 /* LocationManagerDelegate.swift */; };
+		7E94FE4E2B78D6D000DAEAD1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE4D2B78D6D000DAEAD1 /* Location.swift */; };
+		7E94FE542B78E0D600DAEAD1 /* DistanceConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE532B78E0D600DAEAD1 /* DistanceConverter.swift */; };
+		7E94FE572B78E84700DAEAD1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FE562B78E84700DAEAD1 /* SnapKit */; };
+		7E94FE5C2B78EEEE00DAEAD1 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FE5B2B78EEEE00DAEAD1 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (Weak, ); }; };
+		7E94FE5E2B78EEEE00DAEAD1 /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FE5B2B78EEEE00DAEAD1 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7ED51D302B75EC6200696C84 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D2F2B75EC6200696C84 /* Resources.swift */; };
 		7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7E94FE5D2B78EEEE00DAEAD1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7E94FE5E2B78EEEE00DAEAD1 /* SnapKit-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7E29C8032B74B1F400647D9F /* Cafeteria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cafeteria.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,8 +141,12 @@
 		7E94FE392B7665F100DAEAD1 /* NearestCafeterianRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestCafeterianRouterInputProtocol.swift; sourceTree = "<group>"; };
 		7E94FE3B2B7665F600DAEAD1 /* NearestCafeterianRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestCafeterianRouter.swift; sourceTree = "<group>"; };
 		7E94FE3D2B76666800DAEAD1 /* NearestCafeterianInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestCafeterianInteractor.swift; sourceTree = "<group>"; };
-		7E94FE3F2B766A3D00DAEAD1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7E94FE3F2B766A3D00DAEAD1 /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
 		7E94FE412B766A6F00DAEAD1 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		7E94FE482B78C83400DAEAD1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		7E94FE4B2B78D49100DAEAD1 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
+		7E94FE4D2B78D6D000DAEAD1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7E94FE532B78E0D600DAEAD1 /* DistanceConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceConverter.swift; sourceTree = "<group>"; };
 		7ED51D2F2B75EC6200696C84 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,10 +156,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E94FE572B78E84700DAEAD1 /* SnapKit in Frameworks */,
 				7E94FDE12B75F4F900DAEAD1 /* KeychainAccess in Frameworks */,
 				7E94FDDE2B75F23A00DAEAD1 /* Alamofire in Frameworks */,
-				7E29C8352B74C28E00647D9F /* SnapKit in Frameworks */,
-				7E29C8372B74C28E00647D9F /* SnapKit-Dynamic in Frameworks */,
+				7E94FE5C2B78EEEE00DAEAD1 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +171,7 @@
 			children = (
 				7E29C8052B74B1F400647D9F /* Cafeteria */,
 				7E29C8042B74B1F400647D9F /* Products */,
+				7E94FE5A2B78EEEE00DAEAD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -355,6 +379,7 @@
 		7E29C8542B7521AF00647D9F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7E94FE462B78C81B00DAEAD1 /* Location */,
 				7E94FDE52B75F62B00DAEAD1 /* Storage */,
 				7E29C8552B7521BC00647D9F /* Network */,
 			);
@@ -549,8 +574,8 @@
 		7E94FE262B76653200DAEAD1 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				7E94FE3F2B766A3D00DAEAD1 /* Location.swift */,
-				7E94FE412B766A6F00DAEAD1 /* Point.swift */,
+				7E94FE522B78E0CA00DAEAD1 /* Models */,
+				7E94FE532B78E0D600DAEAD1 /* DistanceConverter.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -606,6 +631,48 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		7E94FE462B78C81B00DAEAD1 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE472B78C82A00DAEAD1 /* LocationManager */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		7E94FE472B78C82A00DAEAD1 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE4A2B78D48A00DAEAD1 /* Protocols */,
+				7E94FE482B78C83400DAEAD1 /* LocationManager.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		7E94FE4A2B78D48A00DAEAD1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE4B2B78D49100DAEAD1 /* LocationManagerDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7E94FE522B78E0CA00DAEAD1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE4D2B78D6D000DAEAD1 /* Location.swift */,
+				7E94FE3F2B766A3D00DAEAD1 /* LocationDTO.swift */,
+				7E94FE412B766A6F00DAEAD1 /* Point.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7E94FE5A2B78EEEE00DAEAD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -618,6 +685,7 @@
 				7E29C7FF2B74B1F400647D9F /* Sources */,
 				7E29C8002B74B1F400647D9F /* Frameworks */,
 				7E29C8012B74B1F400647D9F /* Resources */,
+				7E94FE5D2B78EEEE00DAEAD1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -625,10 +693,10 @@
 			);
 			name = Cafeteria;
 			packageProductDependencies = (
-				7E29C8342B74C28E00647D9F /* SnapKit */,
-				7E29C8362B74C28E00647D9F /* SnapKit-Dynamic */,
 				7E94FDDD2B75F23A00DAEAD1 /* Alamofire */,
 				7E94FDE02B75F4F900DAEAD1 /* KeychainAccess */,
+				7E94FE562B78E84700DAEAD1 /* SnapKit */,
+				7E94FE5B2B78EEEE00DAEAD1 /* SnapKit-Dynamic */,
 			);
 			productName = Cafeteria;
 			productReference = 7E29C8032B74B1F400647D9F /* Cafeteria.app */;
@@ -658,9 +726,9 @@
 			);
 			mainGroup = 7E29C7FA2B74B1F400647D9F;
 			packageReferences = (
-				7E29C8332B74C28E00647D9F /* XCRemoteSwiftPackageReference "SnapKit" */,
 				7E94FDDC2B75F23A00DAEAD1 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				7E94FDDF2B75F4F900DAEAD1 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				7E94FE552B78E84700DAEAD1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 7E29C8042B74B1F400647D9F /* Products */;
 			projectDirPath = "";
@@ -748,6 +816,8 @@
 				7E94FE332B7665BD00DAEAD1 /* NearestCafeterianInteractorInputProtocol.swift in Sources */,
 				7E29C80B2B74B1F400647D9F /* RegistrationViewController.swift in Sources */,
 				7ED51D302B75EC6200696C84 /* Resources.swift in Sources */,
+				7E94FE4E2B78D6D000DAEAD1 /* Location.swift in Sources */,
+				7E94FE542B78E0D600DAEAD1 /* DistanceConverter.swift in Sources */,
 				7E94FE112B7629FC00DAEAD1 /* AuthorizationRouter.swift in Sources */,
 				7E29C8672B75236C00647D9F /* RegistrationPresenter.swift in Sources */,
 				7E94FE0D2B76291F00DAEAD1 /* AuthorizationInteractorInputProtocol.swift in Sources */,
@@ -767,6 +837,7 @@
 				7E29C8092B74B1F400647D9F /* SceneDelegate.swift in Sources */,
 				7E94FE3E2B76666800DAEAD1 /* NearestCafeterianInteractor.swift in Sources */,
 				7E94FDE92B761E3C00DAEAD1 /* Login.swift in Sources */,
+				7E94FE492B78C83500DAEAD1 /* LocationManager.swift in Sources */,
 				7E29C8732B754B4C00647D9F /* RegistrationRouter.swift in Sources */,
 				7E29C85F2B75226C00647D9F /* RegistrationConfigurator.swift in Sources */,
 				7E94FE0B2B76290B00DAEAD1 /* AuthorizationInteractor.swift in Sources */,
@@ -774,6 +845,7 @@
 				7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */,
 				7E29C8762B754B6600647D9F /* RegistrationRouterInputProtocol.swift in Sources */,
 				7E29C8782B754C2400647D9F /* RegistrationInteractor.swift in Sources */,
+				7E94FE4C2B78D49100DAEAD1 /* LocationManagerDelegate.swift in Sources */,
 				7E94FE002B7626BC00DAEAD1 /* AuthorizationViewInputProtocol.swift in Sources */,
 				7E94FE0F2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift in Sources */,
 				7E94FE1C2B76346F00DAEAD1 /* UIViewController + Extension.swift in Sources */,
@@ -781,7 +853,7 @@
 				7E94FE422B766A6F00DAEAD1 /* Point.swift in Sources */,
 				7E29C85B2B75220100647D9F /* NetworkClientInputProtocol.swift in Sources */,
 				7E94FE142B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift in Sources */,
-				7E94FE402B766A3D00DAEAD1 /* Location.swift in Sources */,
+				7E94FE402B766A3D00DAEAD1 /* LocationDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,6 +1010,8 @@
 				DEVELOPMENT_TEAM = V7HYWRF575;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cafeteria/App/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Приложению необходима использование вашей геопозиции для корректного отображения кафе и растояния до них";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Приложению необходима использование вашей геопозиции для корректного отображения кафе и растояния до них";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -970,6 +1044,8 @@
 				DEVELOPMENT_TEAM = V7HYWRF575;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cafeteria/App/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Приложению необходима использование вашей геопозиции для корректного отображения кафе и растояния до них";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Приложению необходима использование вашей геопозиции для корректного отображения кафе и растояния до них";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1016,14 +1092,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7E29C8332B74C28E00647D9F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.0;
-			};
-		};
 		7E94FDDC2B75F23A00DAEAD1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -1040,19 +1108,17 @@
 				kind = branch;
 			};
 		};
+		7E94FE552B78E84700DAEAD1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7E29C8342B74C28E00647D9F /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7E29C8332B74C28E00647D9F /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		7E29C8362B74C28E00647D9F /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7E29C8332B74C28E00647D9F /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
 		7E94FDDD2B75F23A00DAEAD1 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7E94FDDC2B75F23A00DAEAD1 /* XCRemoteSwiftPackageReference "Alamofire" */;
@@ -1062,6 +1128,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7E94FDDF2B75F4F900DAEAD1 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		7E94FE562B78E84700DAEAD1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E94FE552B78E84700DAEAD1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7E94FE5B2B78EEEE00DAEAD1 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E94FE552B78E84700DAEAD1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

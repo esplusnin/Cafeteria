@@ -15,6 +15,13 @@ final class CafeterinanCollectionViewCell: UICollectionViewCell {
         static let shadowHeight: CGFloat = 2
     }
     
+    private var location: Location? {
+        didSet {
+            guard let location else { return }
+            setupCellUI()
+        }
+    }
+    
     // MARK: - UI:
     private lazy var contentBackgroundView: UIView = {
         let view = UIView()
@@ -31,7 +38,6 @@ final class CafeterinanCollectionViewCell: UICollectionViewCell {
        let label = UILabel()
         label.font = .largeTitleBold
         label.textColor = Asset.Colors.textBrown.color
-        label.text = "COFFE"
         return label
     }()
     
@@ -39,7 +45,6 @@ final class CafeterinanCollectionViewCell: UICollectionViewCell {
        let label = UILabel()
         label.font = .bodySmall
         label.textColor = Asset.Colors.textLightBrown.color
-        label.text = "100 м от вас"
         return label
     }()
     
@@ -60,11 +65,16 @@ final class CafeterinanCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Public Methods:
-    func setupLocation(_ name: String) {
-        cafeterianTitleLabel.text = name
+    func setup(_ location: Location) {
+        self.location = location
     }
         
     // MARK: - Private Methods:
+    private func setupCellUI() {
+        cafeterianTitleLabel.text = location?.name
+        distanceLabel.text = location?.distance
+    }
+    
     private func addShadow() {
         contentBackgroundView.layer.cornerRadius = LocalUIConstants.cornerRadius
         contentBackgroundView.backgroundColor = Asset.Colors.backgroundLightBrown.color

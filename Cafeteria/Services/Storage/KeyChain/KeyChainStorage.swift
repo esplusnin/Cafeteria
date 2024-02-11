@@ -27,10 +27,10 @@ final class KeyChainStorage {
     
     private(set) var password: String? {
         get {
-            keyChain[Resources.KeyChain.login]
+            keyChain[Resources.KeyChain.password]
         }
         set {
-            keyChain[Resources.KeyChain.login] = newValue
+            keyChain[Resources.KeyChain.password] = newValue
         }
     }
     

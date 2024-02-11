@@ -1,6 +1,6 @@
 import Foundation
 
-struct Location: Codable {
+struct LocationDTO: Codable {
     let id: Int
     let name: String
     let point: Point
