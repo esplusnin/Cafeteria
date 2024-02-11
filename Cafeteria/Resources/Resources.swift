@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 enum Resources {
     enum KeyChain {
@@ -41,6 +41,12 @@ enum Resources {
     
     enum Identifiers {
         static let cafeterianCollectionViewCell = "CafeterianCollectionViewCell"
+        static let menuCollectionViewCell = "MenuCollectionViewCell"
         static let YandexMapKey = "e319bb1b-963b-4a0b-92d1-1a7047178f5d"
+    }
+    
+    enum Symbols {
+        static let plus = UIImage(systemName: "plus")?.withTintColor(Asset.Colors.backgroundLightBrown.color, renderingMode: .alwaysOriginal)
+        static let minus = UIImage(systemName: "minus")?.withTintColor(Asset.Colors.backgroundLightBrown.color, renderingMode: .alwaysOriginal)
     }
 }
