@@ -876,8 +876,8 @@
 		7E94FE962B79668900DAEAD1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7E94FE992B7966A900DAEAD1 /* MenuViewController.swift */,
 				7E94FE9C2B79673500DAEAD1 /* MenuCollectionViewCell.swift */,
+				7E94FE992B7966A900DAEAD1 /* MenuViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
