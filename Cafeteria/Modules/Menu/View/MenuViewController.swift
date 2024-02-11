@@ -2,7 +2,10 @@ import UIKit
 
 final class MenuViewController: UIViewController {
     
-    // MARK: - COnstants and Variables:
+    // MARK: - Dependencies:
+    private var output: MenuViewControllerOutputProtocol?
+    
+    // MARK: - Constants and Variables:
     private enum LocalUIConstants {
         static let buttonSideInset: CGFloat = 16
         static let buttonBottomInset: CGFloat = 32
@@ -23,6 +26,16 @@ final class MenuViewController: UIViewController {
         button.titleLabel?.font = .largeTitleBold
         return button
     }()
+    
+    // MARK: - Public Methods:
+    func setup(_ output: MenuViewControllerOutputProtocol) {
+        self.output = output
+    }
+}
+
+// MARK: - MenuViewControllerInputProtocol:
+extension MenuViewController: MenuViewControllerInputProtocol {
+    
 }
 
 // MARK: - UICollectionViewDataSource:
