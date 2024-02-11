@@ -69,8 +69,12 @@
 		7E94FE572B78E84700DAEAD1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FE562B78E84700DAEAD1 /* SnapKit */; };
 		7E94FE5C2B78EEEE00DAEAD1 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FE5B2B78EEEE00DAEAD1 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E94FE5E2B78EEEE00DAEAD1 /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FE5B2B78EEEE00DAEAD1 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7E94FE672B79112900DAEAD1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE662B79112900DAEAD1 /* MapViewController.swift */; };
+		7E94FE6A2B7912EE00DAEAD1 /* MapViewControllerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE692B7912EE00DAEAD1 /* MapViewControllerInputProtocol.swift */; };
+		7E94FE6C2B7912F800DAEAD1 /* MapViewControllerOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE6B2B7912F800DAEAD1 /* MapViewControllerOutputProtocol.swift */; };
 		7ED51D302B75EC6200696C84 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D2F2B75EC6200696C84 /* Resources.swift */; };
 		7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */; };
+		E0CE78FD3DD3822A4E402A50 /* Pods_Cafeteria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +92,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		375A65FEC38FB097B3A0BC7F /* Pods-Cafeteria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cafeteria.release.xcconfig"; path = "Target Support Files/Pods-Cafeteria/Pods-Cafeteria.release.xcconfig"; sourceTree = "<group>"; };
 		7E29C8032B74B1F400647D9F /* Cafeteria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cafeteria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E29C8062B74B1F400647D9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E29C8082B74B1F400647D9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,8 +152,13 @@
 		7E94FE4B2B78D49100DAEAD1 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		7E94FE4D2B78D6D000DAEAD1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		7E94FE532B78E0D600DAEAD1 /* DistanceConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceConverter.swift; sourceTree = "<group>"; };
+		7E94FE662B79112900DAEAD1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7E94FE692B7912EE00DAEAD1 /* MapViewControllerInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerInputProtocol.swift; sourceTree = "<group>"; };
+		7E94FE6B2B7912F800DAEAD1 /* MapViewControllerOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerOutputProtocol.swift; sourceTree = "<group>"; };
 		7ED51D2F2B75EC6200696C84 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationDTO.swift; sourceTree = "<group>"; };
+		A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cafeteria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5CE1D2C085C65520578CC64 /* Pods-Cafeteria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cafeteria.debug.xcconfig"; path = "Target Support Files/Pods-Cafeteria/Pods-Cafeteria.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,18 +170,29 @@
 				7E94FDE12B75F4F900DAEAD1 /* KeychainAccess in Frameworks */,
 				7E94FDDE2B75F23A00DAEAD1 /* Alamofire in Frameworks */,
 				7E94FE5C2B78EEEE00DAEAD1 /* SnapKit-Dynamic in Frameworks */,
+				E0CE78FD3DD3822A4E402A50 /* Pods_Cafeteria.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76FD1D0C85DA16AAEFECCABD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5CE1D2C085C65520578CC64 /* Pods-Cafeteria.debug.xcconfig */,
+				375A65FEC38FB097B3A0BC7F /* Pods-Cafeteria.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7E29C7FA2B74B1F400647D9F = {
 			isa = PBXGroup;
 			children = (
 				7E29C8052B74B1F400647D9F /* Cafeteria */,
 				7E29C8042B74B1F400647D9F /* Products */,
 				7E94FE5A2B78EEEE00DAEAD1 /* Frameworks */,
+				76FD1D0C85DA16AAEFECCABD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -260,6 +281,7 @@
 				7E29C83C2B74C68200647D9F /* Registration */,
 				7E29C84C2B751D6000647D9F /* Authorization */,
 				7E94FE182B7633DE00DAEAD1 /* NearestCafeterian */,
+				7E94FE5F2B7910F500DAEAD1 /* Map */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -669,8 +691,75 @@
 		7E94FE5A2B78EEEE00DAEAD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E94FE5F2B7910F500DAEAD1 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE652B79111D00DAEAD1 /* Configurator */,
+				7E94FE642B79111A00DAEAD1 /* View */,
+				7E94FE632B79111500DAEAD1 /* Interactor */,
+				7E94FE622B79111000DAEAD1 /* Presenter */,
+				7E94FE612B79110B00DAEAD1 /* Entity */,
+				7E94FE602B79110500DAEAD1 /* Router */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		7E94FE602B79110500DAEAD1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7E94FE612B79110B00DAEAD1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7E94FE622B79111000DAEAD1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7E94FE632B79111500DAEAD1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		7E94FE642B79111A00DAEAD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE682B7912E300DAEAD1 /* Protocols */,
+				7E94FE662B79112900DAEAD1 /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7E94FE652B79111D00DAEAD1 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		7E94FE682B7912E300DAEAD1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE692B7912EE00DAEAD1 /* MapViewControllerInputProtocol.swift */,
+				7E94FE6B2B7912F800DAEAD1 /* MapViewControllerOutputProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -680,12 +769,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E29C8172B74B1F600647D9F /* Build configuration list for PBXNativeTarget "Cafeteria" */;
 			buildPhases = (
+				45C48812F2BD0013F2235726 /* [CP] Check Pods Manifest.lock */,
 				7E29C8212B74B4A000647D9F /* Swiftgen */,
 				7E29C8322B74C14A00647D9F /* Swiftlint */,
 				7E29C7FF2B74B1F400647D9F /* Sources */,
 				7E29C8002B74B1F400647D9F /* Frameworks */,
 				7E29C8012B74B1F400647D9F /* Resources */,
 				7E94FE5D2B78EEEE00DAEAD1 /* Embed Frameworks */,
+				CD33CC133EDC440A3D44CEE3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -755,6 +846,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		45C48812F2BD0013F2235726 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cafeteria-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7E29C8212B74B4A000647D9F /* Swiftgen */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -793,6 +906,23 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		CD33CC133EDC440A3D44CEE3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cafeteria/Pods-Cafeteria-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cafeteria/Pods-Cafeteria-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cafeteria/Pods-Cafeteria-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -803,6 +933,7 @@
 				7E29C83B2B74C43C00647D9F /* UIFont + Extension.swift in Sources */,
 				7E29C8652B75234300647D9F /* RegistrationViewInputProtocol.swift in Sources */,
 				7E94FE242B763C1500DAEAD1 /* CafeterinanCollectionViewCell.swift in Sources */,
+				7E94FE6C2B7912F800DAEAD1 /* MapViewControllerOutputProtocol.swift in Sources */,
 				7E94FDE42B75F50F00DAEAD1 /* KeyChainStorage.swift in Sources */,
 				7E29C87D2B754CF600647D9F /* RegistrationInteractorOutputProtocol.swift in Sources */,
 				7E94FE052B76274E00DAEAD1 /* AuthorizationConfigurator.swift in Sources */,
@@ -814,6 +945,7 @@
 				7E94FE032B7626D500DAEAD1 /* AuthorizationViewOutputProtocols.swift in Sources */,
 				7E94FE3A2B7665F100DAEAD1 /* NearestCafeterianRouterInputProtocol.swift in Sources */,
 				7E94FE332B7665BD00DAEAD1 /* NearestCafeterianInteractorInputProtocol.swift in Sources */,
+				7E94FE6A2B7912EE00DAEAD1 /* MapViewControllerInputProtocol.swift in Sources */,
 				7E29C80B2B74B1F400647D9F /* RegistrationViewController.swift in Sources */,
 				7ED51D302B75EC6200696C84 /* Resources.swift in Sources */,
 				7E94FE4E2B78D6D000DAEAD1 /* Location.swift in Sources */,
@@ -833,6 +965,7 @@
 				7E94FE072B76280F00DAEAD1 /* AuthorizationPresenter.swift in Sources */,
 				7E29C84E2B751D9200647D9F /* AuthorizationViewController.swift in Sources */,
 				7E94FE372B7665E100DAEAD1 /* NearestCafeterianPresenter.swift in Sources */,
+				7E94FE672B79112900DAEAD1 /* MapViewController.swift in Sources */,
 				7E94FE352B7665C800DAEAD1 /* NearestCafeterianInteractorOutputProtocol.swift in Sources */,
 				7E29C8092B74B1F400647D9F /* SceneDelegate.swift in Sources */,
 				7E94FE3E2B76666800DAEAD1 /* NearestCafeterianInteractor.swift in Sources */,
@@ -1002,6 +1135,7 @@
 		};
 		7E29C8182B74B1F600647D9F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5CE1D2C085C65520578CC64 /* Pods-Cafeteria.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1036,6 +1170,7 @@
 		};
 		7E29C8192B74B1F600647D9F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 375A65FEC38FB097B3A0BC7F /* Pods-Cafeteria.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

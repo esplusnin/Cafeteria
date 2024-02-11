@@ -27,7 +27,7 @@ final class NearestCafeterianViewController: UIViewController {
         return collectionView
     }()
     
-    private lazy var onMapButton: CustomButton = {
+    private lazy var toMapButton: CustomButton = {
         let button = CustomButton(type: .system)
         button.setTitle(L10n.NearestCafeterian.onMap, for: .normal)
         button.titleLabel?.font = .largeTitleBold
@@ -49,6 +49,11 @@ final class NearestCafeterianViewController: UIViewController {
     // MARK: - Public Methods:
     func setup(_ output: NearestCafeterianViewOutputProtocol) {
         self.output = output
+    }
+    
+    // MARK: - Objc Methods:
+    @objc private func goToMap() {
+        output?.goToMap()
     }
 }
 
@@ -100,7 +105,7 @@ private extension NearestCafeterianViewController {
         navigationItem.hidesBackButton = true
         view.backgroundColor = Asset.Colors.backgroundWhite.color
 
-        [cafeterianCollectionView, onMapButton].forEach(view.addSubview)
+        [cafeterianCollectionView, toMapButton].forEach(view.addSubview)
     }
 }
 
@@ -108,7 +113,7 @@ private extension NearestCafeterianViewController {
 private extension NearestCafeterianViewController {
     func setupConstraints() {
         setupCafeterianCollectionViewConstraints()
-        setupOnMapButtonConstraints()
+        setupToMapButtonConstraints()
     }
     
     func setupCafeterianCollectionViewConstraints() {
@@ -116,12 +121,12 @@ private extension NearestCafeterianViewController {
             make.top.equalTo(view.snp.topMargin).inset(LocalUIConstants.collectionViewTopInset)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.bottom.equalTo(onMapButton.snp.top).inset(-GlobalUIConstants.baseInset)
+            make.bottom.equalTo(toMapButton.snp.top).inset(-GlobalUIConstants.baseInset)
         }
     }
     
-    func setupOnMapButtonConstraints() {
-        onMapButton.snp.makeConstraints { make in
+    func setupToMapButtonConstraints() {
+        toMapButton.snp.makeConstraints { make in
             make.left.equalTo(LocalUIConstants.buttonHorizontalInset)
             make.right.equalTo(-LocalUIConstants.buttonHorizontalInset)
             make.bottom.equalTo(-LocalUIConstants.buttonBottomInset)
@@ -132,6 +137,6 @@ private extension NearestCafeterianViewController {
 // MARK: - Setup Targets:
 private extension NearestCafeterianViewController {
     func setupTargets() {
-        
+        toMapButton.addTarget(self, action: #selector(goToMap), for: .touchUpInside)
     }
 }
