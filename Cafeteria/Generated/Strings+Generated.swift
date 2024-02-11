@@ -41,6 +41,10 @@ internal enum L10n {
   internal enum NearestCafeterian {
     /// от вас
     internal static let fromYou = L10n.tr("Localizable", "nearestCafeterian.fromYou", fallback: "от вас")
+    ///  км 
+    internal static let km = L10n.tr("Localizable", "nearestCafeterian.km", fallback: " км ")
+    ///  м 
+    internal static let m = L10n.tr("Localizable", "nearestCafeterian.m", fallback: " м ")
     /// На карте
     internal static let onMap = L10n.tr("Localizable", "nearestCafeterian.onMap", fallback: "На карте")
     /// Ближайшие кофейни

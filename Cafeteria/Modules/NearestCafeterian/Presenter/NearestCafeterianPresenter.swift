@@ -25,7 +25,7 @@ final class NearestCafeterianPresenter {
 // MARK: - NearestCafeterianViewControllerInputProtocol:
 extension NearestCafeterianPresenter: NearestCafeterianViewOutputProtocol {
     func fetchLocations() {
-        interactor.fetchLocations()
+        interactor.requestLocations()
     }
 }
 

@@ -74,11 +74,9 @@ extension NearestCafeterianViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.cafeterianCollectionViewCell,
                                                             for: indexPath) as? CafeterinanCollectionViewCell,
-              let locations = output?.locations else { return UICollectionViewCell() }
-        
-        let name = locations[indexPath.row].name
-        
-        cell.setupLocation(name)
+              let location = output?.locations[indexPath.row] else { return UICollectionViewCell() }
+                
+        cell.setup(location)
         
         return cell
     }
