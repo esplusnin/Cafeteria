@@ -8,9 +8,7 @@ enum Resources {
     }
     
     enum Network {
-        
-        static let successHTTPRange = 200..<300
-        
+                
         enum Headers {
             static let jsonType = "application/json"
             static let authorization = "Authorization"
@@ -32,7 +30,13 @@ enum Resources {
         
         enum HTTPCodes {
             static let unauthorized = 401
+            static let successHTTPRange = 200..<300
         }
+    }
+    
+    enum AccountValidation {
+        static let regexValues = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        static let emailPredicate = "SELF MATCHES %@"
     }
     
     enum Identifiers {
