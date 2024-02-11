@@ -82,6 +82,9 @@
 		7E94FE8A2B793C5800DAEAD1 /* NearestCafeterianPresenterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE892B793C5800DAEAD1 /* NearestCafeterianPresenterOutputProtocol.swift */; };
 		7E94FE8C2B793E7C00DAEAD1 /* MapPresenterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE8B2B793E7C00DAEAD1 /* MapPresenterInputProtocol.swift */; };
 		7E94FE8F2B79487700DAEAD1 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE8E2B79487700DAEAD1 /* Placemark.swift */; };
+		7E94FE9A2B7966A900DAEAD1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE992B7966A900DAEAD1 /* MenuViewController.swift */; };
+		7E94FE9D2B79673500DAEAD1 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE9C2B79673500DAEAD1 /* MenuCollectionViewCell.swift */; };
+		7E94FEA12B7968EA00DAEAD1 /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEA02B7968EA00DAEAD1 /* CustomStepper.swift */; };
 		7ED51D302B75EC6200696C84 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D2F2B75EC6200696C84 /* Resources.swift */; };
 		7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */; };
 		E0CE78FD3DD3822A4E402A50 /* Pods_Cafeteria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */; };
@@ -175,6 +178,9 @@
 		7E94FE892B793C5800DAEAD1 /* NearestCafeterianPresenterOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestCafeterianPresenterOutputProtocol.swift; sourceTree = "<group>"; };
 		7E94FE8B2B793E7C00DAEAD1 /* MapPresenterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenterInputProtocol.swift; sourceTree = "<group>"; };
 		7E94FE8E2B79487700DAEAD1 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
+		7E94FE992B7966A900DAEAD1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		7E94FE9C2B79673500DAEAD1 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E94FEA02B7968EA00DAEAD1 /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 		7ED51D2F2B75EC6200696C84 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationDTO.swift; sourceTree = "<group>"; };
 		A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cafeteria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,6 +308,7 @@
 				7E29C84C2B751D6000647D9F /* Authorization */,
 				7E94FE182B7633DE00DAEAD1 /* NearestCafeterian */,
 				7E94FE5F2B7910F500DAEAD1 /* Map */,
+				7E94FE902B79665F00DAEAD1 /* Menu */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -331,6 +338,7 @@
 		7E29C83D2B74C78500647D9F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7E94FE9E2B7968D600DAEAD1 /* Stepper */,
 				7E29C8492B75190B00647D9F /* Buttons */,
 				7E29C8412B74C7EF00647D9F /* StackViews */,
 			);
@@ -824,6 +832,71 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		7E94FE902B79665F00DAEAD1 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE972B79668C00DAEAD1 /* Configurator */,
+				7E94FE962B79668900DAEAD1 /* View */,
+				7E94FE952B79668200DAEAD1 /* Interactor */,
+				7E94FE942B79667D00DAEAD1 /* Presenter */,
+				7E94FE932B79667400DAEAD1 /* Entity */,
+				7E94FE912B79666700DAEAD1 /* Router */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		7E94FE912B79666700DAEAD1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7E94FE932B79667400DAEAD1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7E94FE942B79667D00DAEAD1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7E94FE952B79668200DAEAD1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		7E94FE962B79668900DAEAD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FE992B7966A900DAEAD1 /* MenuViewController.swift */,
+				7E94FE9C2B79673500DAEAD1 /* MenuCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7E94FE972B79668C00DAEAD1 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		7E94FE9E2B7968D600DAEAD1 /* Stepper */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FEA02B7968EA00DAEAD1 /* CustomStepper.swift */,
+			);
+			path = Stepper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1002,7 +1075,9 @@
 				7E94FE052B76274E00DAEAD1 /* AuthorizationConfigurator.swift in Sources */,
 				7E29C86F2B75480F00647D9F /* RegistrationViewOutputProtocol.swift in Sources */,
 				7E29C82E2B74B84E00647D9F /* XCAssets+Generated.swift in Sources */,
+				7E94FEA12B7968EA00DAEAD1 /* CustomStepper.swift in Sources */,
 				7E94FE302B76658600DAEAD1 /* NearestCafeterianViewOutputProtocol.swift in Sources */,
+				7E94FE9A2B7966A900DAEAD1 /* MenuViewController.swift in Sources */,
 				7E94FE1A2B7633F000DAEAD1 /* NearestCafeterianViewController.swift in Sources */,
 				7E94FE8A2B793C5800DAEAD1 /* NearestCafeterianPresenterOutputProtocol.swift in Sources */,
 				7E94FE2E2B76657C00DAEAD1 /* NearestCafeterianViewControllerInputProtocol.swift in Sources */,
@@ -1044,6 +1119,7 @@
 				7E29C85F2B75226C00647D9F /* RegistrationConfigurator.swift in Sources */,
 				7E94FE0B2B76290B00DAEAD1 /* AuthorizationInteractor.swift in Sources */,
 				7E29C8582B7521DA00647D9F /* NetworkClient.swift in Sources */,
+				7E94FE9D2B79673500DAEAD1 /* MenuCollectionViewCell.swift in Sources */,
 				7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */,
 				7E29C8762B754B6600647D9F /* RegistrationRouterInputProtocol.swift in Sources */,
 				7E29C8782B754C2400647D9F /* RegistrationInteractor.swift in Sources */,
