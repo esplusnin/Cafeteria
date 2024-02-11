@@ -7,6 +7,7 @@ final class NearestCafeterianPresenter {
     
     private let interactor: NearestCafeterianInteractorInputProtocol
     private let router: NearestCafeterianRouterInputProtocol
+    private let output: NearestCafeterianPresenterOutputProtocol
     
     // MARK: - Constants and Variables:
     private(set) var locations: [Location] = [] {
@@ -16,9 +17,10 @@ final class NearestCafeterianPresenter {
     }
     
     // MARK: - Lifecycle:
-    init(interactor: NearestCafeterianInteractorInputProtocol, router: NearestCafeterianRouterInputProtocol) {
+    init(interactor: NearestCafeterianInteractorInputProtocol, router: NearestCafeterianRouterInputProtocol, output: NearestCafeterianPresenterOutputProtocol) {
         self.interactor = interactor
         self.router = router
+        self.output = output
     }
 }
 
@@ -29,7 +31,11 @@ extension NearestCafeterianPresenter: NearestCafeterianViewOutputProtocol {
     }
     
     func goToMap() {
-        router.goToMap()
+        if let locations = interactor.getLocationsData() {
+            output.goToMap(with: locations)
+        } else {
+            router.goToMap()
+        }
     }
 }
 
