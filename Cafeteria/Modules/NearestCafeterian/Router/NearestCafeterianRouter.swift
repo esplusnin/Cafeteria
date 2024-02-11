@@ -8,5 +8,8 @@ final class NearestCafeterianRouter {
 
 // MARK: - NearestCafeterianRouterInputProtocol:
 extension NearestCafeterianRouter: NearestCafeterianRouterInputProtocol {
-    
+    func goToMap() {
+        let viewController = MapViewController()
+        navigation?.pushViewController(viewController, animated: true)
+    }
 }

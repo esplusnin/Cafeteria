@@ -41,5 +41,6 @@ enum Resources {
     
     enum Identifiers {
         static let cafeterianCollectionViewCell = "CafeterianCollectionViewCell"
+        static let YandexMapKey = "e319bb1b-963b-4a0b-92d1-1a7047178f5d"
     }
 }

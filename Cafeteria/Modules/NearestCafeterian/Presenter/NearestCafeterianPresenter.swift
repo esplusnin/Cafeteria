@@ -27,6 +27,10 @@ extension NearestCafeterianPresenter: NearestCafeterianViewOutputProtocol {
     func fetchLocations() {
         interactor.requestLocations()
     }
+    
+    func goToMap() {
+        router.goToMap()
+    }
 }
 
 // MARK: - NearestCafeterianInteractorOutputProtocol:
