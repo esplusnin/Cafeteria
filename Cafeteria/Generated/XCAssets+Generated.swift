@@ -38,6 +38,7 @@ internal enum Asset {
   }
   internal enum Images {
     internal static let cappuccino = ImageAsset(name: "Cappuccino")
+    internal static let coffeCupBackground = ImageAsset(name: "CoffeCupBackground")
     internal static let coffeeCup = ImageAsset(name: "CoffeeCup")
     internal static let espresso = ImageAsset(name: "Espresso")
     internal static let hotChocolate = ImageAsset(name: "HotChocolate")

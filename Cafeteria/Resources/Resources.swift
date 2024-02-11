@@ -4,7 +4,7 @@ enum Resources {
     enum KeyChain {
         static let token = "Token"
         static let login = "Login"
-        static let password = "Pasword"
+        static let password = "Password"
     }
     
     enum Network {

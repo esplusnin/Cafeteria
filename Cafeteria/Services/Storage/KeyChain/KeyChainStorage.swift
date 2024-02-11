@@ -38,6 +38,6 @@ final class KeyChainStorage {
     func setNew(_ token: String, _ login: String? = nil, _ password: String? = nil) {
         self.token = token
         self.login = login
-        self.password = password
+        self.password = password        
     }
 }
