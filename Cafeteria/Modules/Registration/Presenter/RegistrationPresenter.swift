@@ -34,6 +34,14 @@ extension RegistrationPresenter: RegistrationInteractorOutputProtocol {
     }
     
     func accountDidNotCreate() {
-        
+        view?.accountDidNotCreate()
+    }
+    
+    func invalidEmailFormat() {
+        view?.invalidEmailFormat()
+    }
+    
+    func invalidPasswordFormat() {
+        view?.invalidPasswordFormat()
     }
 }

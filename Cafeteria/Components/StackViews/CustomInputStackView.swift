@@ -35,7 +35,7 @@ final class CustomInputStackView: UIStackView {
     
     private(set) var inputTextField: UITextField = {
         let textField = UITextField()
-        textField.layer.borderColor = Asset.Colors.textBrown.color.cgColor
+        textField.layer.borderColor = Asset.Colors.backgroundBrown.color.cgColor
         textField.layer.borderWidth = LocalUIConstants.borderWidth
         textField.layer.cornerRadius = GlobalUIConstants.inputViewCornerRadius
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: LocalUIConstants.leftTextViewWidth, height: LocalUIConstants.textFieldHeight))
@@ -65,10 +65,18 @@ final class CustomInputStackView: UIStackView {
         setupStackView()
     }
     
+    // MARK: - Public Methods:
+    func changeInputState(isWrong: Bool) {
+        UIView.animate(withDuration: GlobalUIConstants.baseAnimationDuration) {
+            self.inputTextField.layer.borderColor = isWrong ? Asset.Colors.backgroundRed.color.cgColor : Asset.Colors.backgroundBrown.color.cgColor
+        }
+    }
+    
     // MARK: - Private Methods:
     private func setupStackView() {
         guard let state else { return }
-        
+        inputTextField.delegate = self
+
         switch state {
         case .login:
             titleLabel.text = L10n.Registration.email
@@ -83,6 +91,22 @@ final class CustomInputStackView: UIStackView {
             inputTextField.isSecureTextEntry = true
             inputTextField.placeholder = L10n.Registration.passwordPlaceholder
         }
+    }
+}
+
+// MARK: - UITextFieldDelegate:
+extension CustomInputStackView: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        changeInputState(isWrong: false)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        changeInputState(isWrong: false)
     }
 }
 

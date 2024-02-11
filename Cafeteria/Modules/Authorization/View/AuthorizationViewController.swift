@@ -35,6 +35,7 @@ final class AuthorizationViewController: UIViewController {
     private lazy var authorizationButton: CustomButton = {
         let button = CustomButton(type: .system)
         button.setTitle(L10n.Authorization.enter, for: .normal)
+        button.titleLabel?.font = .largeTitleBold
         return button
     }()
     
@@ -78,6 +79,7 @@ private extension AuthorizationViewController {
     func setupViews() {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
         navigationItem.title = L10n.Authorization.title
+        addEndEditingGesture()
         
         [inputsStackView, authorizationButton].forEach(view.addSubview)
         [loginStackView, passwordStackView].forEach(inputsStackView.addArrangedSubview)

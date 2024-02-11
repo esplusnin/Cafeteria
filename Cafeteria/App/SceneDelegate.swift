@@ -1,5 +1,4 @@
 import UIKit
-import KeychainAccess
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -11,7 +10,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         let rootViewController = isFirstEntry() ? NearestCafeterianViewController() : RegistrationViewController()
         let rootNavigationController = UINavigationController(rootViewController: rootViewController)
-        try? Keychain().removeAll()
+
         setup(rootNavigationController)
         
         window?.rootViewController = rootNavigationController
@@ -32,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func isFirstEntry() -> Bool {
-        if let token = KeyChainStorage().token {
+        if let _ = KeyChainStorage().token {
             return true
         } else {
             return false
