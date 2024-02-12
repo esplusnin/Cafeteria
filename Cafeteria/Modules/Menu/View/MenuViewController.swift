@@ -5,6 +5,9 @@ final class MenuViewController: UIViewController {
     // MARK: - Dependencies:
     private var output: MenuViewControllerOutputProtocol?
     
+    // MARK: - Classes:
+    let configurator: MenuConfiguratorProtocol
+    
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
         static let buttonSideInset: CGFloat = 16
@@ -26,6 +29,26 @@ final class MenuViewController: UIViewController {
         button.titleLabel?.font = .largeTitleBold
         return button
     }()
+
+    // MARK: - Lifecycle
+    init(configurator: MenuConfiguratorProtocol) {
+        self.configurator = configurator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+        setupConstraints()
+        setupTargets()
+
+        blockUI()
+        output?.fetchMenu()
+    }
     
     // MARK: - Public Methods:
     func setup(_ output: MenuViewControllerOutputProtocol) {
@@ -35,19 +58,34 @@ final class MenuViewController: UIViewController {
 
 // MARK: - MenuViewControllerInputProtocol:
 extension MenuViewController: MenuViewControllerInputProtocol {
+    func productsDidDownloaded() {
+        let newAmount = output?.products.count ?? 0
+        
+        menuCollectionView.performBatchUpdates {
+            for index in (0..<newAmount) {
+                menuCollectionView.insertItems(at: [IndexPath(row: index, section: 0)])
+            }
+        }
+    }
     
+    func productsDidNotDownloaded() {
+        
+    }
 }
 
 // MARK: - UICollectionViewDataSource:
 extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        output?.products.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: Resources.Identifiers.menuCollectionViewCell, for: indexPath) as? MenuCollectionViewCell else { return UICollectionViewCell() }
+            withReuseIdentifier: Resources.Identifiers.menuCollectionViewCell, for: indexPath),
+              let products = output?.products as? MenuCollectionViewCell else { return UICollectionViewCell() }
         
+        cell.
+
         return cell
     }
 }
@@ -67,7 +105,7 @@ extension MenuViewController {
     }
 }
 
-// MARK: - Setup Constraints::
+// MARK: - Setup Constraints:
 extension MenuViewController {
     func setupConstraints() {
         setupMenuCollectionViewConstraints()
@@ -87,5 +125,12 @@ extension MenuViewController {
             make.right.equalTo(-LocalUIConstants.buttonSideInset)
             make.bottom.equalTo(-LocalUIConstants.buttonBottomInset)
         }
+    }
+}
+
+// MARK: - Setup Targets:
+extension MenuViewController {
+    func setupTargets() {
+        
     }
 }

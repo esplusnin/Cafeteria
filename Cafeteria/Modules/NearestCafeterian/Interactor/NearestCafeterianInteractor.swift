@@ -66,7 +66,7 @@ final class NearestCafeterianInteractor {
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let token):
-                        self.keyChainStorage.setNew(token)
+                        self.keyChainStorage.setNew(token, login, password)
                         self.requestLocations()
                     case .failure(_ :):
                         self.output?.locationsDidNotUpdate()

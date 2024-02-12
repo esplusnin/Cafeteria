@@ -8,6 +8,12 @@ final class MenuCollectionViewCell: UICollectionViewCell {
         static let labelInset: CGFloat = 10
     }
     
+    private var product: Product? {
+        didSet {
+            setupCellUI()
+        }
+    }
+    
     // MARK: - UI:
     private lazy var productImageView: UIImageView = {
         let imageView = UIImageView()
@@ -42,6 +48,18 @@ final class MenuCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Public Methods:
+    func setupModel(_ product: Product) {
+        self.product = product
+    }
+    
+    // MARK: - Private Methods:
+    private func setupCellUI() {
+        guard let product else { return }
+        titleLabel.text = product.name
+        priceLabel.text = String(product.price)
     }
 }
 
