@@ -64,6 +64,8 @@ extension MapViewController: MapViewControllerInputProtocol {
         locations.forEach {
             let placemark: YMKPlacemarkMapObject = mapView.mapWindow.map.mapObjects.addPlacemark()
             placemark.geometry = YMKPoint(latitude: $0.latitude, longitude: $0.longitude)
+            placemark.addTapListener(with: self)
+            placemark.userData = $0.id
             
             let compositionIcon = placemark.useCompositeIcon()
             
@@ -95,6 +97,17 @@ extension MapViewController: MapViewControllerInputProtocol {
             let point = locations[1]
             moveTo(YMKPoint(latitude: point.latitude, longitude: point.longitude))
         }
+    }
+}
+
+// MARK: - YMKMapObjectTapListener:
+extension MapViewController: YMKMapObjectTapListener {
+    func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
+        guard let placemark = mapObject as? YMKPlacemarkMapObject,
+              let id = placemark.userData as? Int else { return false }
+
+        output?.goToMenu(with: id)
+        return true
     }
 }
 

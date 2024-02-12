@@ -79,7 +79,6 @@
 		7E94FE7B2B79182400DAEAD1 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE7A2B79182400DAEAD1 /* MapRouter.swift */; };
 		7E94FE7D2B79194900DAEAD1 /* MapConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE7C2B79194900DAEAD1 /* MapConfigurator.swift */; };
 		7E94FE862B793A3D00DAEAD1 /* MapConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE852B793A3D00DAEAD1 /* MapConfiguratorProtocol.swift */; };
-		7E94FE8A2B793C5800DAEAD1 /* NearestCafeterianPresenterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE892B793C5800DAEAD1 /* NearestCafeterianPresenterOutputProtocol.swift */; };
 		7E94FE8C2B793E7C00DAEAD1 /* MapPresenterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE8B2B793E7C00DAEAD1 /* MapPresenterInputProtocol.swift */; };
 		7E94FE8F2B79487700DAEAD1 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE8E2B79487700DAEAD1 /* Placemark.swift */; };
 		7E94FE9A2B7966A900DAEAD1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FE992B7966A900DAEAD1 /* MenuViewController.swift */; };
@@ -98,6 +97,8 @@
 		7E94FEBF2B7974C000DAEAD1 /* MenuRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEBE2B7974C000DAEAD1 /* MenuRouterInputProtocol.swift */; };
 		7E94FEC12B7974C700DAEAD1 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEC02B7974C700DAEAD1 /* MenuRouter.swift */; };
 		7E94FEC32B7975F200DAEAD1 /* MenuPresenterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEC22B7975F200DAEAD1 /* MenuPresenterInputProtocol.swift */; };
+		7E94FEC62B7A0D5100DAEAD1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FEC52B7A0D5100DAEAD1 /* Kingfisher */; };
+		7E94FEC82B7A180D00DAEAD1 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEC72B7A180D00DAEAD1 /* UIView + Extension.swift */; };
 		7ED51D302B75EC6200696C84 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D2F2B75EC6200696C84 /* Resources.swift */; };
 		7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */; };
 		E0CE78FD3DD3822A4E402A50 /* Pods_Cafeteria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */; };
@@ -188,7 +189,6 @@
 		7E94FE7A2B79182400DAEAD1 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
 		7E94FE7C2B79194900DAEAD1 /* MapConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfigurator.swift; sourceTree = "<group>"; };
 		7E94FE852B793A3D00DAEAD1 /* MapConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfiguratorProtocol.swift; sourceTree = "<group>"; };
-		7E94FE892B793C5800DAEAD1 /* NearestCafeterianPresenterOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestCafeterianPresenterOutputProtocol.swift; sourceTree = "<group>"; };
 		7E94FE8B2B793E7C00DAEAD1 /* MapPresenterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenterInputProtocol.swift; sourceTree = "<group>"; };
 		7E94FE8E2B79487700DAEAD1 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
 		7E94FE992B7966A900DAEAD1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +207,7 @@
 		7E94FEBE2B7974C000DAEAD1 /* MenuRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouterInputProtocol.swift; sourceTree = "<group>"; };
 		7E94FEC02B7974C700DAEAD1 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		7E94FEC22B7975F200DAEAD1 /* MenuPresenterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenterInputProtocol.swift; sourceTree = "<group>"; };
+		7E94FEC72B7A180D00DAEAD1 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		7ED51D2F2B75EC6200696C84 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationDTO.swift; sourceTree = "<group>"; };
 		A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cafeteria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E94FEC62B7A0D5100DAEAD1 /* Kingfisher in Frameworks */,
 				7E94FE572B78E84700DAEAD1 /* SnapKit in Frameworks */,
 				7E94FDE12B75F4F900DAEAD1 /* KeychainAccess in Frameworks */,
 				7E94FDDE2B75F23A00DAEAD1 /* Alamofire in Frameworks */,
@@ -344,6 +346,7 @@
 			children = (
 				7E29C83A2B74C43C00647D9F /* UIFont + Extension.swift */,
 				7E94FE1B2B76346F00DAEAD1 /* UIViewController + Extension.swift */,
+				7E94FEC72B7A180D00DAEAD1 /* UIView + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -660,7 +663,6 @@
 		7E94FE272B76654100DAEAD1 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				7E94FE882B793C4200DAEAD1 /* Protocols */,
 				7E94FE362B7665E100DAEAD1 /* NearestCafeterianPresenter.swift */,
 			);
 			path = Presenter;
@@ -842,14 +844,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		7E94FE882B793C4200DAEAD1 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7E94FE892B793C5800DAEAD1 /* NearestCafeterianPresenterOutputProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		7E94FE8D2B79486700DAEAD1 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,6 +996,7 @@
 				7E94FDE02B75F4F900DAEAD1 /* KeychainAccess */,
 				7E94FE562B78E84700DAEAD1 /* SnapKit */,
 				7E94FE5B2B78EEEE00DAEAD1 /* SnapKit-Dynamic */,
+				7E94FEC52B7A0D5100DAEAD1 /* Kingfisher */,
 			);
 			productName = Cafeteria;
 			productReference = 7E29C8032B74B1F400647D9F /* Cafeteria.app */;
@@ -1034,6 +1029,7 @@
 				7E94FDDC2B75F23A00DAEAD1 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				7E94FDDF2B75F4F900DAEAD1 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				7E94FE552B78E84700DAEAD1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7E94FEC42B7A0D5100DAEAD1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 7E29C8042B74B1F400647D9F /* Products */;
 			projectDirPath = "";
@@ -1158,7 +1154,6 @@
 				7E94FE302B76658600DAEAD1 /* NearestCafeterianViewOutputProtocol.swift in Sources */,
 				7E94FE9A2B7966A900DAEAD1 /* MenuViewController.swift in Sources */,
 				7E94FE1A2B7633F000DAEAD1 /* NearestCafeterianViewController.swift in Sources */,
-				7E94FE8A2B793C5800DAEAD1 /* NearestCafeterianPresenterOutputProtocol.swift in Sources */,
 				7E94FE2E2B76657C00DAEAD1 /* NearestCafeterianViewControllerInputProtocol.swift in Sources */,
 				7E94FE032B7626D500DAEAD1 /* AuthorizationViewOutputProtocols.swift in Sources */,
 				7E94FE3A2B7665F100DAEAD1 /* NearestCafeterianRouterInputProtocol.swift in Sources */,
@@ -1170,6 +1165,7 @@
 				7ED51D302B75EC6200696C84 /* Resources.swift in Sources */,
 				7E94FEAC2B7973A900DAEAD1 /* MenuViewControllerOutputProtocol.swift in Sources */,
 				7E94FE8F2B79487700DAEAD1 /* Placemark.swift in Sources */,
+				7E94FEC82B7A180D00DAEAD1 /* UIView + Extension.swift in Sources */,
 				7E94FE4E2B78D6D000DAEAD1 /* Location.swift in Sources */,
 				7E94FEA42B79726200DAEAD1 /* MenuConfiguratorProtocol.swift in Sources */,
 				7E94FE112B7629FC00DAEAD1 /* AuthorizationRouter.swift in Sources */,
@@ -1491,6 +1487,14 @@
 				minimumVersion = 5.7.0;
 			};
 		};
+		7E94FEC42B7A0D5100DAEAD1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1513,6 +1517,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7E94FE552B78E84700DAEAD1 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
+		};
+		7E94FEC52B7A0D5100DAEAD1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E94FEC42B7A0D5100DAEAD1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

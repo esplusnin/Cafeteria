@@ -30,11 +30,14 @@ extension MenuInteractor: MenuInteractorInputProtocol {
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             guard let self else { return }
             networkClient?.fetchProducts(with: menuID) { result in
-                switch result {
-                case .success(let products):
-                    self.products = products
-                case .failure(let error):
-                    self.output?.menuDidNotDownloaded()
+                
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let products):
+                        self.products = products
+                    case .failure(_ :):
+                        self.output?.menuDidNotDownloaded()
+                    }
                 }
             }
         }

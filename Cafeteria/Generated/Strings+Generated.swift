@@ -27,6 +27,8 @@ internal enum L10n {
   internal enum Menu {
     /// Перейти к оплате
     internal static let goToPay = L10n.tr("Localizable", "menu.goToPay", fallback: "Перейти к оплате")
+    ///  руб
+    internal static let rub = L10n.tr("Localizable", "menu.rub", fallback: " руб")
     /// Меню
     internal static let title = L10n.tr("Localizable", "menu.title", fallback: "Меню")
   }

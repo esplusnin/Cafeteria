@@ -62,8 +62,9 @@ final class NetworkClient: NetworkClientInputProtocol {
     func fetchProducts(with id: Int, completion: @escaping (Result<[Product], Error>) -> Void) {
         guard let token = KeyChainStorage().token else { return }
         let urlString = Resources.Network.EndPoint.getMenuEndPoint(with: id)
+        let headers: HTTPHeaders = [Resources.Network.Headers.authorization: Resources.Network.Headers.bearer + token]
         
-        AF.request(urlString).responseDecodable(of: [Product].self) { response in
+        AF.request(urlString, headers: headers).responseDecodable(of: [Product].self) { response in
             switch response.result {
             case .success(let products):
                 completion(.success(products))

@@ -10,8 +10,11 @@ final class MenuViewController: UIViewController {
     
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
-        static let buttonSideInset: CGFloat = 16
+        static let cellHeight: CGFloat = 205
+        static let sideInset: CGFloat = 16
         static let buttonBottomInset: CGFloat = 32
+        static let cellHorizontalSpacing: CGFloat = 13
+        static let countOfCellInRow: CGFloat = 2
     }
     
     // MARK: - UI:
@@ -66,6 +69,8 @@ extension MenuViewController: MenuViewControllerInputProtocol {
                 menuCollectionView.insertItems(at: [IndexPath(row: index, section: 0)])
             }
         }
+        
+        unblock()
     }
     
     func productsDidNotDownloaded() {
@@ -81,10 +86,10 @@ extension MenuViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: Resources.Identifiers.menuCollectionViewCell, for: indexPath),
-              let products = output?.products as? MenuCollectionViewCell else { return UICollectionViewCell() }
+            withReuseIdentifier: Resources.Identifiers.menuCollectionViewCell, for: indexPath) as? MenuCollectionViewCell,
+              let products = output?.products else { return UICollectionViewCell() }
         
-        cell.
+        cell.setupModel(products[indexPath.row])
 
         return cell
     }
@@ -92,7 +97,27 @@ extension MenuViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout:
 extension MenuViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let insetSum = (LocalUIConstants.sideInset * LocalUIConstants.countOfCellInRow) + LocalUIConstants.cellHorizontalSpacing
+        let width = (view.frame.width - insetSum) / LocalUIConstants.countOfCellInRow
+        
+        return CGSize(width: width, height: LocalUIConstants.cellHeight)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        LocalUIConstants.cellHorizontalSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        LocalUIConstants.cellHorizontalSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: LocalUIConstants.sideInset,
+                     left: LocalUIConstants.sideInset,
+                     bottom: LocalUIConstants.sideInset,
+                     right: LocalUIConstants.sideInset)
+    }
 }
 
 // MARK: - Setup Views:
@@ -121,8 +146,8 @@ extension MenuViewController {
     
     func setupGoToPayButtonConstraints() {
         goToPayButton.snp.makeConstraints { make in
-            make.left.equalTo(LocalUIConstants.buttonSideInset)
-            make.right.equalTo(-LocalUIConstants.buttonSideInset)
+            make.left.equalTo(LocalUIConstants.sideInset)
+            make.right.equalTo(-LocalUIConstants.sideInset)
             make.bottom.equalTo(-LocalUIConstants.buttonBottomInset)
         }
     }

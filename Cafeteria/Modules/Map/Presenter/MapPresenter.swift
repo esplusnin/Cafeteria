@@ -23,6 +23,10 @@ extension MapPresenter: MapViewControllerOutputProtocol {
     func requestPlacemarks() {
         view?.addPlacemarks(from: placemarks)
     }
+    
+    func goToMenu(with id: Int) {
+        router.goToMenu(with: id)
+    }
 }
 
 // MARK: - MapInteractorOutputProtocol:

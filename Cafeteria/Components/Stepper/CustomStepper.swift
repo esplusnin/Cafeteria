@@ -5,7 +5,6 @@ final class CustomStepper: UIView {
     
     // MARK: - Constants and Variables:
     private enum LocalUIConstraint {
-        static let spacing: CGFloat = 9
         static let buttonSide: CGFloat = 24
     }
     
@@ -19,7 +18,7 @@ final class CustomStepper: UIView {
     private lazy var stepperStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = LocalUIConstraint.spacing
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
@@ -32,6 +31,8 @@ final class CustomStepper: UIView {
     private(set) lazy var countLabel: UILabel = {
         let label = UILabel()
         label.font = .bodySmall
+        label.textColor = Asset.Colors.textBrown.color
+        label.textAlignment = .center
         label.text = String(counter)
         return label
     }()
@@ -75,19 +76,12 @@ extension CustomStepper {
 // MARK: - Setup Constraints:
 extension CustomStepper {
     func setupConstraints() {
-        setupDecrementButtonConstraints()
-        setupIncrementButtonConstraints()
+        setupStepperStackViewConstratints()
     }
     
-    func setupDecrementButtonConstraints() {
-        dicrementButton.snp.makeConstraints { make in
-            make.height.width.equalTo(LocalUIConstraint.buttonSide)
-        }
-    }
-    
-    func setupIncrementButtonConstraints() {
-        incrementButton.snp.makeConstraints { make in
-            make.height.width.equalTo(LocalUIConstraint.buttonSide)
+    func setupStepperStackViewConstratints() {
+        stepperStackView.snp.makeConstraints { make in
+            make.top.left.bottom.right.equalToSuperview()
         }
     }
 }

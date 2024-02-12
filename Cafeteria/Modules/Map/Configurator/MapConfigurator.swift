@@ -12,6 +12,7 @@ final class MapConfigurator: MapConfiguratorProtocol {
         presenter.view = controller
         interactor.output = presenter
         router.presenter = presenter
+        router.navigation = controller.navigationController
         
         if let locationData {
             router.transfer(locationData)

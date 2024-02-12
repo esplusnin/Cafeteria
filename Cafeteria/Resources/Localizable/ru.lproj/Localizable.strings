@@ -26,6 +26,7 @@
 // MARK: - Menu Screen:
 "menu.title" = "Меню";
 "menu.goToPay" = "Перейти к оплате";
+"menu.rub" = " руб";
 
 // MARK: - Order Screen:
 "order.title" = "Ваш заказ";

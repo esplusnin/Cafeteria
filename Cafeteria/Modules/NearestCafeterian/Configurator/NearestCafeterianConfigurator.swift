@@ -2,10 +2,9 @@ import Foundation
 
 final class NearestCafeterianConfigurator {
     func configure(_ controller: NearestCafeterianViewController) {
-        let networkClient = NetworkClient()
         let interactor = NearestCafeterianInteractor()
         let router = NearestCafeterianRouter()
-        let presenter = NearestCafeterianPresenter(interactor: interactor, router: router, output: router)
+        let presenter = NearestCafeterianPresenter(interactor: interactor, router: router)
         
         controller.setup(presenter)
         presenter.view = controller

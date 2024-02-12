@@ -1,5 +1,6 @@
 import Foundation
 
 protocol NearestCafeterianRouterInputProtocol: AnyObject {
-    func goToMap()
+    func goToMap(with locationData: [LocationDTO])
+    func goToMenu(with id: Int)
 }

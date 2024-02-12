@@ -9,15 +9,10 @@ final class CafeterinanCollectionViewCell: UICollectionViewCell {
         static let horizontalInset: CGFloat = 10
         static let verticalInset: CGFloat = 14
         static let cornerRadius: CGFloat = 10
-        
-        static let shadowOpacity: Float = 0.25
-        static let shadowRadius: CGFloat = 2
-        static let shadowHeight: CGFloat = 2
     }
     
     private var location: Location? {
         didSet {
-            guard let location else { return }
             setupCellUI()
         }
     }
@@ -31,6 +26,7 @@ final class CafeterinanCollectionViewCell: UICollectionViewCell {
     private lazy var titlesStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = LocalUIConstants.stackViewSpacing
         return stackView
     }()
     
@@ -61,7 +57,7 @@ final class CafeterinanCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        addShadow()
+        contentBackgroundView.setupShadow()
     }
     
     // MARK: - Public Methods:
@@ -74,21 +70,13 @@ final class CafeterinanCollectionViewCell: UICollectionViewCell {
         cafeterianTitleLabel.text = location?.name
         distanceLabel.text = location?.distance
     }
-    
-    private func addShadow() {
-        contentBackgroundView.layer.cornerRadius = LocalUIConstants.cornerRadius
-        contentBackgroundView.backgroundColor = Asset.Colors.backgroundLightBrown.color
-        
-        contentBackgroundView.layer.shadowColor = Asset.Colors.backgroundBlack.color.cgColor
-        contentBackgroundView.layer.shadowOpacity = LocalUIConstants.shadowOpacity
-        contentBackgroundView.layer.shadowRadius = LocalUIConstants.shadowRadius
-        contentBackgroundView.layer.shadowOffset = CGSize(width: 0, height: LocalUIConstants.shadowHeight)
-    }
 }
 
 // MARK: - Setup Views:
 private extension CafeterinanCollectionViewCell {
     func setupViews() {
+        contentBackgroundView.backgroundColor = Asset.Colors.backgroundLightBrown.color
+
         addSubview(contentBackgroundView)
         contentBackgroundView.addSubview(titlesStackView)
         [cafeterianTitleLabel, distanceLabel].forEach(titlesStackView.addArrangedSubview)
