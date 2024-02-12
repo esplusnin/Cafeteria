@@ -31,7 +31,14 @@ extension OrderPresenter: OrderPresenterInputProtocol {
 
 // MARK: - OrderViewControllerOutputProtocol:
 extension OrderPresenter: OrderViewControllerOutputProtocol {
+    func changeProductAmount(with id: Int, newValue: Int) {
+        interactor.changeProductAmount(with: id, newValue: newValue)
+    }
     
+    func synchronizeOrder() {
+        let order = interactor.getOrder()
+        router.synchronize(order: order)
+    }
 }
 
 // MARK: - OrderViewControllerOutputProtocol:

@@ -46,6 +46,11 @@ extension MenuPresenter: MenuInteractorOutputProtocol {
     func menuDidNotDownloaded() {
         view?.productsDidNotDownloaded()
     }
+    
+    func menuDidEditedFromOrder() {
+        let order = interactor.getOrder()
+        view?.updatePotential(order)
+    }
 }
 
 // MARK: - MenuPresenterInputProtocol:

@@ -6,20 +6,31 @@ final class OrderInteractor {
     weak var output: OrderInteractorOutputProtocol?
     
     // MARK: - Constants and Variables:
-    private var order: Order? {
+    private var order = Order(products: []) {
         didSet {
-            guard let order else { return }
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                self.output?.orderDidChange(order)
+            if isFirstEntry {
+                isFirstEntry = false
+                output?.orderDidChange(order)
             }
         }
     }
+    
+    private var isFirstEntry = true
 }
 
 // MARK: - OrderInteractorInputProtocol:
 extension OrderInteractor: OrderInteractorInputProtocol {
     func setup(_ order: Order) {
         self.order = order
+    }
+    
+    func changeProductAmount(with id: Int, newValue: Int) {
+        if let index = order.products.firstIndex(where: { $0.id == id }) {
+            order.products[index].changeValue(to: newValue)
+        }
+    }
+    
+    func getOrder() -> Order {
+        order
     }
 }

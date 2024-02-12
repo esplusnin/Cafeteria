@@ -17,11 +17,13 @@ extension MenuRouter: MenuRouterInputProtocol {
     func goToOrderScreen(with order: Order) {
         let configurator = OrderConfigurator()
         let viewController = OrderViewController(configurator: configurator)
+        
         navigation?.pushViewController(viewController, animated: true)
         viewController.configurator.configure(viewController, with: order, delegate: self)
     }
 }
 
+// MARK: - OrderRouterDelegate:
 extension MenuRouter: OrderRouterDelegate {
     func change(_ order: Order) {
         presenter?.orderDidChange(order: order)

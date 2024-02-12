@@ -52,20 +52,14 @@ final class OrderViewController: UIViewController {
         blockUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        output?.synchronizeOrder()
+    }
+    
     // MARK: - Public Methods:
     func setup(_ output: OrderViewControllerOutputProtocol) {
         self.output = output
-    }
-    
-    // MARK: - Private Methods:
-    private func updateCollectionView() {
-        orderCollectionView.performBatchUpdates {
-            let newAmount = output?.order?.products.count ?? 0
-            
-            for index in (0..<newAmount) {
-                orderCollectionView.insertItems(at: [IndexPath(row: index, section: 0)])
-            }
-        }
     }
 }
 
@@ -73,10 +67,20 @@ final class OrderViewController: UIViewController {
 extension OrderViewController: OrderViewControllerInputProtocol {
     func orderDidUpdate() {
         if orderCollectionView.visibleCells.count == 0 {
-            updateCollectionView()
+            orderCollectionView.reloadData()
         }
         
         unblock()
+    }
+}
+
+// MARK: - CustomCollectionViewDelegate:
+extension OrderViewController: CustomCollectionViewCellDelegate {
+    func change(value: Int, fromCell: CustomCollectionViewCell) {
+        guard let indexPath = orderCollectionView.indexPath(for: fromCell),
+              let id = output?.order?.products[indexPath.row].id else { return }
+        
+        output?.changeProductAmount(with: id, newValue: value)
     }
 }
 
@@ -91,7 +95,9 @@ extension OrderViewController: UICollectionViewDataSource {
                                                             for: indexPath) as? CustomCollectionViewCell,
               let product = output?.order?.products[indexPath.row]  else { return UICollectionViewCell() }
         
-        cell.setupCellModel(with: product.name, and: String(product.price))
+        cell.delegate = self
+        cell.setup(state: .order)
+        cell.setupCellModel(with: product.name, and: String(product.price), value: product.amount)
         
         return cell
     }

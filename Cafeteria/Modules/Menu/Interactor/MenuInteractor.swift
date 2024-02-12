@@ -63,5 +63,6 @@ extension MenuInteractor: MenuInteractorInputProtocol {
     
     func orderDidChange(order: Order) {
         self.potentialOrder = order
+        output?.menuDidEditedFromOrder()
     }
 }

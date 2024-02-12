@@ -52,7 +52,7 @@ enum Resources {
     }
     
     enum Symbols {
-        static let plus = UIImage(systemName: "plus")?.withTintColor(Asset.Colors.backgroundLightBrown.color, renderingMode: .alwaysOriginal)
-        static let minus = UIImage(systemName: "minus")?.withTintColor(Asset.Colors.backgroundLightBrown.color, renderingMode: .alwaysOriginal)
+        static let plus = "＋"
+        static let minus = "－"
     }
 }

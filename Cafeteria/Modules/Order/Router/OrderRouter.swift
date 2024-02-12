@@ -15,7 +15,7 @@ final class OrderRouter {
 
 // MARK: - OrderRouterInputProtocol:
 extension OrderRouter: OrderRouterInputProtocol {
-    func orderDidChange(order: Order) {
+    func synchronize(order: Order) {
         delegate?.change(order)
     }
 }

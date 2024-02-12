@@ -1,7 +1,15 @@
 import UIKit
 import SnapKit
 
+enum CustomCellState {
+    case menu
+    case order
+}
+
 final class CustomCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Dependencies:
+    weak var delegate: CustomCollectionViewCellDelegate?
     
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
@@ -9,6 +17,14 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         static let horizontalInset: CGFloat = 10
         static let verticalInset: CGFloat = 14
         static let cornerRadius: CGFloat = 10
+    }
+    
+    private var state: CustomCellState? {
+        didSet {
+            if state == .order {
+                setupStepperView()
+            }
+        }
     }
     
     // MARK: - UI:
@@ -38,6 +54,12 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    private lazy var stepperView: CustomStepper = {
+        let stepperView = CustomStepper()
+        stepperView.delegate = self
+        return stepperView
+    }()
+    
     // MARK: - Lifecycle:
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,9 +77,22 @@ final class CustomCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Public Methods:
-    func setupCellModel(with title: String, and subtitle: String) {
+    func setupCellModel(with title: String, and subtitle: String, value: Int?) {
         titleLabel.text = title
         subTitleLabel.text = subtitle
+        stepperView.setupDefaultCounter(value: value ?? 0)
+    }
+    
+    func setup(state: CustomCellState) {
+        self.state = state
+        stepperView.setup(state: state)
+    }
+}
+
+// MARK: - CustomStepperDelegate:
+extension CustomCollectionViewCell: CustomStepperDelegate {
+    func change(value: Int) {
+        delegate?.change(value: value, fromCell: self)
     }
 }
 
@@ -69,6 +104,11 @@ private extension CustomCollectionViewCell {
         addSubview(contentBackgroundView)
         contentBackgroundView.addSubview(titlesStackView)
         [titleLabel, subTitleLabel].forEach(titlesStackView.addArrangedSubview)
+    }
+    
+    func setupStepperView() {
+        addSubview(stepperView)
+        setupStepperViewConstraints()
     }
 }
 
@@ -93,6 +133,13 @@ private extension CustomCollectionViewCell {
             make.top.equalTo(LocalUIConstants.verticalInset)
             make.left.equalTo(LocalUIConstants.horizontalInset)
             make.right.equalTo(-LocalUIConstants.horizontalInset)
+        }
+    }
+    
+    func setupStepperViewConstraints() {
+        stepperView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalTo(-LocalUIConstants.horizontalInset)
         }
     }
 }

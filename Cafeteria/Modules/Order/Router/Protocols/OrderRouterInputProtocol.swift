@@ -1,5 +1,5 @@
 import Foundation
 
 protocol OrderRouterInputProtocol {
-    func orderDidChange(order: Order)
+    func synchronize(order: Order)
 }

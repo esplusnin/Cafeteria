@@ -13,8 +13,6 @@ final class OrderConfigurator: OrderConfiguratorProtocol {
         router.presenter = presenter
         router.delegate = delegate
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            router.transfer(order)
-        }
+        router.transfer(order)
     }
 }

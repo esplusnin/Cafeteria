@@ -32,7 +32,7 @@ final class MenuViewController: UIViewController {
         button.titleLabel?.font = .largeTitleBold
         return button
     }()
-
+    
     // MARK: - Lifecycle
     init(configurator: MenuConfiguratorProtocol) {
         self.configurator = configurator
@@ -48,14 +48,34 @@ final class MenuViewController: UIViewController {
         setupViews()
         setupConstraints()
         setupTargets()
-
         blockUI()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         output?.fetchMenu()
     }
     
     // MARK: - Public Methods:
     func setup(_ output: MenuViewControllerOutputProtocol) {
         self.output = output
+    }
+    
+    // MARK: - Private Methods:
+    private func updateCollectionView() {
+        let newAmount = output?.products.count ?? 0
+        
+        if menuCollectionView.visibleCells.count == 0 {
+            menuCollectionView.performBatchUpdates {
+                for index in (0..<newAmount) {
+                    menuCollectionView.insertItems(at: [IndexPath(row: index, section: 0)])
+                }
+            }
+        } else {
+            menuCollectionView.reloadData()
+        }
+        
+        unblock()
     }
     
     // MARK: - Objc Methods:
@@ -67,19 +87,21 @@ final class MenuViewController: UIViewController {
 // MARK: - MenuViewControllerInputProtocol:
 extension MenuViewController: MenuViewControllerInputProtocol {
     func productsDidDownloaded() {
-        let newAmount = output?.products.count ?? 0
-        
-        menuCollectionView.performBatchUpdates {
-            for index in (0..<newAmount) {
-                menuCollectionView.insertItems(at: [IndexPath(row: index, section: 0)])
-            }
-        }
-        
-        unblock()
+        updateCollectionView()
     }
     
     func productsDidNotDownloaded() {
         
+    }
+    
+    func updatePotential(_ order: Order) {
+        guard let cells = menuCollectionView.visibleCells as? [MenuCollectionViewCell] else { return }
+        
+        for productDTO in order.products {
+            for (index, cell) in cells.enumerated() where productDTO.name == cell.product?.name {
+                cells[index].setupCounter(value: productDTO.amount)
+            }
+        }
     }
 }
 
@@ -103,6 +125,7 @@ extension MenuViewController: UICollectionViewDataSource {
         
         cell.delegate = self
         cell.setupModel(products[indexPath.row])
+        cell.setup(state: .menu)
 
         return cell
     }
@@ -138,6 +161,7 @@ extension MenuViewController {
     func setupViews() {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
         navigationItem.title = L10n.Menu.title
+        navigationItem.backButtonDisplayMode = .minimal
         
         [menuCollectionView, goToPayButton].forEach(view.addSubview)
     }

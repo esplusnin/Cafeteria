@@ -7,10 +7,12 @@ final class CustomStepper: UIView {
     weak var delegate: CustomStepperDelegate?
     
     // MARK: - Constants and Variables:
-    private enum LocalUIConstraint {
-        static let buttonSide: CGFloat = 24
+    private var state: CustomCellState? {
+        didSet {
+            setupFonts()
+        }
     }
-        
+    
     private var counter = 0 {
         didSet {
             countLabel.text = String(counter)
@@ -28,7 +30,7 @@ final class CustomStepper: UIView {
     
     private lazy var dicrementButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(Resources.Symbols.minus, for: .normal)
+        button.setTitle(Resources.Symbols.minus, for: .normal)
         return button
     }()
     
@@ -43,7 +45,7 @@ final class CustomStepper: UIView {
     
     private lazy var incrementButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(Resources.Symbols.plus, for: .normal)
+        button.setTitle(Resources.Symbols.plus, for: .normal)
         return button
     }()
     
@@ -57,6 +59,34 @@ final class CustomStepper: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Public Methods:
+    func setup(state: CustomCellState) {
+        self.state = state
+    }
+    
+    func setupDefaultCounter(value: Int) {
+        counter = value
+    }
+    
+    // MARK: - Private Methods:
+    func setupFonts() {
+        switch state {
+        case .menu:
+            incrementButton.titleLabel?.font = .mediumTitleBold
+            incrementButton.setTitleColor(Asset.Colors.textSuperLightBrown.color, for: .normal)
+            dicrementButton.titleLabel?.font = .mediumTitleBold
+            dicrementButton.setTitleColor(Asset.Colors.textSuperLightBrown.color, for: .normal)
+        case .order:
+            incrementButton.titleLabel?.font = .largeTitleBold
+            incrementButton.setTitleColor(Asset.Colors.textBrown.color, for: .normal)
+            dicrementButton.titleLabel?.font = .largeTitleBold
+            dicrementButton.setTitleColor(Asset.Colors.textBrown.color, for: .normal)
+            countLabel.font = .largeTitleBold
+        default:
+            break
+        }
     }
     
     // MARK: - Objc Methods:

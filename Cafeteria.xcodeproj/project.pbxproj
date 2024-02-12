@@ -116,6 +116,7 @@
 		7E94FEFC2B7A373C00DAEAD1 /* OrderPresenterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEFB2B7A373C00DAEAD1 /* OrderPresenterInputProtocol.swift */; };
 		7E94FF002B7A3BE000DAEAD1 /* OrderRouterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEFF2B7A3BE000DAEAD1 /* OrderRouterDelegate.swift */; };
 		7E94FF022B7A3CBB00DAEAD1 /* OrderRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FF012B7A3CBB00DAEAD1 /* OrderRouterInputProtocol.swift */; };
+		7E94FF042B7A73F100DAEAD1 /* CustomCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FF032B7A73F100DAEAD1 /* CustomCollectionViewCellDelegate.swift */; };
 		7ED51D302B75EC6200696C84 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D2F2B75EC6200696C84 /* Resources.swift */; };
 		7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */; };
 		E0CE78FD3DD3822A4E402A50 /* Pods_Cafeteria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */; };
@@ -242,6 +243,7 @@
 		7E94FEFB2B7A373C00DAEAD1 /* OrderPresenterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPresenterInputProtocol.swift; sourceTree = "<group>"; };
 		7E94FEFF2B7A3BE000DAEAD1 /* OrderRouterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRouterDelegate.swift; sourceTree = "<group>"; };
 		7E94FF012B7A3CBB00DAEAD1 /* OrderRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRouterInputProtocol.swift; sourceTree = "<group>"; };
+		7E94FF032B7A73F100DAEAD1 /* CustomCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
 		7ED51D2F2B75EC6200696C84 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationDTO.swift; sourceTree = "<group>"; };
 		A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cafeteria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1102,6 +1104,7 @@
 		7E94FEDD2B7A2FA400DAEAD1 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				7E94FF032B7A73F100DAEAD1 /* CustomCollectionViewCellDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1357,6 +1360,7 @@
 				7E94FEC82B7A180D00DAEAD1 /* UIView + Extension.swift in Sources */,
 				7E94FE4E2B78D6D000DAEAD1 /* Location.swift in Sources */,
 				7E94FEA42B79726200DAEAD1 /* MenuConfiguratorProtocol.swift in Sources */,
+				7E94FF042B7A73F100DAEAD1 /* CustomCollectionViewCellDelegate.swift in Sources */,
 				7E94FE112B7629FC00DAEAD1 /* AuthorizationRouter.swift in Sources */,
 				7E94FEBF2B7974C000DAEAD1 /* MenuRouterInputProtocol.swift in Sources */,
 				7E94FEE02B7A307900DAEAD1 /* OrderViewControllerInputProtocol.swift in Sources */,
