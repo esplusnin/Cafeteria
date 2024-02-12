@@ -1,0 +1,44 @@
+// MARK: - Registration Screen:
+"registration.registration" = "Регистрация";
+"registration.email" = "e-mail";
+"registration.emailPlaceholder" = "Введите email";
+"registration.password" = "Пароль";
+"registration.passwordPlaceholder" = "******";
+"registration.repeatPassword" = "Повторите пароль";
+"registration.enterLogin" = "Вы уже зарегистрированы?";
+
+// MARK: - Authorization Screen:
+"authorization.title" = "Вход";
+"authorization.email" = "e-mail";
+"authorization.password" = "Пароль";
+"authorization.enter" = "Войти";
+
+// MARK: - Nearest Cafeterian Screen:
+"nearestCafeterian.title" = "Ближайшие кофейни";
+"nearestCafeterian.m" = " м ";
+"nearestCafeterian.km" = " км ";
+"nearestCafeterian.fromYou" = "от вас";
+"nearestCafeterian.onMap" = "На карте";
+
+// MARK: - Map Screen:
+"map.title" = "Карта";
+
+// MARK: - Menu Screen:
+"menu.title" = "Меню";
+"menu.goToPay" = "Перейти к оплате";
+"menu.rub" = " руб";
+
+// MARK: - Order Screen:
+"order.title" = "Ваш заказ";
+"order.thanks" = "Время ожидания заказа\n 15 минут!\nСпасибо, что выбрали нас!";
+"order.pay" = "Оплатить";
+
+// MARK: - Notification Banner:
+"warning.title" = "Ошибка";
+"warning.invalidEmail" = "Проверьте email";
+"warning.invalidPassword" = "Проверьте пароль";
+"warning.accountDidNotCreate" = "Не удалось создать аккаунт";
+"warning.accountDidNotAuthorize" = "Не удалось авторизоваться";
+"warning.locationsDidNotUpdate" = "Не удалось загрузить локации";
+"warning.menuDidNotDownloaded" = "Не удалось загрузить меню";
+
