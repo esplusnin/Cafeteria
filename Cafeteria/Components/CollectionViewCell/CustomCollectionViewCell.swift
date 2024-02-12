@@ -11,12 +11,6 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         static let cornerRadius: CGFloat = 10
     }
     
-    private var location: Location? {
-        didSet {
-            setupCellUI()
-        }
-    }
-    
     // MARK: - UI:
     private lazy var contentBackgroundView: UIView = {
         let view = UIView()
@@ -30,14 +24,14 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
-    private lazy var cafeterianTitleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
        let label = UILabel()
         label.font = .largeTitleBold
         label.textColor = Asset.Colors.textBrown.color
         return label
     }()
     
-    private lazy var distanceLabel: UILabel = {
+    private lazy var subTitleLabel: UILabel = {
        let label = UILabel()
         label.font = .bodySmall
         label.textColor = Asset.Colors.textLightBrown.color
@@ -61,14 +55,9 @@ final class CustomCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Public Methods:
-    func setup(_ location: Location) {
-        self.location = location
-    }
-        
-    // MARK: - Private Methods:
-    private func setupCellUI() {
-        cafeterianTitleLabel.text = location?.name
-        distanceLabel.text = location?.distance
+    func setupCellModel(with title: String, and subtitle: String) {
+        titleLabel.text = title
+        subTitleLabel.text = subtitle
     }
 }
 
@@ -79,7 +68,7 @@ private extension CustomCollectionViewCell {
 
         addSubview(contentBackgroundView)
         contentBackgroundView.addSubview(titlesStackView)
-        [cafeterianTitleLabel, distanceLabel].forEach(titlesStackView.addArrangedSubview)
+        [titleLabel, subTitleLabel].forEach(titlesStackView.addArrangedSubview)
     }
 }
 

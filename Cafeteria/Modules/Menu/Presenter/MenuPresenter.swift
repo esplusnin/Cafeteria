@@ -27,8 +27,13 @@ extension MenuPresenter: MenuViewControllerOutputProtocol {
         interactor.fetchMenu()
     }
     
-    func changeProductAmount(with id: Int, newValue: Int) {
-        interactor.changeProductAmount(with: id, newValue: newValue)
+    func changeProductAmount(with id: Int, name: String, price: Int, newValue: Int) {
+        interactor.changeProductAmount(with: id, name: name, price: price, newValue: newValue)
+    }
+    
+    func goTouOrderScreen() {
+        let order = interactor.getOrder()
+        router.goToOrderScreen(with: order)
     }
 }
 
@@ -47,5 +52,9 @@ extension MenuPresenter: MenuInteractorOutputProtocol {
 extension MenuPresenter: MenuPresenterInputProtocol {
     func setMenu(_ id: Int) {
         interactor.setup(id)
+    }
+    
+    func orderDidChange(order: Order) {
+        interactor.orderDidChange(order: order)
     }
 }

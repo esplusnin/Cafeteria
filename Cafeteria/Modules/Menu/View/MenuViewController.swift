@@ -57,6 +57,11 @@ final class MenuViewController: UIViewController {
     func setup(_ output: MenuViewControllerOutputProtocol) {
         self.output = output
     }
+    
+    // MARK: - Objc Methods:
+    @objc private func goToOrderScreen() {
+        output?.goTouOrderScreen()
+    }
 }
 
 // MARK: - MenuViewControllerInputProtocol:
@@ -80,8 +85,8 @@ extension MenuViewController: MenuViewControllerInputProtocol {
 
 // MARK: - MenuCollectionViewCellDelegate:
 extension MenuViewController: MenuCollectionViewCellDelegate {
-    func changeProductAmount(with id: Int, newValue: Int) {
-        output?.changeProductAmount(with: id, newValue: newValue)
+    func changeProductAmount(with id: Int, name: String, price: Int, newValue: Int) {
+        output?.changeProductAmount(with: id, name: name, price: price, newValue: newValue)
     }
 }
 
@@ -164,6 +169,6 @@ extension MenuViewController {
 // MARK: - Setup Targets:
 extension MenuViewController {
     func setupTargets() {
-        
+        goToPayButton.addTarget(self, action: #selector(goToOrderScreen), for: .touchUpInside)
     }
 }

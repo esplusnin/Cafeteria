@@ -5,6 +5,9 @@ final class OrderViewController: UIViewController {
     // MARK: - Dependencies:
     private var output: OrderViewControllerOutputProtocol?
     
+    // MARK: - Classes:
+    let configurator: OrderConfiguratorProtocol
+    
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
         static let collectionViewTopInset: CGFloat = 15
@@ -32,32 +35,63 @@ final class OrderViewController: UIViewController {
     }()
     
     // MARK: - Lifecycle:
+    init(configurator: OrderConfiguratorProtocol) {
+        self.configurator = configurator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        
+        blockUI()
     }
     
     // MARK: - Public Methods:
     func setup(_ output: OrderViewControllerOutputProtocol) {
         self.output = output
     }
+    
+    // MARK: - Private Methods:
+    private func updateCollectionView() {
+        orderCollectionView.performBatchUpdates {
+            let newAmount = output?.order?.products.count ?? 0
+            
+            for index in (0..<newAmount) {
+                orderCollectionView.insertItems(at: [IndexPath(row: index, section: 0)])
+            }
+        }
+    }
 }
 
 // MARK: - OrderViewControllerInputProtocol:
 extension OrderViewController: OrderViewControllerInputProtocol {
-    
+    func orderDidUpdate() {
+        if orderCollectionView.visibleCells.count == 0 {
+            updateCollectionView()
+        }
+        
+        unblock()
+    }
 }
 
 // MARK: - UICollectionViewDataSource:
 extension OrderViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        output?.order?.products.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.cafeterianCollectionViewCell,
-                                                            for: indexPath) as? CustomCollectionViewCell else { return UICollectionViewCell() }
+                                                            for: indexPath) as? CustomCollectionViewCell,
+              let product = output?.order?.products[indexPath.row]  else { return UICollectionViewCell() }
+        
+        cell.setupCellModel(with: product.name, and: String(product.price))
         
         return cell
     }
@@ -65,14 +99,20 @@ extension OrderViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout:
 extension OrderViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: orderCollectionView.frame.width, height: LocalUIConstants.collectionViewCellHeight)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        LocalUIConstants.cellsSpacing
+    }
 }
 
 // MARK: - Setup Views:
 private extension OrderViewController {
     func setupViews() {
-        navigationItem.title = L10n.NearestCafeterian.title
-        navigationItem.hidesBackButton = true
+        navigationItem.title = L10n.Order.title
+        navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
         view.backgroundColor = Asset.Colors.backgroundWhite.color
 
         [orderCollectionView, toPayButton].forEach(view.addSubview)

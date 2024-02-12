@@ -88,8 +88,8 @@ final class MenuCollectionViewCell: UICollectionViewCell {
 // MARK: - CustomStepperDelegate:
 extension MenuCollectionViewCell: CustomStepperDelegate {
     func change(value: Int) {
-        guard let id = product?.id else { return }
-        delegate?.changeProductAmount(with: id, newValue: value)
+        guard let product else { return }
+        delegate?.changeProductAmount(with: product.id, name: product.name, price: product.price, newValue: value)
     }
 }
 
