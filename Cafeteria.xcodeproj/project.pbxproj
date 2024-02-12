@@ -103,6 +103,16 @@
 		7E94FED62B7A274100DAEAD1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FED52B7A274100DAEAD1 /* Order.swift */; };
 		7E94FED82B7A27BE00DAEAD1 /* ProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FED72B7A27BE00DAEAD1 /* ProductDTO.swift */; };
 		7E94FEDB2B7A2B0600DAEAD1 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEDA2B7A2B0600DAEAD1 /* OrderViewController.swift */; };
+		7E94FEE02B7A307900DAEAD1 /* OrderViewControllerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEDF2B7A307900DAEAD1 /* OrderViewControllerInputProtocol.swift */; };
+		7E94FEE22B7A308600DAEAD1 /* OrderViewControllerOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEE12B7A308600DAEAD1 /* OrderViewControllerOutputProtocol.swift */; };
+		7E94FEE52B7A30AD00DAEAD1 /* OrderConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEE42B7A30AD00DAEAD1 /* OrderConfiguratorProtocol.swift */; };
+		7E94FEE72B7A30BC00DAEAD1 /* OrderConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEE62B7A30BC00DAEAD1 /* OrderConfigurator.swift */; };
+		7E94FEEB2B7A30E100DAEAD1 /* OrderInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEEA2B7A30E100DAEAD1 /* OrderInteractorInputProtocol.swift */; };
+		7E94FEED2B7A30F400DAEAD1 /* OrderInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEEC2B7A30F400DAEAD1 /* OrderInteractorOutputProtocol.swift */; };
+		7E94FEEF2B7A314300DAEAD1 /* OrderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEEE2B7A314300DAEAD1 /* OrderInteractor.swift */; };
+		7E94FEF12B7A318100DAEAD1 /* OrderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEF02B7A318100DAEAD1 /* OrderPresenter.swift */; };
+		7E94FEF42B7A31AD00DAEAD1 /* OrderRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEF32B7A31AD00DAEAD1 /* OrderRouterInputProtocol.swift */; };
+		7E94FEF62B7A31BF00DAEAD1 /* OrderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEF52B7A31BF00DAEAD1 /* OrderRouter.swift */; };
 		7ED51D302B75EC6200696C84 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D2F2B75EC6200696C84 /* Resources.swift */; };
 		7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */; };
 		E0CE78FD3DD3822A4E402A50 /* Pods_Cafeteria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */; };
@@ -216,6 +226,16 @@
 		7E94FED52B7A274100DAEAD1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		7E94FED72B7A27BE00DAEAD1 /* ProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDTO.swift; sourceTree = "<group>"; };
 		7E94FEDA2B7A2B0600DAEAD1 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		7E94FEDF2B7A307900DAEAD1 /* OrderViewControllerInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewControllerInputProtocol.swift; sourceTree = "<group>"; };
+		7E94FEE12B7A308600DAEAD1 /* OrderViewControllerOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewControllerOutputProtocol.swift; sourceTree = "<group>"; };
+		7E94FEE42B7A30AD00DAEAD1 /* OrderConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfiguratorProtocol.swift; sourceTree = "<group>"; };
+		7E94FEE62B7A30BC00DAEAD1 /* OrderConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfigurator.swift; sourceTree = "<group>"; };
+		7E94FEEA2B7A30E100DAEAD1 /* OrderInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		7E94FEEC2B7A30F400DAEAD1 /* OrderInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		7E94FEEE2B7A314300DAEAD1 /* OrderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInteractor.swift; sourceTree = "<group>"; };
+		7E94FEF02B7A318100DAEAD1 /* OrderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPresenter.swift; sourceTree = "<group>"; };
+		7E94FEF32B7A31AD00DAEAD1 /* OrderRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRouterInputProtocol.swift; sourceTree = "<group>"; };
+		7E94FEF52B7A31BF00DAEAD1 /* OrderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRouter.swift; sourceTree = "<group>"; };
 		7ED51D2F2B75EC6200696C84 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationDTO.swift; sourceTree = "<group>"; };
 		A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cafeteria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -996,6 +1016,8 @@
 		7E94FECA2B7A260000DAEAD1 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
+				7E94FEE32B7A30A300DAEAD1 /* Protocols */,
+				7E94FEE62B7A30BC00DAEAD1 /* OrderConfigurator.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -1011,6 +1033,7 @@
 		7E94FECC2B7A261400DAEAD1 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				7E94FEF02B7A318100DAEAD1 /* OrderPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1018,6 +1041,8 @@
 		7E94FECD2B7A261800DAEAD1 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				7E94FEE82B7A30D400DAEAD1 /* Protocols */,
+				7E94FEEE2B7A314300DAEAD1 /* OrderInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -1025,6 +1050,7 @@
 		7E94FECE2B7A261C00DAEAD1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7E94FEDE2B7A306E00DAEAD1 /* Protocols */,
 				7E94FEDA2B7A2B0600DAEAD1 /* OrderViewController.swift */,
 			);
 			path = View;
@@ -1033,6 +1059,8 @@
 		7E94FECF2B7A262200DAEAD1 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				7E94FEF22B7A31A300DAEAD1 /* Protocols */,
+				7E94FEF52B7A31BF00DAEAD1 /* OrderRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -1066,6 +1094,40 @@
 		7E94FEDD2B7A2FA400DAEAD1 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7E94FEDE2B7A306E00DAEAD1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FEDF2B7A307900DAEAD1 /* OrderViewControllerInputProtocol.swift */,
+				7E94FEE12B7A308600DAEAD1 /* OrderViewControllerOutputProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7E94FEE32B7A30A300DAEAD1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FEE42B7A30AD00DAEAD1 /* OrderConfiguratorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7E94FEE82B7A30D400DAEAD1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FEEA2B7A30E100DAEAD1 /* OrderInteractorInputProtocol.swift */,
+				7E94FEEC2B7A30F400DAEAD1 /* OrderInteractorOutputProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7E94FEF22B7A31A300DAEAD1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7E94FEF32B7A31AD00DAEAD1 /* OrderRouterInputProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1245,8 +1307,10 @@
 				7E29C8652B75234300647D9F /* RegistrationViewInputProtocol.swift in Sources */,
 				7E94FE242B763C1500DAEAD1 /* CustomCollectionViewCell.swift in Sources */,
 				7E94FE6C2B7912F800DAEAD1 /* MapViewControllerOutputProtocol.swift in Sources */,
+				7E94FEED2B7A30F400DAEAD1 /* OrderInteractorOutputProtocol.swift in Sources */,
 				7E94FDE42B75F50F00DAEAD1 /* KeyChainStorage.swift in Sources */,
 				7E29C87D2B754CF600647D9F /* RegistrationInteractorOutputProtocol.swift in Sources */,
+				7E94FEF62B7A31BF00DAEAD1 /* OrderRouter.swift in Sources */,
 				7E94FE052B76274E00DAEAD1 /* AuthorizationConfigurator.swift in Sources */,
 				7E29C86F2B75480F00647D9F /* RegistrationViewOutputProtocol.swift in Sources */,
 				7E29C82E2B74B84E00647D9F /* XCAssets+Generated.swift in Sources */,
@@ -1270,12 +1334,16 @@
 				7E94FEA42B79726200DAEAD1 /* MenuConfiguratorProtocol.swift in Sources */,
 				7E94FE112B7629FC00DAEAD1 /* AuthorizationRouter.swift in Sources */,
 				7E94FEBF2B7974C000DAEAD1 /* MenuRouterInputProtocol.swift in Sources */,
+				7E94FEE02B7A307900DAEAD1 /* OrderViewControllerInputProtocol.swift in Sources */,
 				7E29C8672B75236C00647D9F /* RegistrationPresenter.swift in Sources */,
+				7E94FEEF2B7A314300DAEAD1 /* OrderInteractor.swift in Sources */,
 				7E94FEB72B79744800DAEAD1 /* MenuPresenterOutputProtocol.swift in Sources */,
 				7E94FEAF2B7973C600DAEAD1 /* MenuInteractorInputProtocol.swift in Sources */,
 				7E94FE0D2B76291F00DAEAD1 /* AuthorizationInteractorInputProtocol.swift in Sources */,
 				7E94FEB12B7973E200DAEAD1 /* MenuInteractorOutputProtocol.swift in Sources */,
 				7E29C8072B74B1F400647D9F /* AppDelegate.swift in Sources */,
+				7E94FEE22B7A308600DAEAD1 /* OrderViewControllerOutputProtocol.swift in Sources */,
+				7E94FEEB2B7A30E100DAEAD1 /* OrderInteractorInputProtocol.swift in Sources */,
 				7E29C84B2B75191F00647D9F /* CustomButton.swift in Sources */,
 				7E94FE8C2B793E7C00DAEAD1 /* MapPresenterInputProtocol.swift in Sources */,
 				7E94FEAA2B79739300DAEAD1 /* MenuViewControllerInputProtocol.swift in Sources */,
@@ -1296,6 +1364,7 @@
 				7E29C8092B74B1F400647D9F /* SceneDelegate.swift in Sources */,
 				7E94FEC32B7975F200DAEAD1 /* MenuPresenterInputProtocol.swift in Sources */,
 				7E94FE722B7917BE00DAEAD1 /* MapInteractorInputProtocol.swift in Sources */,
+				7E94FEE72B7A30BC00DAEAD1 /* OrderConfigurator.swift in Sources */,
 				7E94FE3E2B76666800DAEAD1 /* NearestCafeterianInteractor.swift in Sources */,
 				7E94FED62B7A274100DAEAD1 /* Order.swift in Sources */,
 				7E94FDE92B761E3C00DAEAD1 /* Login.swift in Sources */,
@@ -1315,13 +1384,16 @@
 				7E29C8782B754C2400647D9F /* RegistrationInteractor.swift in Sources */,
 				7E94FE4C2B78D49100DAEAD1 /* LocationManagerDelegate.swift in Sources */,
 				7E94FE002B7626BC00DAEAD1 /* AuthorizationViewInputProtocol.swift in Sources */,
+				7E94FEE52B7A30AD00DAEAD1 /* OrderConfiguratorProtocol.swift in Sources */,
 				7E94FE7B2B79182400DAEAD1 /* MapRouter.swift in Sources */,
 				7E94FE0F2B76292D00DAEAD1 /* AuthorizationInteractorOutputProtocol.swift in Sources */,
 				7E94FE742B7917D000DAEAD1 /* MapInteractorOutputProtocol.swift in Sources */,
 				7E94FE1C2B76346F00DAEAD1 /* UIViewController + Extension.swift in Sources */,
 				7E94FEA72B79736900DAEAD1 /* MenuConfigurator.swift in Sources */,
 				7E29C86D2B75477E00647D9F /* Account.swift in Sources */,
+				7E94FEF42B7A31AD00DAEAD1 /* OrderRouterInputProtocol.swift in Sources */,
 				7E94FE422B766A6F00DAEAD1 /* Point.swift in Sources */,
+				7E94FEF12B7A318100DAEAD1 /* OrderPresenter.swift in Sources */,
 				7E94FED82B7A27BE00DAEAD1 /* ProductDTO.swift in Sources */,
 				7E29C85B2B75220100647D9F /* NetworkClientInputProtocol.swift in Sources */,
 				7E94FE142B762A1100DAEAD1 /* AuthorizationRouterInputProtocol.swift in Sources */,

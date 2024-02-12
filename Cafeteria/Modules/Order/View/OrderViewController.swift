@@ -2,6 +2,9 @@ import UIKit
 
 final class OrderViewController: UIViewController {
     
+    // MARK: - Dependencies:
+    private var output: OrderViewControllerOutputProtocol?
+    
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
         static let collectionViewTopInset: CGFloat = 15
@@ -34,6 +37,16 @@ final class OrderViewController: UIViewController {
         setupViews()
         setupConstraints()
     }
+    
+    // MARK: - Public Methods:
+    func setup(_ output: OrderViewControllerOutputProtocol) {
+        self.output = output
+    }
+}
+
+// MARK: - OrderViewControllerInputProtocol:
+extension OrderViewController: OrderViewControllerInputProtocol {
+    
 }
 
 // MARK: - UICollectionViewDataSource:
