@@ -74,8 +74,6 @@ final class MenuViewController: UIViewController {
         } else {
             menuCollectionView.reloadData()
         }
-        
-        unblock()
     }
     
     // MARK: - Objc Methods:
@@ -88,10 +86,12 @@ final class MenuViewController: UIViewController {
 extension MenuViewController: MenuViewControllerInputProtocol {
     func productsDidDownloaded() {
         updateCollectionView()
+        unblock()
     }
     
     func productsDidNotDownloaded() {
-        
+        unblock()
+        showBanner(subtitle: L10n.Warning.menuDidNotDownloaded)
     }
     
     func updatePotential(_ order: Order) {

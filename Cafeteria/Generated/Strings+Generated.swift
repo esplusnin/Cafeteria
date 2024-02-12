@@ -69,6 +69,22 @@ internal enum L10n {
     /// Повторите пароль
     internal static let repeatPassword = L10n.tr("Localizable", "registration.repeatPassword", fallback: "Повторите пароль")
   }
+  internal enum Warning {
+    /// Не удалось авторизоваться
+    internal static let accountDidNotAuthorize = L10n.tr("Localizable", "warning.accountDidNotAuthorize", fallback: "Не удалось авторизоваться")
+    /// Не удалось создать аккаунт
+    internal static let accountDidNotCreate = L10n.tr("Localizable", "warning.accountDidNotCreate", fallback: "Не удалось создать аккаунт")
+    /// Проверьте email
+    internal static let invalidEmail = L10n.tr("Localizable", "warning.invalidEmail", fallback: "Проверьте email")
+    /// Проверьте пароль
+    internal static let invalidPassword = L10n.tr("Localizable", "warning.invalidPassword", fallback: "Проверьте пароль")
+    /// Не удалось загрузить локации
+    internal static let locationsDidNotUpdate = L10n.tr("Localizable", "warning.locationsDidNotUpdate", fallback: "Не удалось загрузить локации")
+    /// Не удалось загрузить меню
+    internal static let menuDidNotDownloaded = L10n.tr("Localizable", "warning.menuDidNotDownloaded", fallback: "Не удалось загрузить меню")
+    /// Ошибка
+    internal static let title = L10n.tr("Localizable", "warning.title", fallback: "Ошибка")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

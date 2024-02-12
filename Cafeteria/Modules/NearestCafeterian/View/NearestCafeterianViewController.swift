@@ -41,7 +41,6 @@ final class NearestCafeterianViewController: UIViewController {
         setupConstraints()
         setupTargets()
         configurator.configure(self)
-
         blockUI()
         output?.fetchLocations()
     }
@@ -67,6 +66,11 @@ extension NearestCafeterianViewController: NearestCafeterianViewControllerInputP
         }
         
         unblock()
+    }
+    
+    func locationsDidNotUpdate() {
+        unblock()
+        showBanner(subtitle: L10n.Warning.locationsDidNotUpdate)
     }
 }
 

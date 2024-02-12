@@ -30,6 +30,6 @@ extension AuthorizationPresenter: AuthorizationInteractorOutputProtocol {
     }
     
     func accountDidNotAuthorize() {
-        #warning("обработчик ошибок")
+        view?.accountDidNotAuthorize()
     }
 }

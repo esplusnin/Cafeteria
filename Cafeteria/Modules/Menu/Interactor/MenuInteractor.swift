@@ -15,7 +15,6 @@ final class MenuInteractor {
     }
     
     private var potentialOrder = Order(products: [])
-    
     private var menuID: Int?
 }
 

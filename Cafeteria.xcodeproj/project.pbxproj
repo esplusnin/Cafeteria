@@ -117,6 +117,7 @@
 		7E94FF002B7A3BE000DAEAD1 /* OrderRouterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEFF2B7A3BE000DAEAD1 /* OrderRouterDelegate.swift */; };
 		7E94FF022B7A3CBB00DAEAD1 /* OrderRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FF012B7A3CBB00DAEAD1 /* OrderRouterInputProtocol.swift */; };
 		7E94FF042B7A73F100DAEAD1 /* CustomCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FF032B7A73F100DAEAD1 /* CustomCollectionViewCellDelegate.swift */; };
+		7E94FF072B7AAA1500DAEAD1 /* NotificationBannerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E94FF062B7AAA1500DAEAD1 /* NotificationBannerSwift */; };
 		7ED51D302B75EC6200696C84 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D2F2B75EC6200696C84 /* Resources.swift */; };
 		7ED51D322B75F13500696C84 /* AuthorizationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED51D312B75F13500696C84 /* AuthorizationDTO.swift */; };
 		E0CE78FD3DD3822A4E402A50 /* Pods_Cafeteria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62C2EE9A4BC9D76B5800562 /* Pods_Cafeteria.framework */; };
@@ -255,6 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E94FF072B7AAA1500DAEAD1 /* NotificationBannerSwift in Frameworks */,
 				7E94FEC62B7A0D5100DAEAD1 /* Kingfisher in Frameworks */,
 				7E94FE572B78E84700DAEAD1 /* SnapKit in Frameworks */,
 				7E94FDE12B75F4F900DAEAD1 /* KeychainAccess in Frameworks */,
@@ -1187,6 +1189,7 @@
 				7E94FE562B78E84700DAEAD1 /* SnapKit */,
 				7E94FE5B2B78EEEE00DAEAD1 /* SnapKit-Dynamic */,
 				7E94FEC52B7A0D5100DAEAD1 /* Kingfisher */,
+				7E94FF062B7AAA1500DAEAD1 /* NotificationBannerSwift */,
 			);
 			productName = Cafeteria;
 			productReference = 7E29C8032B74B1F400647D9F /* Cafeteria.app */;
@@ -1220,6 +1223,7 @@
 				7E94FDDF2B75F4F900DAEAD1 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				7E94FE552B78E84700DAEAD1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				7E94FEC42B7A0D5100DAEAD1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7E94FF052B7AAA1500DAEAD1 /* XCRemoteSwiftPackageReference "NotificationBanner" */,
 			);
 			productRefGroup = 7E29C8042B74B1F400647D9F /* Products */;
 			projectDirPath = "";
@@ -1703,6 +1707,14 @@
 				minimumVersion = 7.10.2;
 			};
 		};
+		7E94FF052B7AAA1500DAEAD1 /* XCRemoteSwiftPackageReference "NotificationBanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Daltron/NotificationBanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1730,6 +1742,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7E94FEC42B7A0D5100DAEAD1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		7E94FF062B7AAA1500DAEAD1 /* NotificationBannerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E94FF052B7AAA1500DAEAD1 /* XCRemoteSwiftPackageReference "NotificationBanner" */;
+			productName = NotificationBannerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

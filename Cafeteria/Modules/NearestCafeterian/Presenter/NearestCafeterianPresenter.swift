@@ -46,6 +46,6 @@ extension NearestCafeterianPresenter: NearestCafeterianInteractorOutputProtocol 
     }
     
     func locationsDidNotUpdate() {
-        #warning("Обработчик")
+        view?.locationsDidNotUpdate()
     }
 }
