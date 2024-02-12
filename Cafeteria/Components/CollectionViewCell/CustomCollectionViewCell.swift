@@ -80,7 +80,7 @@ final class CustomCollectionViewCell: UICollectionViewCell {
     // MARK: - Public Methods:
     func setupCellModel(with title: String, and subtitle: String, value: Int?) {
         titleLabel.text = title
-        subTitleLabel.text = subtitle
+        subTitleLabel.text = state == .order ? subtitle + L10n.Menu.rub : subtitle
         stepperView.setupDefaultCounter(value: value ?? 0)
     }
     
