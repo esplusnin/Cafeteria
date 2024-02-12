@@ -113,4 +113,8 @@ extension NearestCafeterianInteractor: LocationManagerDelegate {
     func userChangeAuthorizationStatus() {
         fetchLocations()
     }
+    
+    func locationDidNotAllowed() {
+        output?.locationsDidNotUpdate()
+    }
 }

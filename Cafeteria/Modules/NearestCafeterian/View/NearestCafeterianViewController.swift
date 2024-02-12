@@ -41,6 +41,7 @@ final class NearestCafeterianViewController: UIViewController {
         setupConstraints()
         setupTargets()
         configurator.configure(self)
+        
         blockUI()
         output?.fetchLocations()
     }
@@ -60,9 +61,12 @@ final class NearestCafeterianViewController: UIViewController {
 extension NearestCafeterianViewController: NearestCafeterianViewControllerInputProtocol {
     func updateLocationsList() {
         guard let newAmount = output?.locations.count else { return }
-        cafeterianCollectionView.performBatchUpdates {
-            for index in 0..<newAmount {
-                cafeterianCollectionView.insertItems(at: [IndexPath(row: index, section: 0)])
+        
+        if cafeterianCollectionView.visibleCells.count == 0 {
+            cafeterianCollectionView.performBatchUpdates {
+                for index in 0..<newAmount {
+                    cafeterianCollectionView.insertItems(at: [IndexPath(row: index, section: 0)])
+                }
             }
         }
         

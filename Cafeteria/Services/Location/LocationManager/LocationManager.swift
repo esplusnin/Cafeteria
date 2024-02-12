@@ -60,8 +60,13 @@ final class LocationManager: NSObject {
 // MARK: - CLLocationManagerDelegate:
 extension LocationManager: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        if isUsedBefore {
+        switch manager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
             delegate?.userChangeAuthorizationStatus()
+        case .denied, .restricted:
+            delegate?.locationDidNotAllowed()
+        default:
+            break
         }
     }
     
