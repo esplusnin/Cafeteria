@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import NotificationBannerSwift
 
 // MARK: - Block/Unblock UI:
 extension UIViewController {
@@ -29,6 +30,7 @@ extension UIViewController {
     }
 }
 
+// MARK: - End Editing View:
 extension UIViewController {
     func addEndEditingGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(endEditingGesture))
@@ -37,5 +39,13 @@ extension UIViewController {
     
     @objc private func endEditingGesture() {
         view.endEditing(true)
+    }
+}
+
+// MARK: - Notification Banner:
+extension UIViewController {
+    func showBanner(subtitle: String) {
+        let banner = NotificationBanner(title: L10n.Warning.title, subtitle: subtitle, style: .warning)
+        banner.show()
     }
 }

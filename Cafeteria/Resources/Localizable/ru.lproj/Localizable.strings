@@ -32,3 +32,13 @@
 "order.title" = "Ваш заказ";
 "order.thanks" = "Время ожидания заказа 15 минут\nСпасибо, что выбрали нас!";
 "order.pay" = "Оплатить";
+
+// MARK: - Notification Banner:
+"warning.title" = "Ошибка";
+"warning.invalidEmail" = "Проверьте email";
+"warning.invalidPassword" = "Проверьте пароль";
+"warning.accountDidNotCreate" = "Не удалось создать аккаунт";
+"warning.accountDidNotAuthorize" = "Не удалось авторизоваться";
+"warning.locationsDidNotUpdate" = "Не удалось загрузить локации";
+"warning.menuDidNotDownloaded" = "Не удалось загрузить меню";
+

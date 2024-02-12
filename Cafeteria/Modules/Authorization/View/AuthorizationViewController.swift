@@ -67,6 +67,11 @@ extension AuthorizationViewController: AuthorizationViewInputProtocol {
     func accountDidAuthorize() {
         unblock()
     }
+    
+    func accountDidNotAuthorize() {
+        unblock()
+        showBanner(subtitle: L10n.Warning.accountDidNotAuthorize)
+    }
 }
 
 // MARK: - CustomInputStackViewDelegate:

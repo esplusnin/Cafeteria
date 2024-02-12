@@ -82,16 +82,18 @@ class RegistrationViewController: UIViewController {
 // MARK: - RegistrationViewProtocol:
 extension RegistrationViewController: RegistrationViewInputProtocol {
     func accountDidNotCreate() {
-        #warning("Добавить нотификейшн")
+        showBanner(subtitle: L10n.Warning.accountDidNotCreate)
     }
     
     func invalidEmailFormat() {
         loginStackView.changeInputState(isWrong: true)
+        showBanner(subtitle: L10n.Warning.invalidEmail)
     }
     
     func invalidPasswordFormat() {
         passwordStackView.changeInputState(isWrong: true)
         repeatPasswordStackView.changeInputState(isWrong: true)
+        showBanner(subtitle: L10n.Warning.invalidPassword)
     }
 }
 
