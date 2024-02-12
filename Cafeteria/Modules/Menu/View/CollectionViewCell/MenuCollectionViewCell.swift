@@ -44,6 +44,7 @@ final class MenuCollectionViewCell: UICollectionViewCell {
     
     private lazy var stepperView: CustomStepper = {
         let stepperView = CustomStepper()
+        stepperView.delegate = self
         return stepperView
     }()
     
@@ -81,6 +82,14 @@ final class MenuCollectionViewCell: UICollectionViewCell {
         
         productImageView.kf.indicatorType = .activity
         productImageView.kf.setImage(with: url, options: [.processor(processor), .transition(.fade(LocalUIConstants.fadeDuration))])
+    }
+}
+
+// MARK: - CustomStepperDelegate:
+extension MenuCollectionViewCell: CustomStepperDelegate {
+    func change(value: Int) {
+        guard let id = product?.id else { return }
+        delegate?.changeProductAmount(with: id, newValue: value)
     }
 }
 

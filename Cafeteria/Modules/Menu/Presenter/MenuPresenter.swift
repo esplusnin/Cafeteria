@@ -26,6 +26,10 @@ extension MenuPresenter: MenuViewControllerOutputProtocol {
     func fetchMenu() {
         interactor.fetchMenu()
     }
+    
+    func changeProductAmount(with id: Int, newValue: Int) {
+        interactor.changeProductAmount(with: id, newValue: newValue)
+    }
 }
 
 // MARK: - MenuInteractorOutputProtocol:

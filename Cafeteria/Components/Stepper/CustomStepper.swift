@@ -3,14 +3,18 @@ import SnapKit
 
 final class CustomStepper: UIView {
     
+    // MARK: - Dependencies:
+    weak var delegate: CustomStepperDelegate?
+    
     // MARK: - Constants and Variables:
     private enum LocalUIConstraint {
         static let buttonSide: CGFloat = 24
     }
-    
+        
     private var counter = 0 {
         didSet {
             countLabel.text = String(counter)
+            delegate?.change(value: counter)
         }
     }
     
@@ -28,7 +32,7 @@ final class CustomStepper: UIView {
         return button
     }()
     
-    private(set) lazy var countLabel: UILabel = {
+    private lazy var countLabel: UILabel = {
         let label = UILabel()
         label.font = .bodySmall
         label.textColor = Asset.Colors.textBrown.color

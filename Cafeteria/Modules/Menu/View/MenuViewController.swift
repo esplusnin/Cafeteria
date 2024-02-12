@@ -78,6 +78,13 @@ extension MenuViewController: MenuViewControllerInputProtocol {
     }
 }
 
+// MARK: - MenuCollectionViewCellDelegate:
+extension MenuViewController: MenuCollectionViewCellDelegate {
+    func changeProductAmount(with id: Int, newValue: Int) {
+        output?.changeProductAmount(with: id, newValue: newValue)
+    }
+}
+
 // MARK: - UICollectionViewDataSource:
 extension MenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -89,6 +96,7 @@ extension MenuViewController: UICollectionViewDataSource {
             withReuseIdentifier: Resources.Identifiers.menuCollectionViewCell, for: indexPath) as? MenuCollectionViewCell,
               let products = output?.products else { return UICollectionViewCell() }
         
+        cell.delegate = self
         cell.setupModel(products[indexPath.row])
 
         return cell
