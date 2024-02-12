@@ -30,7 +30,7 @@
 
 // MARK: - Order Screen:
 "order.title" = "Ваш заказ";
-"order.thanks" = "Время ожидания заказа 15 минут\nСпасибо, что выбрали нас!";
+"order.thanks" = "Время ожидания заказа\n 15 минут!\nСпасибо, что выбрали нас!";
 "order.pay" = "Оплатить";
 
 // MARK: - Notification Banner:

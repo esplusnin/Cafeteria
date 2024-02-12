@@ -3,10 +3,9 @@ import UIKit
 final class MenuViewController: UIViewController {
     
     // MARK: - Dependencies:
-    private var output: MenuViewControllerOutputProtocol?
-    
-    // MARK: - Classes:
     let configurator: MenuConfiguratorProtocol
+    
+    private var output: MenuViewControllerOutputProtocol?
     
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
@@ -71,8 +70,6 @@ final class MenuViewController: UIViewController {
                     menuCollectionView.insertItems(at: [IndexPath(row: index, section: 0)])
                 }
             }
-        } else {
-            menuCollectionView.reloadData()
         }
     }
     
@@ -126,7 +123,7 @@ extension MenuViewController: UICollectionViewDataSource {
         cell.delegate = self
         cell.setupModel(products[indexPath.row])
         cell.setup(state: .menu)
-
+        
         return cell
     }
 }
@@ -161,7 +158,7 @@ extension MenuViewController {
     func setupViews() {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
         navigationItem.title = L10n.Menu.title
-        navigationItem.backButtonDisplayMode = .minimal
+        navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
         
         [menuCollectionView, goToPayButton].forEach(view.addSubview)
     }

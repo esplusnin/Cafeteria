@@ -8,6 +8,7 @@ final class MenuPresenter {
     private let interactor: MenuInteractorInputProtocol
     private let router: MenuRouterInputProtocol
     
+    // MARK: - Constants and Variables:
     private(set) var products: [Product] = [] {
         didSet {
             view?.productsDidDownloaded()

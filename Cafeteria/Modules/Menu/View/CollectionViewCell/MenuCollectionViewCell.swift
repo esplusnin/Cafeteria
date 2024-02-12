@@ -87,10 +87,10 @@ final class MenuCollectionViewCell: UICollectionViewCell {
     private func setupCellUI() {
         guard let product,
               let url = URL(string: product.imageURL) else { return }
-
+        
         titleLabel.text = product.name
         priceLabel.text = String(product.price) + L10n.Menu.rub
-
+        
         let processor =  DownsamplingImageProcessor(size: productImageView.bounds.size)
         
         productImageView.kf.indicatorType = .activity

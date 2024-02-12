@@ -1,6 +1,8 @@
 import Foundation
 
 final class NearestCafeterianConfigurator {
+    
+    // MARK: - Public Methods:
     func configure(_ controller: NearestCafeterianViewController) {
         let interactor = NearestCafeterianInteractor()
         let router = NearestCafeterianRouter()

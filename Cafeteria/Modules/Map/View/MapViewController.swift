@@ -5,10 +5,9 @@ import YandexMapsMobile
 final class MapViewController: UIViewController {
     
     // MARK: - Dependencies:
-    private var output: MapViewControllerOutputProtocol?
-    
-    // MARK: - Classes:
     let configurator: MapConfiguratorProtocol
+    
+    private var output: MapViewControllerOutputProtocol?
     
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
@@ -105,7 +104,7 @@ extension MapViewController: YMKMapObjectTapListener {
     func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
         guard let placemark = mapObject as? YMKPlacemarkMapObject,
               let id = placemark.userData as? Int else { return false }
-
+        
         output?.goToMenu(with: id)
         return true
     }

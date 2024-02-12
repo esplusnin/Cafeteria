@@ -44,7 +44,7 @@ final class NetworkClient: NetworkClientInputProtocol {
     func fetchLocations(completion: @escaping (Result<[LocationDTO], Error>) -> Void) {
         guard let token = KeyChainStorage().token else { return }
         let headers: HTTPHeaders = [Resources.Network.Headers.authorization: Resources.Network.Headers.bearer + token]
-
+        
         AF.request(Resources.Network.EndPoint.locations, headers: headers).responseDecodable(of: [LocationDTO].self) { response in
             switch response.result {
             case .success(let locations):

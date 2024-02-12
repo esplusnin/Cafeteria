@@ -7,16 +7,17 @@ final class RegistrationInteractor {
     
     private let networkClient: NetworkClientInputProtocol
     
+    // MARK: - Constants and Variables:
+    private let minPasswordCharacter = 4
+    
+    // MARK: - Lifecycle:
     init(networkClient: NetworkClientInputProtocol) {
         self.networkClient = networkClient
     }
     
-    // MARK: - Constants and Variables:
-    private let minPasswordCharacter = 4
-    
     // MARK: - Private Methods:
     private func checkAccountDetail(login: String, password: String, repeatedPassword: String) {
-
+        
         guard isValidEmail(login) else {
             output?.invalidEmailFormat()
             return
@@ -26,7 +27,7 @@ final class RegistrationInteractor {
             output?.invalidPasswordFormat()
             return
         }
-
+        
         let account = Account(login: login, password: password)
         
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in

@@ -52,7 +52,7 @@ final class LocationManager: NSObject {
               let myLocation = CLLocationManager().location else { return nil }
         let toLocation = CLLocation(latitude: latitude, longitude: longitude)
         let distance = myLocation.distance(from: toLocation)
-
+        
         return distance
     }
 }
