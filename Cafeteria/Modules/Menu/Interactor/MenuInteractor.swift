@@ -14,6 +14,8 @@ final class MenuInteractor {
         }
     }
     
+    private var potentialOrder = Order(products: [])
+    
     private var menuID: Int?
 }
 
@@ -40,6 +42,18 @@ extension MenuInteractor: MenuInteractorInputProtocol {
                     }
                 }
             }
+        }
+    }
+    
+    func changeProductAmount(with id: Int, newValue: Int) {
+        if let index = potentialOrder.products.firstIndex(where: { $0.id == id }) {
+            if newValue == 0 {
+                potentialOrder.products.remove(at: index)
+            } else {
+                potentialOrder.products[index].changeValue(to: newValue)
+            }
+        } else {
+            potentialOrder.products.append(ProductDTO(id: id, amount: newValue))
         }
     }
 }

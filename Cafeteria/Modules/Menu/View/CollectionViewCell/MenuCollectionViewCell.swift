@@ -4,6 +4,9 @@ import Kingfisher
 
 final class MenuCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Dependencies:
+    weak var delegate: MenuCollectionViewCellDelegate?
+    
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
         static let imageHeight: CGFloat = 137

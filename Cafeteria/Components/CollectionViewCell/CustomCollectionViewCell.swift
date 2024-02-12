@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-final class CafeterinanCollectionViewCell: UICollectionViewCell {
+final class CustomCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
@@ -73,7 +73,7 @@ final class CafeterinanCollectionViewCell: UICollectionViewCell {
 }
 
 // MARK: - Setup Views:
-private extension CafeterinanCollectionViewCell {
+private extension CustomCollectionViewCell {
     func setupViews() {
         contentBackgroundView.backgroundColor = Asset.Colors.backgroundLightBrown.color
 
@@ -84,7 +84,7 @@ private extension CafeterinanCollectionViewCell {
 }
 
 // MARK: - Setup Constraints:
-private extension CafeterinanCollectionViewCell {
+private extension CustomCollectionViewCell {
     func setupConstraints() {
         setupTitlesStackViewConstraints()
         setupContentBackgroundViewConstraints()
