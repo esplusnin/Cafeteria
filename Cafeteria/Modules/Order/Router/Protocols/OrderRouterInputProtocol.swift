@@ -1,5 +1,5 @@
 import Foundation
 
-protocol OrderRouterInputProtocol: AnyObject {
-    
+protocol OrderRouterInputProtocol {
+    func synchronize(order: Order)
 }

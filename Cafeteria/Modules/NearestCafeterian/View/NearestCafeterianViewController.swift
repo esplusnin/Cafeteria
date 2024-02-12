@@ -81,7 +81,8 @@ extension NearestCafeterianViewController: UICollectionViewDataSource {
                                                             for: indexPath) as? CustomCollectionViewCell,
               let location = output?.locations[indexPath.row] else { return UICollectionViewCell() }
                 
-        cell.setup(location)
+        cell.setup(state: .menu)
+        cell.setupCellModel(with: location.name, and: location.distance, value: nil)
         
         return cell
     }

@@ -1,7 +1,15 @@
 import UIKit
 import SnapKit
 
+enum CustomCellState {
+    case menu
+    case order
+}
+
 final class CustomCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Dependencies:
+    weak var delegate: CustomCollectionViewCellDelegate?
     
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
@@ -11,9 +19,11 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         static let cornerRadius: CGFloat = 10
     }
     
-    private var location: Location? {
+    private var state: CustomCellState? {
         didSet {
-            setupCellUI()
+            if state == .order {
+                setupStepperView()
+            }
         }
     }
     
@@ -30,18 +40,24 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
-    private lazy var cafeterianTitleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
        let label = UILabel()
         label.font = .largeTitleBold
         label.textColor = Asset.Colors.textBrown.color
         return label
     }()
     
-    private lazy var distanceLabel: UILabel = {
+    private lazy var subTitleLabel: UILabel = {
        let label = UILabel()
         label.font = .bodySmall
         label.textColor = Asset.Colors.textLightBrown.color
         return label
+    }()
+    
+    private lazy var stepperView: CustomStepper = {
+        let stepperView = CustomStepper()
+        stepperView.delegate = self
+        return stepperView
     }()
     
     // MARK: - Lifecycle:
@@ -61,14 +77,22 @@ final class CustomCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Public Methods:
-    func setup(_ location: Location) {
-        self.location = location
+    func setupCellModel(with title: String, and subtitle: String, value: Int?) {
+        titleLabel.text = title
+        subTitleLabel.text = subtitle
+        stepperView.setupDefaultCounter(value: value ?? 0)
     }
-        
-    // MARK: - Private Methods:
-    private func setupCellUI() {
-        cafeterianTitleLabel.text = location?.name
-        distanceLabel.text = location?.distance
+    
+    func setup(state: CustomCellState) {
+        self.state = state
+        stepperView.setup(state: state)
+    }
+}
+
+// MARK: - CustomStepperDelegate:
+extension CustomCollectionViewCell: CustomStepperDelegate {
+    func change(value: Int) {
+        delegate?.change(value: value, fromCell: self)
     }
 }
 
@@ -79,7 +103,12 @@ private extension CustomCollectionViewCell {
 
         addSubview(contentBackgroundView)
         contentBackgroundView.addSubview(titlesStackView)
-        [cafeterianTitleLabel, distanceLabel].forEach(titlesStackView.addArrangedSubview)
+        [titleLabel, subTitleLabel].forEach(titlesStackView.addArrangedSubview)
+    }
+    
+    func setupStepperView() {
+        addSubview(stepperView)
+        setupStepperViewConstraints()
     }
 }
 
@@ -104,6 +133,13 @@ private extension CustomCollectionViewCell {
             make.top.equalTo(LocalUIConstants.verticalInset)
             make.left.equalTo(LocalUIConstants.horizontalInset)
             make.right.equalTo(-LocalUIConstants.horizontalInset)
+        }
+    }
+    
+    func setupStepperViewConstraints() {
+        stepperView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalTo(-LocalUIConstants.horizontalInset)
         }
     }
 }

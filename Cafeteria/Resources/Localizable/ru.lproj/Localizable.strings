@@ -31,4 +31,4 @@
 // MARK: - Order Screen:
 "order.title" = "Ваш заказ";
 "order.thanks" = "Время ожидания заказа 15 минут\nСпасибо, что выбрали нас!";
-"order.pay" = "";
+"order.pay" = "Оплатить";

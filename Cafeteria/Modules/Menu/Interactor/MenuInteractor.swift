@@ -45,7 +45,7 @@ extension MenuInteractor: MenuInteractorInputProtocol {
         }
     }
     
-    func changeProductAmount(with id: Int, newValue: Int) {
+    func changeProductAmount(with id: Int, name: String, price: Int, newValue: Int) {
         if let index = potentialOrder.products.firstIndex(where: { $0.id == id }) {
             if newValue == 0 {
                 potentialOrder.products.remove(at: index)
@@ -53,7 +53,16 @@ extension MenuInteractor: MenuInteractorInputProtocol {
                 potentialOrder.products[index].changeValue(to: newValue)
             }
         } else {
-            potentialOrder.products.append(ProductDTO(id: id, amount: newValue))
+            potentialOrder.products.append(ProductDTO(id: id, name: name, price: price, amount: newValue))
         }
+    }
+    
+    func getOrder() -> Order {
+        potentialOrder
+    }
+    
+    func orderDidChange(order: Order) {
+        self.potentialOrder = order
+        output?.menuDidEditedFromOrder()
     }
 }

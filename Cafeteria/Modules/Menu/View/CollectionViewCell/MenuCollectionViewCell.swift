@@ -12,11 +12,12 @@ final class MenuCollectionViewCell: UICollectionViewCell {
         static let imageHeight: CGFloat = 137
         static let labelInset: CGFloat = 10
         static let buttonSide: CGFloat = 24
-        static let buttonRightInset: CGFloat = -5
+        static let buttonRightInset: CGFloat = 5
         static let fadeDuration: CGFloat = 0.5
     }
     
-    private var product: Product?
+    private(set) var product: Product?
+    private var isFirstAppearance = true
     
     // MARK: - UI:
     private lazy var productImageView: UIImageView = {
@@ -44,6 +45,7 @@ final class MenuCollectionViewCell: UICollectionViewCell {
     
     private lazy var stepperView: CustomStepper = {
         let stepperView = CustomStepper()
+        stepperView.delegate = self
         return stepperView
     }()
     
@@ -60,8 +62,12 @@ final class MenuCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupCellUI()
-        setupShadow()
+        if isFirstAppearance {
+            setupShadow()
+            setupCellUI()
+            isFirstAppearance.toggle()
+            layoutIfNeeded()
+        }
     }
     
     // MARK: - Public Methods:
@@ -69,11 +75,19 @@ final class MenuCollectionViewCell: UICollectionViewCell {
         self.product = product
     }
     
+    func setup(state: CustomCellState) {
+        stepperView.setup(state: state)
+    }
+    
+    func setupCounter(value: Int) {
+        stepperView.setupDefaultCounter(value: value)
+    }
+    
     // MARK: - Private Methods:
     private func setupCellUI() {
         guard let product,
               let url = URL(string: product.imageURL) else { return }
-        
+
         titleLabel.text = product.name
         priceLabel.text = String(product.price) + L10n.Menu.rub
 
@@ -81,6 +95,14 @@ final class MenuCollectionViewCell: UICollectionViewCell {
         
         productImageView.kf.indicatorType = .activity
         productImageView.kf.setImage(with: url, options: [.processor(processor), .transition(.fade(LocalUIConstants.fadeDuration))])
+    }
+}
+
+// MARK: - CustomStepperDelegate:
+extension MenuCollectionViewCell: CustomStepperDelegate {
+    func change(value: Int) {
+        guard let product else { return }
+        delegate?.changeProductAmount(with: product.id, name: product.name, price: product.price, newValue: value)
     }
 }
 
@@ -121,6 +143,7 @@ extension MenuCollectionViewCell {
         priceLabel.snp.makeConstraints { make in
             make.left.equalTo(LocalUIConstants.labelInset)
             make.bottom.equalTo(-LocalUIConstants.labelInset)
+            make.right.equalTo(stepperView).inset(-LocalUIConstants.buttonRightInset)
         }
     }
     
@@ -128,7 +151,7 @@ extension MenuCollectionViewCell {
         stepperView.snp.makeConstraints { make in
             make.height.equalTo(LocalUIConstants.buttonSide)
             make.left.equalTo(snp.centerX)
-            make.right.equalTo(LocalUIConstants.buttonRightInset)
+            make.right.equalTo(-LocalUIConstants.buttonRightInset)
             make.centerY.equalTo(priceLabel.snp.centerY)
         }
     }
