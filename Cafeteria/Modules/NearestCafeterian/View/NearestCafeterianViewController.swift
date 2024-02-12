@@ -20,7 +20,7 @@ final class NearestCafeterianViewController: UIViewController {
     // MARK: - UI:
     private lazy var cafeterianCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.register(CafeterinanCollectionViewCell.self, forCellWithReuseIdentifier: Resources.Identifiers.cafeterianCollectionViewCell)
+        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: Resources.Identifiers.cafeterianCollectionViewCell)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsVerticalScrollIndicator = false
@@ -78,7 +78,7 @@ extension NearestCafeterianViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.cafeterianCollectionViewCell,
-                                                            for: indexPath) as? CafeterinanCollectionViewCell,
+                                                            for: indexPath) as? CustomCollectionViewCell,
               let location = output?.locations[indexPath.row] else { return UICollectionViewCell() }
                 
         cell.setup(location)

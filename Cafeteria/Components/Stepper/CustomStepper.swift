@@ -61,7 +61,9 @@ final class CustomStepper: UIView {
     }
     
     @objc private func dicrement() {
-        counter -= 1
+        if counter >= 1 {
+            counter -= 1
+        }
     }
 }
 
