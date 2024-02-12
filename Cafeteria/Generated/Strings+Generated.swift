@@ -25,16 +25,10 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "map.title", fallback: "Карта")
   }
   internal enum Menu {
-    /// Капучино
-    internal static let cappuccino = L10n.tr("Localizable", "menu.cappuccino", fallback: "Капучино")
-    /// Эспрессо
-    internal static let espresso = L10n.tr("Localizable", "menu.espresso", fallback: "Эспрессо")
     /// Перейти к оплате
     internal static let goToPay = L10n.tr("Localizable", "menu.goToPay", fallback: "Перейти к оплате")
-    /// Горячий шоколад
-    internal static let hotChocolate = L10n.tr("Localizable", "menu.hotChocolate", fallback: "Горячий шоколад")
-    /// Латте
-    internal static let latte = L10n.tr("Localizable", "menu.latte", fallback: "Латте")
+    ///  руб
+    internal static let rub = L10n.tr("Localizable", "menu.rub", fallback: " руб")
     /// Меню
     internal static let title = L10n.tr("Localizable", "menu.title", fallback: "Меню")
   }

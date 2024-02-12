@@ -25,11 +25,8 @@
 
 // MARK: - Menu Screen:
 "menu.title" = "Меню";
-"menu.espresso" = "Эспрессо";
-"menu.cappuccino" = "Капучино";
-"menu.hotChocolate" = "Горячий шоколад";
-"menu.latte" = "Латте";
 "menu.goToPay" = "Перейти к оплате";
+"menu.rub" = " руб";
 
 // MARK: - Order Screen:
 "order.title" = "Ваш заказ";

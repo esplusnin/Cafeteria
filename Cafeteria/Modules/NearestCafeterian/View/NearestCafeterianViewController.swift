@@ -96,6 +96,12 @@ extension NearestCafeterianViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         LocalUIConstants.cellsSpacing
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let menuID = output?.locations[indexPath.row].id {
+            output?.goToMenu(with: menuID)
+        }
+    }
 }
 
 // MARK: - Setup Views:

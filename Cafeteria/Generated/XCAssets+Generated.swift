@@ -37,12 +37,8 @@ internal enum Asset {
     internal static let textSuperLightBrown = ColorAsset(name: "TextSuperLightBrown")
   }
   internal enum Images {
-    internal static let cappuccino = ImageAsset(name: "Cappuccino")
     internal static let coffeCupBackground = ImageAsset(name: "CoffeCupBackground")
     internal static let coffeeCup = ImageAsset(name: "CoffeeCup")
-    internal static let espresso = ImageAsset(name: "Espresso")
-    internal static let hotChocolate = ImageAsset(name: "HotChocolate")
-    internal static let latte = ImageAsset(name: "Latte")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

@@ -19,13 +19,19 @@ enum Resources {
             static let baseURL = "http://147.78.66.203:3210/"
             static let login = "auth/login"
             static let register = "auth/register"
+            static let location = "location/"
             static let locations = "locations"
+            static let menu = "/menu"
         }
         
         enum EndPoint {
             static let login = Resources.Network.Pathes.baseURL + Resources.Network.Pathes.login
             static let register = Resources.Network.Pathes.baseURL + Resources.Network.Pathes.register
             static let locations = Resources.Network.Pathes.baseURL + Resources.Network.Pathes.locations
+            
+            static func getMenuEndPoint(with id: Int) -> String {
+                Resources.Network.Pathes.baseURL + Resources.Network.Pathes.location + String(id) + Resources.Network.Pathes.menu
+            }
         }
         
         enum HTTPCodes {

@@ -6,6 +6,7 @@ final class AuthorizationRouter {
     weak var navigation: UINavigationController?
 }
 
+// MARK: - AuthorizationRouterInputProtocol:
 extension AuthorizationRouter: AuthorizationRouterInputProtocol {
     func goToNearestCafeterianScreen() {
         let viewController = NearestCafeterianViewController()
