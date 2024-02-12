@@ -1,7 +1,7 @@
 import UIKit
 
 class RegistrationViewController: UIViewController {
-
+    
     // MARK: - Dependencies:
     private var output: RegistrationViewOutputProtocol?
     
@@ -23,17 +23,17 @@ class RegistrationViewController: UIViewController {
     }()
     
     private lazy var loginStackView: CustomInputStackView = {
-        let stackView = CustomInputStackView(delegate: self, state: .login)
+        let stackView = CustomInputStackView(state: .login)
         return stackView
     }()
     
     private lazy var passwordStackView: CustomInputStackView = {
-        let stackView = CustomInputStackView(delegate: self, state: .password)
+        let stackView = CustomInputStackView(state: .password)
         return stackView
     }()
     
     private lazy var repeatPasswordStackView: CustomInputStackView = {
-        let stackView = CustomInputStackView(delegate: self, state: .repeatPassword)
+        let stackView = CustomInputStackView(state: .repeatPassword)
         return stackView
     }()
     
@@ -51,7 +51,7 @@ class RegistrationViewController: UIViewController {
         button.titleLabel?.font = .bodyMedium
         return button
     }()
-
+    
     // MARK: - Lifecycle:
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,18 +97,13 @@ extension RegistrationViewController: RegistrationViewInputProtocol {
     }
 }
 
-// MARK: - CustomInputStackViewDelegate:
-extension RegistrationViewController: CustomInputStackViewDelegate {
-    
-}
-
 // MARK: - Setup Views:
 private extension RegistrationViewController {
     func setupViews() {
         view.backgroundColor = Asset.Colors.backgroundWhite.color
         navigationItem.title = L10n.Registration.registration
         addEndEditingGesture()
-
+        
         [inputsStackView, registrationButton, authorizationButton].forEach(view.addSubview)
         [loginStackView, passwordStackView, repeatPasswordStackView].forEach(inputsStackView.addArrangedSubview)
     }

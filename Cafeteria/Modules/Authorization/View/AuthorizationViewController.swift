@@ -23,12 +23,12 @@ final class AuthorizationViewController: UIViewController {
     }()
     
     private lazy var loginStackView: CustomInputStackView = {
-        let stackView = CustomInputStackView(delegate: self, state: .login)
+        let stackView = CustomInputStackView(state: .login)
         return stackView
     }()
     
     private lazy var passwordStackView: CustomInputStackView = {
-        let stackView = CustomInputStackView(delegate: self, state: .password)
+        let stackView = CustomInputStackView(state: .password)
         return stackView
     }()
     
@@ -72,11 +72,6 @@ extension AuthorizationViewController: AuthorizationViewInputProtocol {
         unblock()
         showBanner(subtitle: L10n.Warning.accountDidNotAuthorize)
     }
-}
-
-// MARK: - CustomInputStackViewDelegate:
-extension AuthorizationViewController: CustomInputStackViewDelegate {
-    
 }
 
 // MARK: - Setup Views:

@@ -1,10 +1,10 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     // MARK: - Constants and Variables:
     var window: UIWindow?
-
+    
     // MARK: - Public Methods:
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         let rootViewController = isFirstEntry() ? NearestCafeterianViewController() : RegistrationViewController()
         let rootNavigationController = UINavigationController(rootViewController: rootViewController)
-
+        
         setup(rootNavigationController)
         
         window?.rootViewController = rootNavigationController

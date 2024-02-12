@@ -8,13 +8,13 @@ enum Resources {
     }
     
     enum Network {
-                
+        
         enum Headers {
             static let jsonType = "application/json"
             static let authorization = "Authorization"
             static let bearer = "Bearer "
         }
-            
+        
         enum Pathes {
             static let baseURL = "http://147.78.66.203:3210/"
             static let login = "auth/login"

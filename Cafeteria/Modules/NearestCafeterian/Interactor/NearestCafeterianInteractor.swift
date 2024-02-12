@@ -6,6 +6,8 @@ final class NearestCafeterianInteractor {
     weak var output: NearestCafeterianInteractorOutputProtocol?
     
     private var networkClient: NetworkClientInputProtocol?
+    
+    // MARK: - Classes:
     private let keyChainStorage = KeyChainStorage()
     private let locationManager = LocationManager()
     
@@ -19,7 +21,7 @@ final class NearestCafeterianInteractor {
     init() {
         self.locationManager.delegate = self
     }
-
+    
     // MARK: - Private Methods:
     private func fetchLocations() {
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
@@ -38,8 +40,8 @@ final class NearestCafeterianInteractor {
                             let distanceString = self.convert(distance)
                             
                             return Location(id: $0.id,
-                                     name: $0.name,
-                                     distance: distanceString)
+                                            name: $0.name,
+                                            distance: distanceString)
                         }
                         self.output?.update(locations)
                     case .failure(let error):

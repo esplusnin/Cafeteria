@@ -1,7 +1,7 @@
 import Foundation
 
 final class MapConfigurator: MapConfiguratorProtocol {
-
+    
     // MARK: - Public Methods:
     func configure(_ controller: MapViewController, with locationData: [LocationDTO]? = nil) {
         let interactor = MapInteractor()

@@ -47,9 +47,10 @@ internal enum L10n {
   internal enum Order {
     /// Оплатить
     internal static let pay = L10n.tr("Localizable", "order.pay", fallback: "Оплатить")
-    /// Время ожидания заказа 15 минут
+    /// Время ожидания заказа
+    ///  15 минут!
     /// Спасибо, что выбрали нас!
-    internal static let thanks = L10n.tr("Localizable", "order.thanks", fallback: "Время ожидания заказа 15 минут\nСпасибо, что выбрали нас!")
+    internal static let thanks = L10n.tr("Localizable", "order.thanks", fallback: "Время ожидания заказа\n 15 минут!\nСпасибо, что выбрали нас!")
     /// Ваш заказ
     internal static let title = L10n.tr("Localizable", "order.title", fallback: "Ваш заказ")
   }

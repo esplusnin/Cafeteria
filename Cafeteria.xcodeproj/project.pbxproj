@@ -20,7 +20,6 @@
 		7E29C83B2B74C43C00647D9F /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C83A2B74C43C00647D9F /* UIFont + Extension.swift */; };
 		7E29C8432B74C81D00647D9F /* CustomInputStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8422B74C81D00647D9F /* CustomInputStackView.swift */; };
 		7E29C8452B74CA7500647D9F /* GlobalUIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8442B74CA7500647D9F /* GlobalUIConstants.swift */; };
-		7E29C8482B74CB0700647D9F /* CustomInputStackViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8472B74CB0700647D9F /* CustomInputStackViewDelegate.swift */; };
 		7E29C84B2B75191F00647D9F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C84A2B75191F00647D9F /* CustomButton.swift */; };
 		7E29C84E2B751D9200647D9F /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C84D2B751D9200647D9F /* AuthorizationViewController.swift */; };
 		7E29C8582B7521DA00647D9F /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E29C8572B7521DA00647D9F /* NetworkClient.swift */; };
@@ -91,7 +90,6 @@
 		7E94FEAF2B7973C600DAEAD1 /* MenuInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEAE2B7973C600DAEAD1 /* MenuInteractorInputProtocol.swift */; };
 		7E94FEB12B7973E200DAEAD1 /* MenuInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEB02B7973E200DAEAD1 /* MenuInteractorOutputProtocol.swift */; };
 		7E94FEB32B7973ED00DAEAD1 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEB22B7973ED00DAEAD1 /* MenuInteractor.swift */; };
-		7E94FEB72B79744800DAEAD1 /* MenuPresenterOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEB62B79744800DAEAD1 /* MenuPresenterOutputProtocol.swift */; };
 		7E94FEB92B79745B00DAEAD1 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEB82B79745B00DAEAD1 /* MenuPresenter.swift */; };
 		7E94FEBB2B79748400DAEAD1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEBA2B79748400DAEAD1 /* Product.swift */; };
 		7E94FEBF2B7974C000DAEAD1 /* MenuRouterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E94FEBE2B7974C000DAEAD1 /* MenuRouterInputProtocol.swift */; };
@@ -139,13 +137,13 @@
 
 /* Begin PBXFileReference section */
 		375A65FEC38FB097B3A0BC7F /* Pods-Cafeteria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cafeteria.release.xcconfig"; path = "Target Support Files/Pods-Cafeteria/Pods-Cafeteria.release.xcconfig"; sourceTree = "<group>"; };
+		7E1936AF2B7AC47C00E645EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E29C8032B74B1F400647D9F /* Cafeteria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cafeteria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E29C8062B74B1F400647D9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E29C8082B74B1F400647D9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7E29C80A2B74B1F400647D9F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		7E29C80F2B74B1F600647D9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E29C8142B74B1F600647D9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E29C81E2B74B3EF00647D9F /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E29C8252B74B4CA00647D9F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7E29C8282B74B58000647D9F /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		7E29C82B2B74B5D500647D9F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		7E29C83A2B74C43C00647D9F /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		7E29C8422B74C81D00647D9F /* CustomInputStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputStackView.swift; sourceTree = "<group>"; };
 		7E29C8442B74CA7500647D9F /* GlobalUIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUIConstants.swift; sourceTree = "<group>"; };
-		7E29C8472B74CB0700647D9F /* CustomInputStackViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputStackViewDelegate.swift; sourceTree = "<group>"; };
 		7E29C84A2B75191F00647D9F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		7E29C84D2B751D9200647D9F /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		7E29C8572B7521DA00647D9F /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
@@ -220,7 +217,6 @@
 		7E94FEAE2B7973C600DAEAD1 /* MenuInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		7E94FEB02B7973E200DAEAD1 /* MenuInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractorOutputProtocol.swift; sourceTree = "<group>"; };
 		7E94FEB22B7973ED00DAEAD1 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
-		7E94FEB62B79744800DAEAD1 /* MenuPresenterOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenterOutputProtocol.swift; sourceTree = "<group>"; };
 		7E94FEB82B79745B00DAEAD1 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
 		7E94FEBA2B79748400DAEAD1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7E94FEBE2B7974C000DAEAD1 /* MenuRouterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouterInputProtocol.swift; sourceTree = "<group>"; };
@@ -417,18 +413,9 @@
 		7E29C8412B74C7EF00647D9F /* StackViews */ = {
 			isa = PBXGroup;
 			children = (
-				7E29C8462B74CAFC00647D9F /* Protocols */,
 				7E29C8422B74C81D00647D9F /* CustomInputStackView.swift */,
 			);
 			path = StackViews;
-			sourceTree = "<group>";
-		};
-		7E29C8462B74CAFC00647D9F /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7E29C8472B74CB0700647D9F /* CustomInputStackViewDelegate.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		7E29C8492B75190B00647D9F /* Buttons */ = {
@@ -998,7 +985,6 @@
 			isa = PBXGroup;
 			children = (
 				7E94FEC22B7975F200DAEAD1 /* MenuPresenterInputProtocol.swift */,
-				7E94FEB62B79744800DAEAD1 /* MenuPresenterOutputProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1216,6 +1202,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				ru,
+				Base,
 			);
 			mainGroup = 7E29C7FA2B74B1F400647D9F;
 			packageReferences = (
@@ -1370,7 +1357,6 @@
 				7E94FEE02B7A307900DAEAD1 /* OrderViewControllerInputProtocol.swift in Sources */,
 				7E29C8672B75236C00647D9F /* RegistrationPresenter.swift in Sources */,
 				7E94FEEF2B7A314300DAEAD1 /* OrderInteractor.swift in Sources */,
-				7E94FEB72B79744800DAEAD1 /* MenuPresenterOutputProtocol.swift in Sources */,
 				7E94FEAF2B7973C600DAEAD1 /* MenuInteractorInputProtocol.swift in Sources */,
 				7E94FE0D2B76291F00DAEAD1 /* AuthorizationInteractorInputProtocol.swift in Sources */,
 				7E94FEB12B7973E200DAEAD1 /* MenuInteractorOutputProtocol.swift in Sources */,
@@ -1385,7 +1371,6 @@
 				7E29C87B2B754C3500647D9F /* RegistrationInteractorInputProtocol.swift in Sources */,
 				7E29C8292B74B58000647D9F /* Strings+Generated.swift in Sources */,
 				7E94FEC12B7974C700DAEAD1 /* MenuRouter.swift in Sources */,
-				7E29C8482B74CB0700647D9F /* CustomInputStackViewDelegate.swift in Sources */,
 				7E94FEB32B7973ED00DAEAD1 /* MenuInteractor.swift in Sources */,
 				7E94FE2B2B76656500DAEAD1 /* NearestCafeterianConfigurator.swift in Sources */,
 				7E94FEFC2B7A373C00DAEAD1 /* OrderPresenterInputProtocol.swift in Sources */,
@@ -1444,7 +1429,7 @@
 		7E29C8112B74B1F600647D9F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7E29C81E2B74B3EF00647D9F /* ru */,
+				7E1936AF2B7AC47C00E645EC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1513,7 +1498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1571,7 +1556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

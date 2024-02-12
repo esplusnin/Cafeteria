@@ -56,6 +56,7 @@ final class NearestCafeterianViewController: UIViewController {
     }
 }
 
+// MARK: - NearestCafeterianViewControllerInputProtocol:
 extension NearestCafeterianViewController: NearestCafeterianViewControllerInputProtocol {
     func updateLocationsList() {
         guard let newAmount = output?.locations.count else { return }
@@ -84,7 +85,7 @@ extension NearestCafeterianViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.cafeterianCollectionViewCell,
                                                             for: indexPath) as? CustomCollectionViewCell,
               let location = output?.locations[indexPath.row] else { return UICollectionViewCell() }
-                
+        
         cell.setup(state: .menu)
         cell.setupCellModel(with: location.name, and: location.distance, value: nil)
         
@@ -115,7 +116,7 @@ private extension NearestCafeterianViewController {
         navigationItem.title = L10n.NearestCafeterian.title
         navigationItem.hidesBackButton = true
         view.backgroundColor = Asset.Colors.backgroundWhite.color
-
+        
         [cafeterianCollectionView, toMapButton].forEach(view.addSubview)
     }
 }

@@ -3,10 +3,9 @@ import UIKit
 final class OrderViewController: UIViewController {
     
     // MARK: - Dependencies:
-    private var output: OrderViewControllerOutputProtocol?
-    
-    // MARK: - Classes:
     let configurator: OrderConfiguratorProtocol
+    
+    private var output: OrderViewControllerOutputProtocol?
     
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
@@ -34,6 +33,16 @@ final class OrderViewController: UIViewController {
         return button
     }()
     
+    private lazy var thanksLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 3
+        label.font = .bodyExtraLarge
+        label.textColor = Asset.Colors.textBrown.color
+        label.text = L10n.Order.thanks
+        label.textAlignment = .center
+        return label
+    }()
+    
     // MARK: - Lifecycle:
     init(configurator: OrderConfiguratorProtocol) {
         self.configurator = configurator
@@ -48,6 +57,7 @@ final class OrderViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        setupTargets()
         
         blockUI()
     }
@@ -60,6 +70,11 @@ final class OrderViewController: UIViewController {
     // MARK: - Public Methods:
     func setup(_ output: OrderViewControllerOutputProtocol) {
         self.output = output
+    }
+    
+    // MARK: - Objc Methods:
+    @objc private func thanksForOrder() {
+        setupThanksLabel()
     }
 }
 
@@ -120,8 +135,13 @@ private extension OrderViewController {
         navigationItem.title = L10n.Order.title
         navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
         view.backgroundColor = Asset.Colors.backgroundWhite.color
-
+        
         [orderCollectionView, toPayButton].forEach(view.addSubview)
+    }
+    
+    func setupThanksLabel() {
+        view.addSubview(thanksLabel)
+        setupThankLabelConstraints()
     }
 }
 
@@ -147,5 +167,23 @@ private extension OrderViewController {
             make.right.equalTo(-LocalUIConstants.buttonHorizontalInset)
             make.bottom.equalTo(-LocalUIConstants.buttonBottomInset)
         }
+    }
+    
+    func setupThankLabelConstraints() {
+        guard let lastCell = orderCollectionView.visibleCells.last else { return }
+        
+        thanksLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(lastCell.snp.bottom).inset(-150)
+            make.left.equalTo(13)
+            make.right.equalTo(-13)
+        }
+    }
+}
+
+// MARK: - Setup Targets:
+private extension OrderViewController {
+    func setupTargets() {
+        toPayButton.addTarget(self, action: #selector(thanksForOrder), for: .touchUpInside)
     }
 }

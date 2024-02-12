@@ -3,9 +3,6 @@ import SnapKit
 
 final class CustomInputStackView: UIStackView {
     
-    // MARK: - Dependencies:
-    weak var delegate: CustomInputStackViewDelegate?
-    
     // MARK: - Constants and Variables
     enum CustomInputStackViewState {
         case login
@@ -58,9 +55,8 @@ final class CustomInputStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(delegate: CustomInputStackViewDelegate, state: CustomInputStackViewState) {
+    convenience init(state: CustomInputStackViewState) {
         self.init()
-        self.delegate = delegate
         self.state = state
         setupStackView()
     }
@@ -76,7 +72,7 @@ final class CustomInputStackView: UIStackView {
     private func setupStackView() {
         guard let state else { return }
         inputTextField.delegate = self
-
+        
         switch state {
         case .login:
             titleLabel.text = L10n.Registration.email

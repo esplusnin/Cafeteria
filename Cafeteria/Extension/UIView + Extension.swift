@@ -4,7 +4,7 @@ import UIKit
 extension UIView {
     func setupShadow() {
         layer.cornerRadius = GlobalUIConstants.baseCornerRadius
-
+        
         layer.shadowColor = Asset.Colors.backgroundBlack.color.cgColor
         layer.shadowOpacity = GlobalUIConstants.shadowOpacity
         layer.shadowRadius = GlobalUIConstants.shadowRadius

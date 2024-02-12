@@ -13,6 +13,7 @@ final class CustomCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Constants and Variables:
     private enum LocalUIConstants {
+        static let minimumStepperViewWidth: CGFloat = 100
         static let stackViewSpacing: CGFloat = 6
         static let horizontalInset: CGFloat = 10
         static let verticalInset: CGFloat = 14
@@ -41,14 +42,14 @@ final class CustomCollectionViewCell: UICollectionViewCell {
     }()
     
     private lazy var titleLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = .largeTitleBold
         label.textColor = Asset.Colors.textBrown.color
         return label
     }()
     
     private lazy var subTitleLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = .bodySmall
         label.textColor = Asset.Colors.textLightBrown.color
         return label
@@ -100,7 +101,7 @@ extension CustomCollectionViewCell: CustomStepperDelegate {
 private extension CustomCollectionViewCell {
     func setupViews() {
         contentBackgroundView.backgroundColor = Asset.Colors.backgroundLightBrown.color
-
+        
         addSubview(contentBackgroundView)
         contentBackgroundView.addSubview(titlesStackView)
         [titleLabel, subTitleLabel].forEach(titlesStackView.addArrangedSubview)
@@ -138,8 +139,15 @@ private extension CustomCollectionViewCell {
     
     func setupStepperViewConstraints() {
         stepperView.snp.makeConstraints { make in
+            make.width.greaterThanOrEqualTo(LocalUIConstants.minimumStepperViewWidth).priority(.high)
             make.centerY.equalToSuperview()
-            make.trailing.equalTo(-LocalUIConstants.horizontalInset)
+            make.trailing.equalTo(-LocalUIConstants.horizontalInset).priority(.high)
+        }
+        
+        titlesStackView.snp.remakeConstraints { make in
+            make.top.equalTo(LocalUIConstants.verticalInset)
+            make.left.equalTo(LocalUIConstants.horizontalInset)
+            make.right.lessThanOrEqualTo(stepperView.snp.left).inset(-LocalUIConstants.horizontalInset)
         }
     }
 }
