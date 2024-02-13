@@ -30,7 +30,8 @@ extension RegistrationPresenter: RegistrationViewOutputProtocol {
 // MARK: - RegistrationInteractorOutputProtocol:
 extension RegistrationPresenter: RegistrationInteractorOutputProtocol {
     func accountDidCreate() {
-        router.goToAuthorizationScreen()
+        router.goToNearestCafeterianScreen()
+        view?.accountDidCreate()
     }
     
     func accountDidNotCreate() {

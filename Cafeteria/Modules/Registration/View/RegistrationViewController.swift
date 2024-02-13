@@ -72,6 +72,7 @@ class RegistrationViewController: UIViewController {
               let password = passwordStackView.inputTextField.text,
               let repeatedPassword = repeatPasswordStackView.inputTextField.text else { return }
         output?.createAccount(with: login, and: password, repeatedPassword: repeatedPassword)
+        blockUI()
     }
     
     @objc private func authorization() {
@@ -81,16 +82,23 @@ class RegistrationViewController: UIViewController {
 
 // MARK: - RegistrationViewProtocol:
 extension RegistrationViewController: RegistrationViewInputProtocol {
+    func accountDidCreate() {
+         unblock()
+    }
+    
     func accountDidNotCreate() {
+        unblock()
         showBanner(subtitle: L10n.Warning.accountDidNotCreate)
     }
     
     func invalidEmailFormat() {
+        unblock()
         loginStackView.changeInputState(isWrong: true)
         showBanner(subtitle: L10n.Warning.invalidEmail)
     }
     
     func invalidPasswordFormat() {
+        unblock()
         passwordStackView.changeInputState(isWrong: true)
         repeatPasswordStackView.changeInputState(isWrong: true)
         showBanner(subtitle: L10n.Warning.invalidPassword)
